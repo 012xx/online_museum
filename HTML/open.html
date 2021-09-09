@@ -43,9 +43,10 @@
     <!-- 展示タイトルを入力 -->
     <div class="title">
     <label class="ef">
-      <input type="text" placeholder="展示タイトル">
+      <input type="text" placeholder="展示タイトル" required>
     </label>
     </div>
+    <!-- 展示画像をアップロード -->
     <div id="upFileWrap">
     <div id="inputFile">
         <!-- ドラッグ&ドロップエリア -->
@@ -53,10 +54,16 @@
 
         <!-- 通常のinput[type=file] -->
         <div id="inputFileWrap">
-            <input type="file" name="uploadFile" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif">
+            <input type="file" name="uploadFile" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" required>
             <div id="btnInputFile"><span>ファイルを選択する</span></div>
             <div id="btnChangeFile"><span>ファイルを変更する</span></div>
         </div>
+    </div>
+    <!-- 展示説明を入力 -->
+    <div class="explanation">
+    <label class="el">
+      <textarea type="text" placeholder="展示の説明を入力してください" rows="2" cols="10" wrap="hard" maxlength="40"></textarea>
+    </label>
     </div>
 </div>
 </div>
