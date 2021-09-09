@@ -20,10 +20,10 @@
   transition: 0.3s;
   letter-spacing: 1px;
   color: #7caa92;
-  border: 3px solid #88bba1;
+  border: 3px solid #6d6d6d;
   border-radius: 16px;
 }
 .ef input[type="text"]:focus {
-  border: 3px solid #ffffff;
+  border: 3px solid #88bba1;
   outline: none;
 }
