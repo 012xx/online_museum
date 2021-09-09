@@ -7,10 +7,16 @@
   margin: 0 auto; /*中央寄せ*/
   padding: 60px 0;
 }
+.open-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 64px;
+  text-align: center;
+}
 .title {
   position: relative;
   width: 80%;
-  margin: 40px 3%;
+  margin: auto;
 }
 .title input[type="text"] {
   font-size: 16px;
