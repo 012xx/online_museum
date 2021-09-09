@@ -112,3 +112,14 @@
 #upFileWrap.selected #btnChangeFile {
   display: table;
 }
+
+textarea {
+  padding: 10px;
+  max-width: 100%;
+  margin-top: 40px;
+  height: calc(1.5em * 2);
+  line-height: 1.5;
+  border-radius: 20px;
+  border: 2px solid #6d6d6d;
+  width: 768px;
+}
