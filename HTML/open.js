@@ -1,28 +1,51 @@
-function previewFile(file) {
-  // プレビュー画像を追加する要素
-  const preview = document.getElementById("preview");
+// ドラッグ&ドロップエリアの取得
+var fileArea = document.getElementById("dropArea");
 
-  // FileReaderオブジェクトを作成
-  const reader = new FileReader();
+// input[type=file]の取得
+var fileInput = document.getElementById("uploadFile");
 
-  // ファイルが読み込まれたときに実行する
-  reader.onload = function (e) {
-    const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-    const img = document.createElement("img"); // img要素を作成
-    img.src = imageUrl; // 画像のURLをimg要素にセット
-    preview.appendChild(img); // #previewの中に追加
-  };
+// ドラッグオーバー時の処理
+fileArea.addEventListener("dragover", function (e) {
+  e.preventDefault();
+  fileArea.classList.add("dragover");
+});
 
-  // いざファイルを読み込む
-  reader.readAsDataURL(file);
-}
+// ドラッグアウト時の処理
+fileArea.addEventListener("dragleave", function (e) {
+  e.preventDefault();
+  fileArea.classList.remove("dragover");
+});
 
-// <input>でファイルが選択されたときの処理
-const fileInput = document.getElementById("example");
-const handleFileSelect = () => {
-  const files = fileInput.files;
-  for (let i = 0; i < files.length; i++) {
-    previewFile(files[i]);
+// ドロップ時の処理
+fileArea.addEventListener("drop", function (e) {
+  e.preventDefault();
+  fileArea.classList.remove("dragover");
+
+  // ドロップしたファイルの取得
+  var files = e.dataTransfer.files;
+
+  // 取得したファイルをinput[type=file]へ
+  fileInput.files = files;
+
+  if (typeof files[0] !== "undefined") {
+    //ファイルが正常に受け取れた際の処理
+  } else {
+    //ファイルが受け取れなかった際の処理
   }
-};
-fileInput.addEventListener("change", handleFileSelect);
+});
+
+// input[type=file]に変更があれば実行
+// もちろんドロップ以外でも発火します
+fileInput.addEventListener(
+  "change",
+  function (e) {
+    var file = e.target.files[0];
+
+    if (typeof e.target.files[0] !== "undefined") {
+      // ファイルが正常に受け取れた際の処理
+    } else {
+      // ファイルが受け取れなかった際の処理
+    }
+  },
+  false
+);
