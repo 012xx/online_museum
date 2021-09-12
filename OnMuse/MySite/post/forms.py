@@ -9,7 +9,8 @@ class PostCreateForm(forms.ModelForm):
             'title',
             'content',
             'image',
-            'category'
+            'tag',
+            'relation'
         )
 
         '''
