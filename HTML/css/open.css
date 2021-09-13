@@ -134,6 +134,7 @@ textarea {
 /*作品タグ*/
 .tag-space {
   text-align: center;
+  margin-bottom: 64px;
 }
 p.workstag {
   margin-bottom: 32px;
