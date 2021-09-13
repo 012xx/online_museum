@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm
-from .models import Post
+from .models import Post,Tag
 
 def post_create(request):
     if request.method == "POST":
@@ -15,5 +15,6 @@ def post_create(request):
 def post_list(request):
     context = {
         'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
     }
     return render(request, 'post/post_list.html', context)
