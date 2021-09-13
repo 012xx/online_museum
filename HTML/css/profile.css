@@ -35,5 +35,8 @@ img.artworks {
   width: 250px;
   height: 300px;
   object-fit: cover;
-  border: 3px solid #ffffff;
+  border: 3px solid #f1f1f1;
+}
+img.artworks:hover {
+  border: 3px double #f1f1f1;
 }
