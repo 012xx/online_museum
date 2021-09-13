@@ -116,6 +116,7 @@
 textarea {
   padding: 10px;
   margin-top: 64px;
+  margin-bottom: 64px;
   height: calc(1.5em * 3);
   border-radius: 16px;
   border: 3px solid #6d6d6d;
@@ -128,4 +129,27 @@ textarea {
 .el textarea[type="text"]:focus {
   border: 3px solid #88bba1;
   outline: none;
+}
+/*作品タグ*/
+p.workstag {
+  margin-bottom: 32px;
+}
+label.tag {
+  margin-right: 5px;
+}
+label.tag input {
+  display: none; /* デフォルトのinputは非表示にする */
+}
+label.tag span {
+  color: #ffffff;
+  background-color: #3f3f3f;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+label.tag input:checked + span {
+  color: #fff;
+  background: #88bba1;
+  border: 2px solid #88bba1;
 }
