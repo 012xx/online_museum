@@ -138,6 +138,7 @@ textarea {
 }
 p.workstag {
   margin-bottom: 32px;
+  font-size: 16px;
 }
 label.tag {
   margin-right: 5px;
@@ -146,10 +147,10 @@ label.tag input {
   display: none; /* デフォルトのinputは非表示にする */
 }
 label.tag span {
-  color: #ffffff;
-  background-color: #3f3f3f;
+  color: #3f3f3f;
+  background-color: #ffffff;
   font-size: 16px;
-  border: 2px solid #333;
+  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 5px 20px;
   display: inline-block;
