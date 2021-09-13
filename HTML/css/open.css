@@ -130,7 +130,11 @@ textarea {
   border: 3px solid #88bba1;
   outline: none;
 }
+
 /*作品タグ*/
+.tag-space {
+  text-align: center;
+}
 p.workstag {
   margin-bottom: 32px;
 }
@@ -147,9 +151,11 @@ label.tag span {
   border: 2px solid #333;
   border-radius: 20px;
   padding: 5px 20px;
+  display: inline-block;
+  margin: 10px 0;
 }
 label.tag input:checked + span {
-  color: #fff;
+  color: #ffffff;
   background: #88bba1;
   border: 2px solid #88bba1;
 }
