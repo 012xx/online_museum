@@ -4,12 +4,13 @@
   margin: 0 auto;
   padding: 60px 0;
 }
-img {
+img.icon {
   display: block;
   margin: 80px auto 0 auto; /* 上 | 右 | 下 | 左 */
   border: 5px solid #ffffff;
   width: 200px;
   height: 200px;
+  object-fit: cover;
   border-radius: 50%;
 }
 p.username {
@@ -27,5 +28,51 @@ p.userid {
 p.artworks {
   text-align: center;
   font-size: 24px;
-  margin: 56px 0 0 0; /* 上 | 右 | 下 | 左 */
+  margin: 56px 0 16px 0; /* 上 | 右 | 下 | 左 */
+}
+img.artworks {
+  margin: 32px; /* 上 | 右 | 下 | 左 */
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+.list {
+  flex-wrap: wrap;
+  margin: 40px -20px 0;
+  display: flex;
+}
+.list li {
+  /*ここを触ってたよ*/
+  box-sizing: border-box;
+  margin: 0 10px 20px;
+  text-align: center;
+  opacity: 1;
+  height: auto;
+  flex-basis: calc(33.33333% - 20px);
+  max-width: calc(33.33333% - 20px);
+  transition: all 0.4s ease 0s;
+  overflow: hidden;
+}
+.list li.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding: 0;
+}
+.more {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  background-color: #5c6bc0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  padding: 0;
+  line-height: 40px;
+  width: 160px;
+  border-radius: 20px;
 }
