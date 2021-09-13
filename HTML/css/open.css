@@ -115,8 +115,7 @@
 
 textarea {
   padding: 10px;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  margin: 64px 0;
   height: calc(1.5em * 3);
   border-radius: 16px;
   border: 3px solid #6d6d6d;
@@ -160,4 +159,8 @@ label.tag input:checked + span {
   color: #ffffff;
   background: #88bba1;
   border: 2px solid #88bba1;
+}
+p {
+  font-size: 16px;
+  margin: 8px;
 }
