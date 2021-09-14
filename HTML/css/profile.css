@@ -46,7 +46,7 @@ img.artworks:hover {
 .grad-item {
   position: relative;
   overflow: hidden;
-  height: 500px; /*隠した状態の高さ*/
+  height: 400px; /*隠した状態の高さ*/
 }
 .grad-item::before {
   display: block;
