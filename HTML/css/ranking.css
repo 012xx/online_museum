@@ -45,19 +45,22 @@ section.typeA::after {
   height: 3px;
   order: -1;
   display: block;
-  background: rgba(0, 137, 167, 0.7);
+  background: #7caa92;
 }
 section.typeA .tabLabel {
   /* タブ */
   margin-right: 3px;
-  padding: 3px 12px;
+  font-size: 16px;
+  text-align: center;
+  padding: 8px 0 0 0; /*上下左右*/
   flex: 1;
   order: -1;
-  border-radius: 3px 3px 0 0;
-  color: #444;
-  background: rgba(0, 137, 167, 0.3);
+  border-radius: 16px 16px 0 0;
+  color: #ffffff;
+  background: #444444;
   transition: 0.5s;
   cursor: pointer;
+  height: 40px;
 }
 section.typeA .tabLabel:nth-last-of-type(1) {
   margin-right: 0;
@@ -76,7 +79,7 @@ section.typeA .content {
 /*アクティブ設定*/
 section.typeA input:checked + .tabLabel {
   color: #fff;
-  background: rgba(0, 137, 167, 0.7);
+  background: #7caa92;
 }
 section.typeA input:checked + .tabLabel + .content {
   padding: 15px;
