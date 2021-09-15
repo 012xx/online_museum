@@ -2,17 +2,19 @@
 .search_container {
   box-sizing: border-box;
   position: relative;
-  border: 1px solid #999;
+  border: 2px solid #6e6e6e;
   display: block;
   padding: 3px 10px;
   border-radius: 20px;
-  height: 2.3em;
-  width: 260px;
+  height: 40px;
+  width: 400px;
   overflow: hidden;
+  margin: 80px auto 0 auto; /* 上 | 右 | 下 | 左 */
 }
 .search_container input[type="text"] {
   border: none;
-  height: 2em;
+  font-size: 1.8em;
+  color: #7caa92;
 }
 .search_container input[type="text"]:focus {
   outline: 0;
@@ -20,10 +22,10 @@
 .search_container input[type="submit"] {
   cursor: pointer;
   font-family: FontAwesome;
-  font-size: 1.3em;
+  font-size: 2.2em;
   border: none;
   background: none;
-  color: #3879d9;
+  color: #7caa92;
   position: absolute;
   width: 2.5em;
   height: 2.5em;
