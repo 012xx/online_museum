@@ -9,7 +9,7 @@
   height: 40px;
   width: 400px;
   overflow: hidden;
-  margin: 80px auto 0 auto; /* 上 | 右 | 下 | 左 */
+  margin: 80px auto; /* 上 | 右 | 下 | 左 */
 }
 .search_container input[type="text"] {
   border: none;
