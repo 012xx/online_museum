@@ -56,8 +56,8 @@ section.typeA .tabLabel {
   flex: 1;
   order: -1;
   border-radius: 16px 16px 0 0;
-  color: #ffffff;
-  background: #444444;
+  color: #3f3f3f;
+  background: #ffffff;
   transition: 0.5s;
   cursor: pointer;
   height: 40px;
@@ -78,7 +78,7 @@ section.typeA .content {
 }
 /*アクティブ設定*/
 section.typeA input:checked + .tabLabel {
-  color: #3f3f3f;
+  color: #ffffff;
   background: #7caa92;
 }
 section.typeA input:checked + .tabLabel + .content {
