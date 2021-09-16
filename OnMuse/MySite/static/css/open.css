@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  width: 768px; /*横幅*/
+  margin: 0 auto; /*中央寄せ*/
+  padding: 60px 0;
+}
+.open-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 64px;
+  text-align: center;
+}
+.title {
+  position: relative;
+  width: 100%;
+}
+.title input[type="text"] {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 64px;
+  width: 768px;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #7caa92;
+  border: 3px solid #6d6d6d;
+  border-radius: 16px;
+}
+.ef input[type="text"]:focus {
+  border: 3px solid #88bba1;
+  outline: none;
+}
+#inputFile {
+  position: relative;
+  padding: 180px 0 100px;
+  text-align: center;
+}
+#inputFile {
+  position: relative;
+  padding: 180px 0 100px;
+  text-align: center;
+}
+
+#dropArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0 0;
+  border: 2px dashed #6e6e6e;
+  border-radius: 16px;
+  background: rgba(22, 165, 191, 0);
+  transition: all 0.25s cubic-bezier(0.21, 0.51, 0.51, 1);
+}
+
+#dropArea.dragover {
+  border: 2px solid #16a5bf;
+  background: rgba(22, 165, 191, 0.6);
+}
+
+#uploadFile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 300px;
+  height: 80px;
+  opacity: 0;
+  margin: 0 auto;
+}
+
+#inputFileWrap {
+  position: relative;
+  display: inline-block;
+}
+
+#btnInputFile,
+#btnChangeFile {
+  display: table;
+}
+
+#btnChangeFile {
+  display: none;
+}
+
+#btnInputFile span,
+#btnChangeFile span {
+  position: relative;
+  z-index: 2;
+  display: table-cell;
+  width: 260px;
+  height: 64px;
+  border: 2px solid #757575;
+  border-radius: 70px;
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+#upFileWrap.selected #btnInputFile {
+  display: none;
+}
+
+#upFileWrap.selected #btnChangeFile {
+  display: table;
+}
+
+textarea {
+  padding: 10px;
+  margin: 64px 0;
+  height: calc(1.5em * 3);
+  border-radius: 16px;
+  border: 3px solid #6d6d6d;
+  width: 768px;
+  font-size: 16px;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #7caa92;
+}
+.el textarea[type="text"]:focus {
+  border: 3px solid #88bba1;
+  outline: none;
+}
+
+/*作品タグ*/
+.tag-space {
+  text-align: center;
+  margin-bottom: 64px;
+}
+p.workstag {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+label.tag {
+  margin-right: 5px;
+}
+label.tag input {
+  display: none; /* デフォルトのinputは非表示にする */
+}
+label.tag span {
+  color: #3f3f3f;
+  background-color: #ffffff;
+  font-size: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  padding: 5px 20px;
+  display: inline-block;
+  margin: 10px 0;
+}
+label.tag input:checked + span {
+  color: #ffffff;
+  background: #88bba1;
+  border: 2px solid #88bba1;
+}
+p {
+  font-size: 16px;
+  margin: 8px;
+}

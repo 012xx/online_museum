@@ -1,3 +1,8 @@
+{% load static %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}">
+{% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -15,8 +20,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="css/grobal.css" />
-    <link rel="stylesheet" href="css/index.css" />
     <title>OnMuse</title>
   </head>
   <body>
@@ -24,9 +27,9 @@
     <header>
       <nav class="pc-nav">
         <ul class="pc-nav-menu">
-          <li class="home"><a href="index.html">HOME</a></li>
-          <li><a href="open.html">OPEN</a></li>
-          <li><a href="#">SEARTH</a></li>
+          <li class="home"><a href="">HOME</a></li>
+          <li><a href="../post/list">OPEN</a></li>
+          <li><a href="../post/list">SEARTH</a></li>
           <li><a href="#">PLOFILE</a></li>
         </ul>
       </nav>
@@ -109,7 +112,7 @@
         <p class="caption">想いを書き込もう。想いを受け取ろう。</p>
         <div class="container">
           <div class="box1">
-            <img src="picture/03.png" />
+            <img src="../../static/picture/03.png" />
             <p class="home-text3">手軽に開催しよう</p>
             <p class="home-text2">描いた絵を多くの人に見てもらおう</p>
             <p class="home-text1">想いを受け取ろう</p>
@@ -120,7 +123,7 @@
             <p class="home-text2">様々な人の作品を覗くことが出来ます</p>
             <p class="home-text1">想いを書き込もう</p>
             <p class="home-text2">その絵に書き込んで想いを伝えよう</p>
-            <img src="picture/04.png" class="right" />
+            <img src="../../static/picture/04.png" class="right" />
           </div>
         </div>
       </main>
