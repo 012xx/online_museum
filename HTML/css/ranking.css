@@ -13,7 +13,7 @@
 }
 .search_container input[type="text"] {
   border: none;
-  font-size: 1.8em;
+  font-size: 2.4em;
   color: #7caa92;
 }
 .search_container input[type="text"]:focus {
@@ -22,7 +22,7 @@
 .search_container input[type="submit"] {
   cursor: pointer;
   font-family: FontAwesome;
-  font-size: 2.2em;
+  font-size: 2.4em;
   border: none;
   background: none;
   color: #7caa92;
@@ -78,7 +78,7 @@ section.typeA .content {
 }
 /*アクティブ設定*/
 section.typeA input:checked + .tabLabel {
-  color: #fff;
+  color: #3f3f3f;
   background: #7caa92;
 }
 section.typeA input:checked + .tabLabel + .content {
@@ -103,4 +103,11 @@ img {
   max-width: 960px;
   margin-right: auto;
   margin-left: auto;
+}
+/*展示タイトル*/
+p.title {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 500;
+  display: inline-block;
 }
