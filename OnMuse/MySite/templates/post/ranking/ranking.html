@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{% load static %} {% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+{% endblock %}<!DOCTYPE html>
 <html lang="ja">
   <head>
     <link 
@@ -23,8 +26,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="css/grobal.css">
-    <link rel="stylesheet" href="css/ranking.css" />
     <title>OnMuse</title>
   </head>
   <body>
@@ -32,14 +33,14 @@
     <header>
       <nav class="pc-nav">
         <ul class="pc-nav-menu">
-          <li class="home"><a href="index.html">HOME</a></li>
+          <li class="home"><a href="../../home">HOME</a></li>
           <li><a href="open.html">OPEN</a></li>
           <li><a href="ranking.html">SEARTH</a></li>
           <li><a href="profile.html">PLOFILE</a></li>
         </ul>
       </nav>
       <a href="signup.html" class="btn btn-signup">SIGNUP</a>
-      <a href="login.html" class="btn btn-login">LOGIN</a>
+      <a href="../../account/login/login.html" class="btn btn-login">LOGIN</a>
     </header>
     <!-- 内容 -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
