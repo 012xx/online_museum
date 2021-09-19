@@ -18,3 +18,20 @@ def post_list(request):
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/post_list.html', context)
+
+def open(request):
+    if request.method == "POST":
+        form = PostCreateForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('post:ranking')
+    else:#GETの時
+        form = PostCreateForm()
+    return render(request, 'post/open.html',{'form': form})
+
+def ranking(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/ranking.html', context)
