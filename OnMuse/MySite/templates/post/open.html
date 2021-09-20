@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{% load static %} {% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/open.css' %}" />
+{% endblock %}<!DOCTYPE html>
 <html lang="ja">
   <head>
     <link
@@ -19,30 +22,21 @@
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/grobal.css" />
-    <link rel="stylesheet" href="css/open.css" />
     <title>OnMuse</title>
   </head>
   <body>
-    <!--ここからフォーム-->
-    <form enctype="multipart/form-data" action="{% url 'post:post_create' %}" method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">送信</button>
-  </form>
-  <!--ここまでフォーム-->
     <!-- header -->
     <header>
       <nav class="pc-nav">
         <ul class="pc-nav-menu">
-          <li class="home"><a href="index.html">HOME</a></li>
+          <li class="home"><a href=".././../home/index.html">HOME</a></li>
           <li><a href="open.html">OPEN</a></li>
           <li><a href="#">SEARTH</a></li>
           <li><a href="#">PLOFILE</a></li>
         </ul>
       </nav>
       <a href="signup.html" class="btn btn-signup">SIGNUP</a>
-      <a href="login.html" class="btn btn-login">LOGIN</a>
+      <a href="../../account/login/login.html" class="btn btn-login">LOGIN</a>
     </header>
     <!-- 内容 -->
     <div class="container">
