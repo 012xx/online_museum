@@ -35,3 +35,17 @@ def ranking(request):
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/ranking.html', context)
+
+def retail(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/retail.html', context)
+
+def search(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/search.html', context)
