@@ -9,4 +9,6 @@ urlpatterns = [
     path('create', views.post_create, name='post_create'),
     path('open',views.open,name = 'open'),
     path('ranking',views.ranking,name = 'ranking'),
+    path('retail',views.retail,name = 'retail'),
+    path('search',views.search,name = 'search'),
 ]
