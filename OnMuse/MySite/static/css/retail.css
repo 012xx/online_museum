@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.carousel {
+  width: 600px;
+  height: calc(600px * 0.5625);
+  margin: 0 auto;
+}
+.carousel-area {
+  width: 3150px;
+  height: 100%;
+  display: flex;
+}
+.carousel-list {
+  width: 600px;
+  height: calc(600px * 0.5625);
+  margin-right: 30px;
+}
+.carousel-img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 300px;
+    height: calc(300px * 0.5625);
+  }
+  .carousel-area {
+    width: 1500px;
+  }
+  .carousel-list {
+    width: 300px;
+    height: calc(300px * 0.5625);
+    margin-right: 0;
+  }
+}
