@@ -7,18 +7,23 @@
   <title>Document</title>
 </head>
 <body>
-  {% for post_list in post %}
-    <p>&emsp;タイトル:{{ post_list.title }}</p>
-    <p>&emsp;&emsp;&emsp;本文:{{ post_list.content}}</p>
-    <p>&emsp;投稿時間:{{ post_list.created_at }}</p>
+  {% for post in post_list %}
+    <p>&emsp;タイトル:{{ post.title }}</p>
+    <p>&emsp;&emsp;&emsp;本文:{{ post.content}}</p>
+    <p>&emsp;投稿時間:{{ post.created_at }}</p>
     <a>&emsp;&emsp;&emsp;タグ:</a>
-    {% for TAG in post_list.tag.all %}
+    {% for TAG in post.tag.all %}
       <a>{{ TAG.name }}</a>
     {% empty %}
       <a>タグ付いてないよ</a>
     {% endfor %}
     <br>
-    <img src="{{ post_list.image.url }}" style="width:600px;height:auto">
+    {% for image in images %}
+      {% if image.post_id == post.id %}
+      <img src="{{ image.image.url }}" style="width:600px;height:auto">
+      <br>
+      {% endif %}
+    {% endfor %}
     <br>
   {% endfor %}
 </body>

@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-db.sqlite3
+OnMuse/MtSite/db.sqlite3
 OnMuse/MySite/medias/
 
 # C extensions
