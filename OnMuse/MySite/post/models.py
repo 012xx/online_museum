@@ -11,7 +11,6 @@ class Post(models.Model):
     #user = 製作者名(ログイン後に実装)
     title = models.CharField(verbose_name='タイトル',max_length=20,blank=False,null=False)
     content = models.CharField(verbose_name='本文',max_length=140,blank=False,null=False)
-    image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
     tag = models.ManyToManyField(Tag, verbose_name='タグ',blank=True)#Tagモデルと紐づけ
     relation = models.ManyToManyField('self', verbose_name='関連', blank=True)#Postモデルと紐づけ
     #previews = 見られた回数(展示会を個々で見れるようになってから実装)
@@ -27,4 +26,8 @@ class Post(models.Model):
     '''
     
     def __str__(self):
-        return self.title
+        return str(self.id)
+
+class Image(models.Model):
+    image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
+    post = models.ForeignKey(Post,on_delete=models.CASCADE)

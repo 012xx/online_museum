@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm
-from .models import Post,Tag
+from .models import Post,Tag,Image
 
 def post_create(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST,request.FILES)
         if form.is_valid():
-            form.save()
+            post_id = form.save()
+            portfolio_images = request.FILES.getlist('image', False)
+            for image in portfolio_images:
+                image_instance = Image(
+                    image = image,
+                    post = post_id
+                )
+                image_instance.save()
             return redirect('post:post_list')
     else:#GETの時
         form = PostCreateForm()
