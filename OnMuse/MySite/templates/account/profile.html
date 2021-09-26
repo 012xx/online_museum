@@ -1,0 +1,70 @@
+{% load static %} {% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
+{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <title>OnMuse</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="pc-nav">
+        <ul class="pc-nav-menu">
+          <li class="home"><a href="../home">HOME</a></li>
+          <li><a href="../post/open">OPEN</a></li>
+          <li><a href="../post/search">SEARTH</a></li>
+          <li><a href="../account/profile">PLOFILE</a></li>
+        </ul>
+      </nav>
+      <a href="signup" class="btn btn-signup">SIGNUP</a>
+      <a href="login" class="btn btn-login">LOGIN</a>
+    </header>
+    <!-- アイコン画像表示 -->
+    <div class="container">
+      <img class="icon" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg" />
+      <!-- 取得したアイコン  -->
+      <!-- 名前/ID表示  -->
+      <p class="username">ヒビキ</p>
+      <!-- 取得したID/名前  -->
+      <p class="userid">@012xx</p>
+      <!-- 自己紹介 -->
+      <!-- 展示作品 -->
+      <p class="artworks">この作者の展示</p>
+      <div class="grad-wrap">
+        <input id="trigger1" class="grad-trigger" type="checkbox" />
+        <label class="grad-btn" for="trigger1"></label>
+        <div class="grad-item">
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+        </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer>
+        <ul class="footer-menu">
+          <p class="footer-text">© 2021 こらえる</p>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
