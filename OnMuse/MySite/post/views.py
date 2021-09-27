@@ -21,8 +21,9 @@ def post_create(request):
 
 def post_list(request):
     context = {
-        'post': Post.objects.all(),
+        'post_list': Post.objects.all(),
         'tag': Tag.objects.all(),
+        'images':Image.objects.all(),
     }
     return render(request, 'post/post_list.html', context)
 
