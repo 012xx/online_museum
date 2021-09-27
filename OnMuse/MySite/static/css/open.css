@@ -165,3 +165,17 @@ p {
   font-size: 16px;
   margin: 8px;
 }
+
+/*いるのかわからない部分*/
+.explanation textarea[type="text"] {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 64px;
+  width: 768px;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #7caa92;
+  border: 3px solid #6d6d6d;
+  border-radius: 16px;
+}
