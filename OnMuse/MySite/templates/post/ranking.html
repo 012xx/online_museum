@@ -1,8 +1,9 @@
 {% load static %} 
 {% block link %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
-{% endblock %}<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}" />
+{% endblock %}
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <link 
@@ -57,8 +58,16 @@
             <div class="opus"> <!-- 作品要素を横並びに -->
               <img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg">
               <p class="title"><a href="#">展示タイトルここだよ</a></p>
-              <i class="fas fa-heart fa-3x"></i>100<!-- ここに取得した数字(いいね数) -->
-              <i class="far fa-eye fa-3x"></i>100<!-- ここに取得した数字(閲覧数) -->
+              <div class="sub-element">
+                <i class="fas fa-heart fa-3x" style="margin-top: 50px;"></i>
+                <span class="margin"></span><!-- 空白 -->
+                <span class="number">100</span><!-- ここに取得した数字(いいね数) -->
+                <span class="margin"></span><!-- 空白 -->
+                <i class="far fa-eye fa-3x" style="margin-top: 50px;"></i>
+                <span class="margin"></span><!-- 空白 -->
+                <span class="number">100</span><!-- ここに取得した数字(閲覧数) -->
+                <span class="margin"></span><!-- 空白 -->
+              </div>
               </div>
               <div class="opus"> <!-- 作品要素を横並びに -->
               <img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg">

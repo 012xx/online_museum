@@ -114,18 +114,31 @@ p.title {
   font-weight: Regular 400;
   margin: 40px 88px 0 88px; /* 上 | 右 | 下 | 左 */
 }
-/*リンク色指定*/
 a:link {
   color: #ffffff;
+  border: hidden;
 } /*未訪問のリンクの色*/
 a:visited {
   color: #ffffff;
+  border: hidden;
 } /*訪問済みのリンクの色*/
 a:hover {
   color: #ffffff;
+  border: hidden;
 } /*カーソルが乗っているリンクの色*/
 a:active {
   color: #ffffff;
+  border: hidden;
 } /*クリック中のリンクの色*/
-i {
+
+/*以下効かないですね～～～～～～～～*/
+.sub-element{
+  margin-top: 50px;
+}
+h3.number{
+  margin-top: 50px;
+  font-size: 32px;
+}
+span.margin{
+  margin-right : 20px;
 }
