@@ -3,6 +3,7 @@ import uuid
 
 class Tag(models.Model):
     name = models.CharField('タグ', max_length=50)
+    id = models.UUIDField(verbose_name='タグID',primary_key=True, default=uuid.uuid4, editable=False)
 
     def __str__(self):
         return self.name
