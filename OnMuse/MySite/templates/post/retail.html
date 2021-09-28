@@ -1,9 +1,11 @@
-{% load static %} {% block link %}
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/retail.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,39 +14,53 @@
     <title>User Works</title>
   </head>
   <body>
-    <div class="carousel">
-      <ul class="carousel-area">
-        <li class="carousel-list">
-        <img class="carousel-img" src="../../../MySite/medias/images/topimg.jpg" alt="展示作品01"/>
-        </li>
-        <!-- <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品02" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品03" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品04" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品05" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品06" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品07" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品08" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品09" />
-        </li>
-        <li class="carousel-list">
-          <img class="carousel-img" src="#" alt="展示作品10" />
-        </li>
-      </ul> -->
-    </div>
+    <div class="wrapper">
+      <!-- カルーセル基盤 -->
+      <input checked type=radio name="slider" id="slide1" />
+      <input type=radio name="slider" id="slide2" />
+      <input type=radio name="slider" id="slide3" />
+      <input type=radio name="slider" id="slide4" />
+      <input type=radio name="slider" id="slide5" />
+
+      <!-- 個々の作品画像 -->
+      <div class="slider-wrapper">
+        <div class=inner>
+          <article>
+            <img src="../../medias/images/karei.png">
+          </article>
+          <article>
+            <img src="../../medias/images/topimg.jpg">
+          </article>
+          <article>
+            <img src="../../medias/images/Lake_biwa.jpg">
+          </article>
+          <article>
+            <img src="../../medias/images/ENBkGJYU4AIinuE.jpg">
+          </article>
+          <article>
+            <img src="../../medias/images/icon.png">
+          </article>
+        </div><!-- inner -->
+      </div><!-- slider-wrapper -->
+
+      <!-- 画面左右のコントロールパネル -->
+      <div class="slider-prev-next-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+        <label for=slide4></label>
+        <label for=slide5></label>
+      </div><!-- slider-prev-next-control -->
+
+      <!-- 画面下部のコントロールパネル -->
+      <div class="slider-dot-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+        <label for=slide4></label>
+        <label for=slide5></label>
+      </div><!-- slider-dot-control -->
+    </div><!-- wrapper -->
+
   </body>
 </html>
