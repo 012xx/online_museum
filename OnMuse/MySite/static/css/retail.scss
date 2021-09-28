@@ -1,7 +1,8 @@
 @import "bourbon";
-/*---- NUMBER OF SLIDE CONFIGURATION ----*/
+/*スライド数*/
 $num-of-slide: 5;
 
+/*全体包括要素*/
 .wrapper {
   max-width: 60em;
   margin: 1em auto;
@@ -13,12 +14,12 @@ input {
 }
 
 .inner {
-  width: percentage($num-of-slide);
+  width: percentage($num-of-slide); /*横幅の%をスライド数により変化させる*/
   line-height: 0;
 }
 
 article {
-  width: percentage(1/$num-of-slide);
+  width: percentage(1/$num-of-slide); /*横幅の%を1/スライド数にする*/
   float: left;
   position: relative;
 img {
