@@ -1,5 +1,4 @@
-import "./styles.css";
-
+import "../../static/css/draw.css";
 const canvas = document.querySelector("#draw-area");
 const context = canvas.getContext("2d");
 
