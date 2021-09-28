@@ -67,3 +67,10 @@ def search(request):
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/search.html', context)
+
+def draw(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/draw.html', context)

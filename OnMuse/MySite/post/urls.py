@@ -11,4 +11,5 @@ urlpatterns = [
     path('ranking',views.ranking,name = 'ranking'),
     path('retail',views.retail,name = 'retail'),
     path('search',views.search,name = 'search'),
+    path('draw',views.draw,name = 'draw'),
 ]
