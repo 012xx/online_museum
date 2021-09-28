@@ -1,0 +1,4 @@
+/*はみ出た部分を隠す*/
+body {
+  overflow: hidden;
+}
