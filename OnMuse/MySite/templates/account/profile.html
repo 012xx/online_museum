@@ -38,13 +38,14 @@
     </header>
     <!-- アイコン画像表示 -->
     <div class="container">
-      <img class="icon" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg" />
+      <img class="icon" src="{{ user.icon.url }}" />
       <!-- 取得したアイコン  -->
       <!-- 名前/ID表示  -->
-      <p class="username">ヒビキ</p>
+      <p class="username">{{ user.last_name }}{{ user.first_name }}</p>
       <!-- 取得したID/名前  -->
-      <p class="userid">@012xx</p>
+      <p class="userid">{{ user.username }}</p>
       <!-- 自己紹介 -->
+      {{ user.introduction }}
       <!-- 展示作品 -->
       <p class="artworks">この作者の展示</p>
       <div class="grad-wrap">

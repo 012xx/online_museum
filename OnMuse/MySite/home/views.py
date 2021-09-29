@@ -4,4 +4,7 @@ def home(request):
     return render(request,'home/index.html',)
 
 def choice(request):
-    return render(request,'home/choice.html',)
+    context = {
+        'user':request.user
+    }
+    return render(request,'home/choice.html',context)
