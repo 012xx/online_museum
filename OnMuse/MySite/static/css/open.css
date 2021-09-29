@@ -187,7 +187,9 @@ a.btn-submit {
   border-radius: 70px;
   background: #7caa92;
   color: #ffffff;
-  margin-bottom: 72px; /* 上 | 右 | 下 | 左(効かない) */
+  display:block;  /*検証ではOK*/
+  margin: 0 auto; /*検証ではOK*/
+  margin-bottom: 72px;
 }
 a.btn-submit:hover {
   color: #ffffff;
