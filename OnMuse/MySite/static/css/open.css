@@ -134,7 +134,7 @@ textarea {
 /*作品タグ*/
 .tag-space {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 p.workstag {
   margin-bottom: 32px;
@@ -178,4 +178,18 @@ p {
   color: #7caa92;
   border: 3px solid #6d6d6d;
   border-radius: 16px;
+}
+/*送信ボタン*/
+a.btn-submit {
+  width: 153px;
+  height: 48px;
+  border: 2px solid #ffffff;
+  border-radius: 70px;
+  background: #7caa92;
+  color: #ffffff;
+  margin-bottom: 72px; /* 上 | 右 | 下 | 左(効かない) */
+}
+a.btn-submit:hover {
+  color: #ffffff;
+  background: #1f8d35;
 }

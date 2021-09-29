@@ -116,19 +116,18 @@ p.title {
 }
 a:link {
   color: #ffffff;
-  border: hidden;
+  border: none;
 } /*未訪問のリンクの色*/
 a:visited {
   color: #ffffff;
-  border: hidden;
+  border: none;
 } /*訪問済みのリンクの色*/
 a:hover {
   color: #ffffff;
-  border: hidden;
 } /*カーソルが乗っているリンクの色*/
 a:active {
   color: #ffffff;
-  border: hidden;
+  border: none;
 } /*クリック中のリンクの色*/
 
 /*以下効かないですね～～～～～～～～*/
