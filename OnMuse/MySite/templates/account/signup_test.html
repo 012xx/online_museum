@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="ユーザID" required> 
+    <input type="password" name="password1" placeholder="パスワード" required>
+    <input type="password" name="password2" placeholder="パスワー(再度入力)" required> 
+    <input type="email" name="email" placeholder="メールアドレス" required> 
+    
+    <button type="submit">ユーザー登録</button>
+</form>
