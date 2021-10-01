@@ -118,12 +118,11 @@ p.title {
   color: #ffffff;
 }
 
-/*以下効かないですね～～～～～～～～*/
 .sub-element{
   margin-top: 50px;
 }
 span.number{
-  font-size: 32px;
+  font-size: 24px;
 }
 span.margin{
   margin-right : 20px;
