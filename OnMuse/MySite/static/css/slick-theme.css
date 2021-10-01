@@ -104,7 +104,7 @@
     right: auto;
     left: -25px;
 }
-.slick-next:before
+.slick-next:before 
 {
     content: '→';
 }
@@ -175,7 +175,7 @@
 {
     opacity: 1;
 }
-.slick-dots li button:before
+.slick-dots li button:before /*未選択のドット*/
 {
     font-family: 'slick';
     font-size: 6px;
@@ -192,13 +192,13 @@
     text-align: center;
 
     opacity: .25;
-    color: black;
+    color: white;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.slick-dots li.slick-active button:before
+.slick-dots li.slick-active button:before /*選択時のドット*/
 {
     opacity: .75;
-    color: black;
+    color: lightgreen;
 }

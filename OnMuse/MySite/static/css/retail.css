@@ -1,10 +1,12 @@
 .slider-wrapper {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 152px auto auto; /* 上 | 左右 | 下 */
 }
 
 .slider-wrapper li img {
-  width: 100%;
+  align-items: center;
+  margin: 0 auto;
   height: 400px;
-  object-fit: cover;
+border: #fff 3px solid;
+  object-fit: contain
 }
