@@ -114,28 +114,15 @@ p.title {
   font-weight: Regular 400;
   margin: 40px 88px 0 88px; /* 上 | 右 | 下 | 左 */
 }
-a:link {
+.title a{
   color: #ffffff;
-  border: none;
-} /*未訪問のリンクの色*/
-a:visited {
-  color: #ffffff;
-  border: none;
-} /*訪問済みのリンクの色*/
-a:hover {
-  color: #ffffff;
-} /*カーソルが乗っているリンクの色*/
-a:active {
-  color: #ffffff;
-  border: none;
-} /*クリック中のリンクの色*/
+}
 
 /*以下効かないですね～～～～～～～～*/
 .sub-element{
   margin-top: 50px;
 }
-h3.number{
-  margin-top: 50px;
+span.number{
   font-size: 32px;
 }
 span.margin{

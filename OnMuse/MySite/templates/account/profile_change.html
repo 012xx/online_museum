@@ -1,0 +1,12 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="last_name" placeholder="苗字">
+    <input type="text" name="first_name" placeholder="名字">
+    <input type="text" name="introduction" placeholder="自己紹介">
+    <input type="url" name="link" placeholder="URL">
+    <input type="file" name="icon" placeholder="アイコン">
+    <input type="month" name="birthday" placeholder="生年月日">
+
+    <input type="reset" value="リセットする">
+    <button type="submit">ユーザー登録</button>
+</form>

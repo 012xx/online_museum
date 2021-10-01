@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
+    class Meta(AbstractUser.Meta):
+        db_table    = 'custom_users'
     #名前、ID、自己紹介、リンク、アイコン画像、誕生日、
     introduction = models.CharField(verbose_name='自己紹介',max_length=200,blank=True,null=True,default="よろしくお願いします")
     link = models.URLField(verbose_name='リンク',max_length=200,blank=True,null=True)

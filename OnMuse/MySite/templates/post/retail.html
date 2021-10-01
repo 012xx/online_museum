@@ -1,47 +1,49 @@
-{% load static %} 
-{% block link %}
-<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/retail.css' %}" />
-{% endblock %}
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/retail.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
+{% endblock %}
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <title>User Works</title>
   </head>
   <body>
     <div class="wrapper">
       <!-- カルーセル基盤 -->
-      <input checked type=radio name="slider" id="slide1" />
+      <!-- <input checked type=radio name="slider" id="slide1" />
       <input type=radio name="slider" id="slide2" />
       <input type=radio name="slider" id="slide3" />
       <input type=radio name="slider" id="slide4" />
-      <input type=radio name="slider" id="slide5" />
+      <input type=radio name="slider" id="slide5" /> -->
 
       <!-- 個々の作品画像 -->
-      <div class="slider-wrapper">
-        <div class=inner>
-          <article>
+      <ul class="slider-wrapper">
+        <!-- <div class=inner> -->
+          <li>
             <img src="../../medias/images/karei.png">
-          </article>
-          <article>
+          </li>
+          <li>
             <img src="../../medias/images/topimg.jpg">
-          </article>
-          <article>
+          </li>
+          <li>
             <img src="../../medias/images/Lake_biwa.jpg">
-          </article>
-          <article>
+          </li>
+          <li>
             <img src="../../medias/images/ENBkGJYU4AIinuE.jpg">
-          </article>
-          <article>
+          </li>
+          <li>
             <img src="../../medias/images/icon.png">
-          </article>
-        </div><!-- inner -->
-      </div><!-- slider-wrapper -->
+          </li>
+        <!-- </div>inner -->
+        </ul><!-- slider-wrapper -->
 
       <!-- 画面左右のコントロールパネル -->
       <div class="slider-prev-next-control">
@@ -60,7 +62,9 @@
         <label for=slide4></label>
         <label for=slide5></label>
       </div><!-- slider-dot-control -->
-    </div><!-- wrapper -->
-
+    </div>wrapper
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/retail.js' %}"></script>
   </body>
 </html>

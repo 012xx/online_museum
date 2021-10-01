@@ -136,6 +136,7 @@ MEDIA_ROOT = BASE_DIR.joinpath('medias')
 MEDIA_URL = '/medias/'
 
 AUTH_USER_MODEL = 'account.CustomUser'
+ACCOUNT_FORMS   = { "signup":"account.forms.SignupForm"}
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '../../home/choice'
