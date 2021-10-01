@@ -88,7 +88,14 @@
 }
 .slick-prev:before
 {
+    display: inline-block;
+    border-radius:50%;
+    border: #ffffff 4px solid;
+    width: 40px;
+    height: 40px;
     content: '←';
+    background:linear-gradient(#C5C5C5, #ffffff);
+    color: black;
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -106,7 +113,14 @@
 }
 .slick-next:before 
 {
+    display: inline-block;
+    border-radius:50%;
+    border: #ffffff 4px solid;
+    width: 40px;
+    height: 40px;
     content: '→';
+    background:linear-gradient(#C5C5C5, #ffffff);
+    color: black;
 }
 [dir='rtl'] .slick-next:before
 {
