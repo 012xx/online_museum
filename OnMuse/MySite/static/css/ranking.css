@@ -107,6 +107,11 @@ img {
 /*横並びにするためのdiv*/
 .opus {
   display: flex;
+  margin-bottom: 8px;
+}
+.opus-last {
+  display: flex;
+  margin-bottom: 124px;
 }
 /*展示タイトル*/
 p.title {
