@@ -25,6 +25,14 @@ p.userid {
   font-size: 24px;
   color: #777777;
 }
+.profile-text{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #f1f1f1;
+  border: solid 3px #7caa92;
+  border-radius: 10px;
+}
 p.artworks {
   text-align: center;
   font-size: 24px;
