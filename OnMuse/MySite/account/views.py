@@ -19,7 +19,7 @@ def signup(request):
             return redirect('home:choice')
     else:
         form = SignUpForm()
-    return render(request, 'account/signup_test.html', {'form': form})
+    return render(request, 'account/signup.html', {'form': form})
 
 @login_required
 def profile(request):

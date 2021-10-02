@@ -19,34 +19,55 @@
     <body>
       <div class="main" align="center">
         <p class="su">SIGN UP</p>
-        <form class="form1" align="center">
+        <form class="form1" align="center" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <!-- <p>{{ form.errors }}</p> -->
           <input
             class="Name"
             type="text"
-            placeholder="User Name"
+            name="last_name"
+            placeholder="Full Name"
             required
             autofocus
           />
-          <input class="ID" type="text" placeholder="ID" required autofocus />
+          {{ form.last_name.errors }}
+          <input
+            class="ID"
+            type="text" 
+            name="username"
+            placeholder="username" 
+            required 
+            autofocus 
+          />
+          {{ form.username.errors }}
           <input
             class="mail"
             type="email"
+            name="email"
             placeholder="Email Address"
             required
           />
+          {{ form.email.errors }}
           <input
             class="pass1"
             type="password"
+            name="password1"
             placeholder="Choose Password"
             required
           />
+          {{ form.password1.errors }}
           <input
             class="pass2"
             type="password"
+            name="password2"
             placeholder="Retype Password"
             required
           />
-          <a class="submit"><input type="submit" value="SIGN UP" align="center"/></a>
+          {{ form.password2.errors }}
+          <button type="submit" class="submit" align="center">SIGN UP</button>
+          <!-- <a class="submit"><input type="submit" value="SIGN UP" align="center"/></a> -->
         </form>
       </div>
     </body>
