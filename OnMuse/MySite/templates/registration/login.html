@@ -1,19 +1,30 @@
-
-<!DOCTYPE html>
+{% load static %} {% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+{% endblock %}
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <title>ログインフォーム画面</title>
+<link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <title>LOGIN</title>
 </head>
-
 <body>
-    <h1>ログインフォーム画面</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">ログイン</button>
-    </form>
+  <div class="main">
+    <p class="sign" align="center">LOGIN</p>
+    <form class="form1" method="POST">    
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <input class="un " type="text" align="center" name="username" placeholder="Username">
+    <input class="pass" type="password" align="center" name="password" placeholder="Password">
+    <button type="submit" class="submit" align="center">LOGIN</button>
+    <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+    </div>
 </body>
-
 </html>
