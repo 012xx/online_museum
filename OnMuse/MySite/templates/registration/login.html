@@ -18,24 +18,13 @@
 <body>
   <div class="main">
     <p class="sign" align="center">LOGIN</p>
-    <form class="form1" method="POST">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-        <p class="us" align="center" placeholder="Username">
-            <!-- {{ form.username.label_tag }} -->
-            {{ form.username }}
-            <span class="helptext">{{ form.username.help_text }}</span>
-            {{ form.username.errors }}
-        </p>
-        <p class="pass" align="center" placeholder="Password">
-            <!-- {{ form.password.label_tag }} -->
-            {{ form.password }}
-            <span class="helptext">{{ form.password.help_text }}</span>
-            {{ form.password.errors }}
-        </p>
-        <button type="submit" class="submit" align="center">LOGIN</button>
-        <p class="forgot" align="center"><a>Forgot Password?</p>
-    </form>
-  </div>
+    <form class="form1" method="POST">    
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <input class="un " type="text" align="center" name="username" placeholder="Username">
+    <input class="pass" type="password" align="center" name="password" placeholder="Password">
+    <button type="submit" class="submit" align="center">LOGIN</button>
+    <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+    </div>
 </body>
 </html>
