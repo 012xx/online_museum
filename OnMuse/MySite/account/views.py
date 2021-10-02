@@ -16,7 +16,7 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            return redirect('home:choice')
+            return redirect('account:success')
     else:
         form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
@@ -24,3 +24,6 @@ def signup(request):
 @login_required
 def profile(request):
     return render(request,'account/profile.html',)
+
+def success(request):
+    return render(request,'account/success.html',)
