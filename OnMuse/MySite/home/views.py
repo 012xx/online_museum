@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 def home(request):
-    return render(request,'home/index.html',)
+    user = str(request.user)
+    if user != "AnonymousUser":
+        return redirect('../account/logout')
+    else:
+        return render(request,'home/index.html')
 
 def choice(request):
     context = {
