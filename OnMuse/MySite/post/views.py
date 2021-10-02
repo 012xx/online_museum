@@ -27,7 +27,6 @@ def post_create(request):
             "tags":tags,
             "posts":posts,
             "images":images,
-
         }
     return render(request, 'post/post_create.html', context)
 
@@ -42,6 +41,7 @@ def post_list(request):
 def open(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
+        print(form)
         if form.is_valid():
             post_id = form.save()
             portfolio_images = request.FILES.getlist('image', False)
@@ -60,6 +60,7 @@ def open(request):
         posts = Post.objects.all()
         images = Image.objects.all()
         context = {
+            'user':request.user,
             "tags":tags,
             "posts":posts,
             "images":images,
