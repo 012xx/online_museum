@@ -23,9 +23,11 @@ def post_create(request):
         posts = Post.objects.all()
         images = Image.objects.all()
         context = {
+            'user':request.user,
             "tags":tags,
             "posts":posts,
             "images":images,
+
         }
     return render(request, 'post/post_create.html', context)
 

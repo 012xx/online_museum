@@ -9,7 +9,7 @@ class Tag(models.Model):
         return self.name
 
 class Post(models.Model):
-    #user = 製作者名(ログイン後に実装)
+    author = models.CharField(verbose_name='作者',max_length=100,null=False,default="admin")
     title = models.CharField(verbose_name='タイトル',max_length=20,blank=False,null=False)
     content = models.CharField(verbose_name='本文',max_length=140,blank=False,null=False)
     tag = models.ManyToManyField(Tag, verbose_name='タグ',blank=True)#Tagモデルと紐づけ
@@ -32,3 +32,10 @@ class Post(models.Model):
 class Image(models.Model):
     image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
+
+class Comment(models.Model):
+    comment = models.CharField(verbose_name='コメント',max_length=200,blank=False,null=False)
+    postid = models.UUIDField(verbose_name='作品ID',null=False)
+
+    def __str__(self):
+        return self.comment
