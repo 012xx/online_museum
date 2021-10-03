@@ -44,10 +44,12 @@
     <div class="container">
     <h1 class="open-title">展示会を開く</h1>
     <!-- 展示タイトルを入力 -->
-    <form enctype="multipart/form-data" action="{% url 'post:post_create' %}" method="POST">
+    <form enctype="multipart/form-data" action="{% url 'post:open' %}" method="POST">
+    {% csrf_token %}
+    <input readonly type="text" name="author" value={{ user.username }} >
     <div class="title">
     <label class="ef">
-      <input type="text" placeholder="展示タイトル" required>
+      <input type="text" name="title" placeholder="展示タイトル" required>
     </label>
     </div>
     <!-- 展示画像をアップロード -->
@@ -60,7 +62,7 @@
 
         <!-- 通常のinput[type=file] -->
         <div id="inputFileWrap">
-            <input type="file" name="uploadFile" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" required>
+            <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" multiple="" required>
             <div id="btnInputFile"><span>ファイルを選択する</span></div>
             <div id="btnChangeFile"><span>ファイルを変更する</span></div>
         </div>
@@ -68,23 +70,17 @@
     <!-- 展示説明を入力 -->
     <div class="explanation">
     <label class="el">
-      <textarea type="text" rows="2" cols="10" wrap="hard" maxlength="40" placeholder="簡単に展示の説明を入力してください"></textarea>
+      <input type="text" name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示の説明を入力してください" required></input>
     </label>
     </div>
     <p class="workstag">作品タグ</p>
     <div class="tag-space">
-      <label class="tag"><input type="checkbox" value="1" name="category"><span>#かわいい</span></label>
-      <label class="tag"><input type="checkbox" value="2" name="category"><span>#かっこいい</span></label>
-      <label class="tag"><input type="checkbox" value="3" name="category"><span>#鬱くしい</span></label>
-      <label class="tag"><input type="checkbox" value="4" name="category"><span>#センシティブ</span></label><br>
-      <label class="tag"><input type="checkbox" value="5" name="category"><span>#きれい</span></label>
-      <label class="tag"><input type="checkbox" value="6" name="category"><span>#LOG</span></label>
-      <label class="tag"><input type="checkbox" value="7" name="category"><span>#本気絵</span></label>
-      <label class="tag"><input type="checkbox" value="8" name="category"><span>#過程</span></label>
-      <label class="tag"><input type="checkbox" value="9" name="category"><span>#好きなもの</span></label><br>
+      {% for tag in tags %}
+        <label class="tag"><input type="checkbox" value= {{tag.id}} name="tag"><span>{{ tag.name }}</span></label>
+      {% endfor %}
     </div>
     <!-- 送信ボタン -->
-    <a href="#" class="btn btn-submit"><input type="submit" value="送信する"></a>
+    <a class="btn btn-submit"><input type="submit"></a>
   </div>
 </form>
 </div>

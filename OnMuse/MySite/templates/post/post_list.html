@@ -8,8 +8,9 @@
 </head>
 <body>
   {% for post in post_list %}
+    <p>&emsp;&emsp;&emsp;作者:{{ post.author }}</p>
     <p>&emsp;タイトル:{{ post.title }}</p>
-    <p>&emsp;&emsp;&emsp;本文:{{ post.content}}</p>
+    <p>&emsp;&emsp;&emsp;本文:{{ post.content }}</p>
     <p>&emsp;投稿時間:{{ post.created_at }}</p>
     <a>&emsp;&emsp;&emsp;タグ:</a>
     {% for TAG in post.tag.all %}
