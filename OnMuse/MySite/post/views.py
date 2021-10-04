@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import PostCreateForm
-from .models import Post,Tag,Image
+from .forms import PostCreateForm,CommentForm
+from .models import Comment, Post,Tag,Image
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 
@@ -75,11 +75,18 @@ def ranking(request):
 
 @login_required
 def retail(request,id):
-    context = {
-        'post': Post.objects.filter(id=str(id)),
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('post:retail',id=id)
+    else:#GETの時
+        context = {
+        'post': Post.objects.filter(id=str(id)).first,
         'tag': Tag.objects.filter(id=str(id)),
         'images':Image.objects.filter(post_id=str(id)),
-    }
+        'comment':Comment.objects.all(),
+        }
     return render(request, 'post/retail.html', context)
 
 @login_required

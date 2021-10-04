@@ -27,7 +27,7 @@ class Post(models.Model):
     '''
     
     def __str__(self):
-        return str(self.id)
+        return self.title
 
 class Image(models.Model):
     image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
@@ -36,6 +36,8 @@ class Image(models.Model):
 class Comment(models.Model):
     comment = models.CharField(verbose_name='コメント',max_length=200,blank=False,null=False)
     postid = models.UUIDField(verbose_name='作品ID',null=False)
+    created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
+
 
     def __str__(self):
         return self.comment
