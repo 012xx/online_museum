@@ -9,7 +9,7 @@ urlpatterns = [
     path('create', views.post_create, name='post_create'),
     path('open',views.open,name = 'open'),
     path('ranking',views.ranking,name = 'ranking'),
-    path('retail/<uuid:id>',views.retail,name = 'retail'),
+    path('detail/<uuid:id>',views.detail,name = 'detail'),
     path('search',views.search,name = 'search'),
     path('draw',views.draw,name = 'draw'),
 ]

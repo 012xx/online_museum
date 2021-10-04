@@ -9,7 +9,7 @@
 <body>
   {% for post in post_list %}
     <p>&emsp;&emsp;&emsp;作者:{{ post.author }}</p>
-    <a href="retail/{{ post.id }}">&emsp;タイトル:{{ post.title }}</a>
+    <a href="detail/{{ post.id }}">&emsp;タイトル:{{ post.title }}</a>
     <p>&emsp;&emsp;&emsp;本文:{{ post.content }}</p>
     <p>&emsp;投稿時間:{{ post.created_at }}</p>
     <a>&emsp;&emsp;&emsp;タグ:</a>

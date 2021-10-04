@@ -74,12 +74,12 @@ def ranking(request):
     return render(request, 'post/ranking.html', context)
 
 @login_required
-def retail(request,id):
+def detail(request,id):
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('post:retail',id=id)
+            return redirect('post:detail',id=id)
     else:#GETの時
         context = {
         'post': Post.objects.filter(id=str(id)).first,
@@ -87,7 +87,7 @@ def retail(request,id):
         'images':Image.objects.filter(post_id=str(id)),
         'comment':Comment.objects.all(),
         }
-    return render(request, 'post/retail.html', context)
+    return render(request, 'post/detail.html', context)
 
 @login_required
 def search(request):
