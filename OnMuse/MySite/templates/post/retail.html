@@ -27,21 +27,11 @@
       <!-- 個々の作品画像 -->
       <ul class="slider-wrapper">
         <!-- <div class=inner> -->
+          {% for image in images %}
           <li>
-            <img src="../../medias/images/karei.png">
+            <img src={{ image.image.url }}>
           </li>
-          <li>
-            <img src="../../medias/images/topimg.jpg">
-          </li>
-          <li>
-            <img src="../../medias/images/Lake_biwa.jpg">
-          </li>
-          <li>
-            <img src="../../medias/images/ENBkGJYU4AIinuE.jpg">
-          </li>
-          <li>
-            <img src="../../medias/images/icon.png">
-          </li>
+          {% endfor %}
         <!-- </div>inner -->
         </ul><!-- slider-wrapper -->
 
