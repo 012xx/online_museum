@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm
 from .models import Post,Tag,Image
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def post_create(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
@@ -15,9 +17,6 @@ def post_create(request):
                 )
                 image_instance.save()
             return redirect('post:post_list')
-        else:
-            print("error")
-            print(form)
     else:#GETの時
         tags = Tag.objects.all()
         posts = Post.objects.all()
@@ -30,6 +29,7 @@ def post_create(request):
         }
     return render(request, 'post/post_create.html', context)
 
+@login_required
 def post_list(request):
     context = {
         'post_list': Post.objects.all(),
@@ -38,10 +38,10 @@ def post_list(request):
     }
     return render(request, 'post/post_list.html', context)
 
+@login_required
 def open(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
-        print(form)
         if form.is_valid():
             post_id = form.save()
             portfolio_images = request.FILES.getlist('image', False)
@@ -52,9 +52,6 @@ def open(request):
                 )
                 image_instance.save()
             return redirect('post:post_list')
-        else:
-            print("error")
-            print(form)
     else:#GETの時
         tags = Tag.objects.all()
         posts = Post.objects.all()
@@ -67,6 +64,7 @@ def open(request):
         }
     return render(request, 'post/open.html', context)
 
+@login_required
 def ranking(request):
     context = {
         'post': Post.objects.all(),
@@ -74,6 +72,7 @@ def ranking(request):
     }
     return render(request, 'post/ranking.html', context)
 
+@login_required
 def retail(request):
     context = {
         'post': Post.objects.all(),
@@ -81,6 +80,7 @@ def retail(request):
     }
     return render(request, 'post/retail.html', context)
 
+@login_required
 def search(request):
     context = {
         'post': Post.objects.all(),
@@ -88,6 +88,7 @@ def search(request):
     }
     return render(request, 'post/search.html', context)
 
+@login_required
 def draw(request):
     context = {
         'post': Post.objects.all(),
