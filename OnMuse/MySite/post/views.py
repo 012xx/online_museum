@@ -90,6 +90,10 @@ def detail(request,id):
     return render(request, 'post/detail.html', context)
 
 @login_required
+def last(request,id):
+    return render(request, 'post/last.html')
+
+@login_required
 def search(request):
     context = {
         'post': Post.objects.all(),
