@@ -69,10 +69,17 @@
     </div>
     <!-- 展示説明を入力 -->
     <div class="explanation">
-    <label class="el">
+    <label class="ef">
       <input type="text" name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示の説明を入力してください" required></input>
     </label>
     </div>
+
+    <!-- <div class="title">
+    <label class="ef">
+      <input type="text" name="title" placeholder="展示タイトル" required>
+    </label>
+    </div> -->
+
     <p class="workstag">作品タグ</p>
     <div class="tag-space">
       {% for tag in tags %}
