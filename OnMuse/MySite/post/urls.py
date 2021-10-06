@@ -12,4 +12,5 @@ urlpatterns = [
     path('detail/<uuid:id>',views.detail,name = 'detail'),
     path('search',views.search,name = 'search'),
     path('draw',views.draw,name = 'draw'),
+    path('last/<uuid:id>',views.last,name = 'last'),
 ]
