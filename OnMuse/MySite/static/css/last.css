@@ -1,0 +1,35 @@
+p.good-work{
+  text-align: center;
+  color: #ffffff;
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-size: 40px;
+  margin:48px 0 0 0;/* 上 | 右 | 下 | 左 */
+}
+p.work-comment{
+  color: #e4e3e3;
+  font-family: "Noto Sans JP";
+  font-size: 16px;
+  margin:40px 0 24px 40px;/* 上 | 右 | 下 | 左 */
+}
+div.comment-scroll{
+  margin:0 0 8px 40px;/* 上 | 右 | 下 | 左 */
+  padding: 0 1.5em;
+  font-size: 1em;
+  width: 90%;
+  height: 40em;
+  overflow: auto;
+  background-color: #686868;
+  border-radius: 16px;
+}
+/* .info {
+  margin: 1em auto 60px auto;
+  padding: 0 1.5em;
+  text-align: left;
+  font-size: 1em;
+  color: #2a333c;
+  overflow: auto;
+  width: 90%;
+  height: 10em;
+  background-color: #eeeeee;
+  border-radius: 20px; /* 角を丸くする */
