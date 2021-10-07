@@ -22,9 +22,9 @@ p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
   background-color: #686868;
   border-radius: 16px;
   align-items: center;
-  padding: 3em;
+  padding: 1em 3em 1em 3em;/* 上 | 右 | 下 | 左 */
 }
-.view-comment{/*ユーザのコメント*/
+dd.view-comment{/*ユーザのコメント*/
   font-size: 24px;
   margin: 0.5em auto 0.5em 1em; /* 上 | 右 | 下 | 左 */
 }
@@ -38,6 +38,17 @@ img{
   object-fit: cover;
   border-radius: 50%;
   border: #ffffff solid 3px;
-  /* margin: 1em 2em auto auto; 上 | 右 | 下 | 左 */
   float: left;
+}
+.comment-scroll dl {
+  padding: 0.5em 0;
+}
+.comment-scroll dt {
+  padding-bottom: 0;
+  width: 7em;
+  margin: 0.7em 8px 0 auto;/* 上 | 右 | 下 | 左 */
+}
+@media screen and (min-width: 480px) {
+.comment-scroll dt {clear: left;float: left;}
+.comment-scroll dd {margin-left: 0.5em;}
 }
