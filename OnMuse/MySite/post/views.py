@@ -33,7 +33,7 @@ def post_create(request):
 @login_required
 def post_list(request):
     context = {
-        'post_list': Post.objects.all(),
+        'post_list': Post.objects.order_by('-created_at'),
         'tag': Tag.objects.all(),
         'images':Image.objects.all(),
     }
@@ -68,8 +68,9 @@ def open(request):
 @login_required
 def ranking(request):
     context = {
-        'post': Post.objects.all(),
+        'posts': Post.objects.order_by('-created_at'),
         'tag': Tag.objects.all(),
+        'images':Image.objects.all(),
     }
     return render(request, 'post/ranking.html', context)
 
