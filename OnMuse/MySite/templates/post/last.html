@@ -49,9 +49,22 @@
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
               <td>
-                <form method="POST" action="comment.php?rep=1" target="com">
+<!-- 
+                <form method="POST">
+                  {% csrf_token %}
+                  <input readonly type="text" name="author" value={{ user.username }} >
+                  <input readonly type="text" name="postid" value={{ post.id }} >
+                  <input type="text" name="comment" placeholder="コメントを書こう！">
+                  <button type="submit">送信</button>
+                </form> -->
+
+                <!--<form method="POST" action="comment.php?rep=1" target="com">-->
+                <form method="POST">
+                  {% csrf_token %}
+                  <input readonly type="hidden" name="author" value={{ user.username }} >
+                  <input readonly type="hidden" name="postid" value={{ id }} >
                   <span class="sub-title">コメントはこちら(100文字以内)</span><br>
-                  <input class="comment-input" type="text"  id="comment" name="comment" size="80"/>
+                  <input class="comment-input" type="text"  id="comment" name="comment" size="80" required/>
                   <input class="comment-button" type="submit" id="submit" value=" 送信"/> 
                 </form>
               </td>

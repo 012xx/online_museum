@@ -25,7 +25,7 @@
         </li>
         {% endfor %}
         <li>
-          <a href="post/list">リストに戻る</a>
+          <a href="../last/{{ post.id }}">リストに戻る</a>
         </li>
       </ul>
       <!-- slider-wrapper -->
@@ -49,13 +49,6 @@
       </div><!-- slider-dot-control -->
     </div><!-- wrapper -->
     
-    <form method="POST">
-      {% csrf_token %}
-      <input readonly type="text" name="author" value={{ user.username }} >
-      <input readonly type="text" name="postid" value={{ post.id }} >
-      <input type="text" name="comment" placeholder="コメントを書こう！">
-      <button type="submit">送信</button>
-    </form>
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>

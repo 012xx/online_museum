@@ -27,7 +27,7 @@ class Post(models.Model):
     '''
     
     def __str__(self):
-        return self.title
+        return(self.id)
 
 class Image(models.Model):
     image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
