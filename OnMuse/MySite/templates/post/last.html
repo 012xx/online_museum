@@ -31,14 +31,14 @@
     <header>
       <nav class="pc-nav">
         <ul class="pc-nav-menu">
-          <li class="home"><a href="../home">HOME</a></li>
-          <li><a href="../post/open">OPEN</a></li>
-          <li><a href="ranking">SEARTH</a></li>
-          <li><a href="../account/profile">PLOFILE</a></li>
+          <li class="home"><a href="../../home">HOME</a></li>
+          <li><a href="../../post/open">OPEN</a></li>
+          <li><a href="../ranking">SEARTH</a></li>
+          <li><a href="../../account/profile">PLOFILE</a></li>
         </ul>
       </nav>
-      <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
-      <a href="../account/login" class="btn btn-login">LOGIN</a>
+      <a href="../../account/signup" class="btn btn-signup">SIGNUP</a>
+      <a href="../../account/login" class="btn btn-login">LOGIN</a>
     </header>
     <!-- 内容 -->
     <div class="container">
@@ -49,7 +49,7 @@
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
               <td>
-                <form method="POST">
+                <form method="POST"><!-- action="comment.php?rep=1" target="com"(これが括弧内に入るかもしれない) -->
                   {% csrf_token %}
                   <input readonly type="hidden" name="author" value={{ user.username }} >
                   <input readonly type="hidden" name="postid" value={{ id }} >
@@ -72,14 +72,6 @@
           {% for comment in comments %}
             <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">{{ comment.comment }}</dd></dl>
           {% endfor %}
-<!-- 
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl> -->
         </div><!-- class="comment-scroll"-->
     </div><!-- class="container" -->
     <!-- footer -->
