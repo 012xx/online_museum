@@ -49,16 +49,6 @@
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
               <td>
-<!-- 
-                <form method="POST">
-                  {% csrf_token %}
-                  <input readonly type="text" name="author" value={{ user.username }} >
-                  <input readonly type="text" name="postid" value={{ post.id }} >
-                  <input type="text" name="comment" placeholder="コメントを書こう！">
-                  <button type="submit">送信</button>
-                </form> -->
-
-                <!--<form method="POST" action="comment.php?rep=1" target="com">-->
                 <form method="POST">
                   {% csrf_token %}
                   <input readonly type="hidden" name="author" value={{ user.username }} >
@@ -78,13 +68,18 @@
           </table>
           <br>
           <!-- コメント投稿部分EN ----->
+
+          {% for comment in comments %}
+            <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">{{ comment.comment }}</dd></dl>
+          {% endfor %}
+<!-- 
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
-          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
+          <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl> -->
         </div><!-- class="comment-scroll"-->
     </div><!-- class="container" -->
     <!-- footer -->
