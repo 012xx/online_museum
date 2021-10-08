@@ -35,7 +35,7 @@ class Image(models.Model):
 
 class Comment(models.Model):
     author = models.CharField(verbose_name='作者',max_length=100,null=False,default="admin")
-    comment = models.CharField(verbose_name='コメント',max_length=200,blank=False,null=False)
+    comment = models.CharField(verbose_name='コメント',max_length=100,blank=False,null=False)
     postid = models.UUIDField(verbose_name='作品ID',null=False)
     created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
 
