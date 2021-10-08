@@ -27,6 +27,19 @@
     <title>OnMuse</title>
   </head>
   <body>
+    <!-- header -->
+    <header>
+      <nav class="pc-nav">
+        <ul class="pc-nav-menu">
+          <li class="home"><a href="../home">HOME</a></li>
+          <li><a href="">OPEN</a></li>
+          <li><a href="ranking">SEARTH</a></li>
+          <li><a href="../account/profile">PLOFILE</a></li>
+        </ul>
+      </nav>
+      <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
+      <a href="../account/login" class="btn btn-login">LOGIN</a>
+    </header>
     <!-- 内容 -->
     <div class="container">
         <p class="good-work">お疲れ様でした</p>
@@ -36,11 +49,12 @@
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
               <td>
-              <form method="POST" action="comment.php?rep=1" target="com">
-                <b>一言コメントをどうぞ！</b>(100字まで)<br>
-                <input type="text" id="comment" name="comment" size="80" style="width:535;border:1px solid #00ccff">
-                <input type="submit" id="submit" value="送信" style="width:54"> 
-              </td></form>
+                <form method="POST" action="comment.php?rep=1" target="com">
+                  <span class="sub-comment">コメントはこちら(100文字以内)</span><br>
+                  <input class="comment-input" type="text"  id="comment" name="comment" size="80"/>
+                  <input class="comment-button" type="submit" id="submit" value=" 送信"/> 
+                </form>
+              </td>
             </tr>
             <tr>
               <td>
@@ -60,5 +74,11 @@
           <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">ここに閲覧者コメント</dd></dl>
         </div><!-- class="comment-scroll"-->
     </div><!-- class="container" -->
+    <!-- footer -->
+      <footer>
+        <ul class="footer-menu">
+          <p class="footer-text">© 2021 こらえる</p>
+        </ul>
+      </footer>
   </body>
 </html>
