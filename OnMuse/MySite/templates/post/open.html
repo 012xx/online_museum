@@ -46,7 +46,7 @@
     <!-- 展示タイトルを入力 -->
     <form enctype="multipart/form-data" action="{% url 'post:open' %}" method="POST">
     {% csrf_token %}
-    <input readonly type="text" name="author" value={{ user.username }} >
+    <input readonly type="hidden" name="author" value={{ user.username }} >
     <div class="title">
     <label class="ef">
       <input type="text" name="title" placeholder="展示タイトル" required>
