@@ -5,41 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 
 @login_required
-def post_create(request):
-    if request.method == "POST":
-        form = PostCreateForm(request.POST)
-        if form.is_valid():
-            post_id = form.save()
-            portfolio_images = request.FILES.getlist('image', False)
-            for image in portfolio_images:
-                image_instance = Image(
-                    image = image,
-                    post = post_id
-                )
-                image_instance.save()
-            return redirect('post:post_list')
-    else:#GETの時
-        tags = Tag.objects.all()
-        posts = Post.objects.all()
-        images = Image.objects.all()
-        context = {
-            'user':request.user,
-            "tags":tags,
-            "posts":posts,
-            "images":images,
-        }
-    return render(request, 'post/post_create.html', context)
-
-@login_required
-def post_list(request):
-    context = {
-        'post_list': Post.objects.order_by('-created_at'),
-        'tag': Tag.objects.all(),
-        'images':Image.objects.all(),
-    }
-    return render(request, 'post/post_list.html', context)
-
-@login_required
 def open(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
@@ -52,16 +17,13 @@ def open(request):
                     post = post_id
                 )
                 image_instance.save()
-            return redirect('post:post_list')
+            return redirect('post:ranking')
     else:#GETの時
-        tags = Tag.objects.all()
-        posts = Post.objects.all()
-        images = Image.objects.all()
         context = {
             'user':request.user,
-            "tags":tags,
-            "posts":posts,
-            "images":images,
+            "tags":Tag.objects.all(),
+            "posts":Post.objects.all(),
+            "images":Image.objects.all(),
         }
     return render(request, 'post/open.html', context)
 
@@ -69,31 +31,34 @@ def open(request):
 def ranking(request):
     context = {
         'posts': Post.objects.order_by('-created_at'),
-        'tag': Tag.objects.all(),
+        'tags': Tag.objects.all(),
         'images':Image.objects.all(),
     }
     return render(request, 'post/ranking.html', context)
 
 @login_required
 def detail(request,id):
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('post:detail',id=id)
-    else:#GETの時
-        context = {
-        'post': Post.objects.filter(id=str(id)).first,
-        'tag': Tag.objects.filter(id=str(id)),
-        'images':Image.objects.filter(post_id=str(id)),
-        'comment':Comment.objects.all(),
-        'user':request.user,
-        }
+    context = {
+    'post': Post.objects.filter(id=str(id)).first,
+    'tags': Tag.objects.filter(id=str(id)),
+    'images':Image.objects.filter(post_id=str(id)),
+    }
     return render(request, 'post/detail.html', context)
 
 @login_required
 def last(request,id):
-    return render(request, 'post/last.html')
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('post:last',id=id)
+    
+    context = {
+    'id': id,
+    'comment':Comment.objects.all(),
+    'user':request.user,
+    }
+    return render(request, 'post/last.html',context)
 
 @login_required
 def search(request):
