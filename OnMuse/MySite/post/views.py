@@ -55,7 +55,7 @@ def last(request,id):
     
     context = {
     'id': id,
-    'comments':Comment.objects.filter(postid=str(id)),
+    'comments':Comment.objects.filter(postid=str(id)).order_by('-created_at'),
     'user':request.user,
     }
     return render(request, 'post/last.html',context)
