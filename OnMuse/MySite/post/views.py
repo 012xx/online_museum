@@ -86,6 +86,7 @@ def detail(request,id):
         'tag': Tag.objects.filter(id=str(id)),
         'images':Image.objects.filter(post_id=str(id)),
         'comment':Comment.objects.all(),
+        'user':request.user,
         }
     return render(request, 'post/detail.html', context)
 

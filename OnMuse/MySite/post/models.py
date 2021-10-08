@@ -34,10 +34,10 @@ class Image(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
 
 class Comment(models.Model):
+    author = models.CharField(verbose_name='作者',max_length=100,null=False,default="admin")
     comment = models.CharField(verbose_name='コメント',max_length=200,blank=False,null=False)
     postid = models.UUIDField(verbose_name='作品ID',null=False)
     created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
-
 
     def __str__(self):
         return self.comment
