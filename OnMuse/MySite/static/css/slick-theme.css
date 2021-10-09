@@ -85,13 +85,17 @@
 }
 .slick-prev:before
 {
-    content: url("../picture/scroll-left.svg");
+    content: "";
     display: inline-block;
     border-radius:50%;
     border: #ffffff 4px solid;
     width: 40px;
     height: 40px;
-    background:linear-gradient(#c5c5c5, #ffffff);
+    background-color:#ffffff;
+    background-image: url("../picture/scroll-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 [dir='rtl'] .slick-prev:before
 {
