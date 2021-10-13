@@ -70,7 +70,11 @@
           <!-- コメント投稿部分EN ----->
 
           {% for comment in comments %}
-            <dl><dt><img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"></dt><dd class="view-comment">{{ comment.comment }}</dd></dl>
+            {% for image in images %}
+              {% if image.username == comment.author %}
+                <dl><dt><img src="{{ image.icon.url }}"></dt><dd class="view-comment">{{ comment.comment }}</dd></dl>
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </div><!-- class="comment-scroll"-->
     </div><!-- class="container" -->
