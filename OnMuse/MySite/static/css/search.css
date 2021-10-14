@@ -16,7 +16,7 @@
 .item {
   display: inline-block;
   background: #fff;
-  padding: 1em;
+  padding: 0.6em;
   margin: 0 0 1.5em;
   width: 100%;
 	-webkit-transition:1s ease all;
