@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm,CommentForm
+from account.models import CustomUser
 from .models import Comment, Post,Tag,Image
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
@@ -54,6 +55,7 @@ def last(request,id):
             return redirect('post:last',id=id)
     
     context = {
+    'images':CustomUser.objects.all(),
     'id': id,
     'comments':Comment.objects.filter(postid=str(id)).order_by('-created_at'),
     'user':request.user,
