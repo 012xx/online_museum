@@ -78,3 +78,11 @@ def draw(request):
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/draw.html', context)
+
+@login_required
+def newranking(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/new-ranking.html', context)
