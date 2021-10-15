@@ -31,6 +31,7 @@ def open(request):
 @login_required
 def ranking(request):
     context = {
+        'icons':CustomUser.objects.all(),
         'posts': Post.objects.order_by('-created_at'),
         'tags': Tag.objects.all(),
         'images':Image.objects.all(),

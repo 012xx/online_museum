@@ -58,7 +58,11 @@
 
             {% for post in posts|slice:":5" %}<!--5は出す回数(弄っていいよ)-->
               <div class="opus"> <!-- 作品要素を横並びに -->
-                <img src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg">
+                {% for icon in icons %}
+                  {% if icon.username == post.author %}
+                    <img src="{{ icon.icon.url }}">
+                  {% endif %}
+                {% endfor %}
                 <p class="title"><a href="detail/{{ post.id }}">{{ post.title }}</a></p>
                 <div class="sub-element">
                   <i class="fas fa-heart fa-3x"></i>
