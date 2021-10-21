@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = '/usr/share/nginx/html/media'
-MEDIA_URL = '/medias/'
+MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'account.CustomUser'
 ACCOUNT_FORMS   = { "signup":"account.forms.SignupForm"}
