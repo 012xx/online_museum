@@ -8,7 +8,7 @@
   display: inline-block;
   margin: 5px;
   align-items: center;
-  margin: 0 450px; 
+  margin: 0 0 0 450px; /* 上 | 右 | 下 | 左  (ここが原因) */
   height: 600px;
   border: #fff 3px solid;
   object-fit: contain;
