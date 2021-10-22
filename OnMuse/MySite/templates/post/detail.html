@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fream.css' %}">
     {% endblock %}
     <title>User Works</title>
   </head>
@@ -18,7 +19,9 @@
       <ul class="horizontal-scroll">
         {% for image in images %}
         <li>
-          <img src={{ image.image.url }}>
+          <div class="frame">
+            <img src={{ image.image.url }}>
+          </div>
         </li>
         {% endfor %}
         <li>

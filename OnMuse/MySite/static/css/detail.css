@@ -2,8 +2,6 @@
 .horizontal-scroll {
   display: flex;
   overflow-x: scroll;
-  padding: 1rem;
-  margin: 110px auto auto; /* 上 | 左右 | 下 */
   list-style: none;
 }
 .horizontal-scroll li img{
@@ -11,7 +9,7 @@
   margin: 5px;
   align-items: center;
   margin: 0 450px; 
-  height: 500px;
+  height: 600px;
   border: #fff 3px solid;
   object-fit: contain;
 }
