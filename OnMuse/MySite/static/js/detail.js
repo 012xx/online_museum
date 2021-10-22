@@ -9,7 +9,7 @@ $(function(){
     // 余韻の距離
     var after = 200;
     // 1スクロールの移動距離
-    var speed = 30;
+    var speed = 70;
     // アニメーション
     var animation = 'easeOutCirc';
     // アニメーションスピード

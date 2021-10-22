@@ -16,31 +16,19 @@
   display: flex;
   overflow-x: scroll;
   padding: 1rem;
-  margin: 152px auto auto; /* 上 | 左右 | 下 */
+  margin: 120px auto auto; /* 上 | 左右 | 下 */
 }
 .horizontal-scroll li img{
   display: inline-block;
   margin: 5px;
   align-items: center;
-  margin: 0 auto;
-  height: 400px;
+  margin: 0 450px; 
+  height: 500px;
   border: #fff 3px solid;
   object-fit: contain
 }
 /* スクロールバーのカスタマイズ */
 .horizontal-scroll::-webkit-scrollbar {
-    width: 6px;
+    display:none;
 }
-.horizontal-scroll::-webkit-scrollbar:horizontal {
-    height: 6px;
-}
-.horizontal-scroll::-webkit-scrollbar-track {
-    background-color: #c1c1c1;
-    border-left: solid 1px #c1c1c1;
-}
-.horizontal-scroll::-webkit-scrollbar-thumb {
-    background-color: #e62410;
-}
-.horizontal-scroll::-webkit-scrollbar-thumb:horizontal {
-    background-color: #e62410;
-}
+
