@@ -78,7 +78,7 @@ body {
   }
 }
 .overlay {
-  background: #ffffff;
+  background: var(--aqua-squeeze);
   opacity: 0.9;
   min-height: 420px;
   min-width: 100%;

@@ -18,6 +18,7 @@ body {
   font-family: "Noto Sans JP", sans-serif, 游ゴシック体, YuGothic, 游ゴシック,
     "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", メイリオ,
     sans-serif;
+  background-color: var(--aqua-squeeze);
   color: var(--mine-shaft);
 }
 body,
@@ -130,7 +131,7 @@ button.btn {
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #212529;
+  color: var(--mine-shaft);
   border-radius: 0.5rem;
 }
 a.btn-signup {
@@ -149,7 +150,7 @@ a.btn-login {
   background: var(--aqua-squeeze);
   margin-right: 40px;
   margin-left: 8px;
-  color: #3f3f3f;
+  color: var(--mine-shaft);
 }
 a.btn-login:hover {
   color: var(--aqua-squeeze);

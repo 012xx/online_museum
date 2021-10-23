@@ -25,7 +25,7 @@
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #7caa92;
+  color: var(--observatory);
   border: 3px solid #6d6d6d;
   border-radius: 16px;
 }
@@ -124,10 +124,10 @@ textarea {
   font-size: 16px;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #7caa92;
+  color: var(--observatory);
 }
 .el textarea[type="text"]:focus {
-  border: 3px solid #88bba1;
+  border: 3px solid #278c72;
   outline: none;
 }
 
@@ -158,8 +158,8 @@ label.tag span {
 }
 label.tag input:checked + span {
   color: #ffffff;
-  background: #88bba1;
-  border: 2px solid #88bba1;
+  background: var(--observatory);
+  border: 2px solid #278c72;
 }
 p {
   font-size: 16px;
@@ -175,7 +175,7 @@ p {
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #7caa92;
+  color: var(--observatory);
   border: 3px solid #6d6d6d;
   border-radius: 16px;
 }
@@ -185,13 +185,13 @@ a.btn-submit {
   height: 48px;
   border: 2px solid #ffffff;
   border-radius: 70px;
-  background: #7caa92;
+  background: var(--observatory);
   color: #ffffff;
-  display:block;  /*検証ではOK*/
-  margin: 0 auto; /*検証ではOK*/
+  display:block;  
+  margin: 0 auto; 
   margin-bottom: 72px;
 }
 a.btn-submit:hover {
   color: #ffffff;
-  background: #1f8d35;
+  background: var(--java);
 }
