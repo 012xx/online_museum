@@ -8,7 +8,6 @@
   display: inline-block;
   margin: 5px;
   align-items: center;
-  border: #fff 3px solid;
   object-fit: contain;
 }
 /* スクロールバーのカスタマイズ */
