@@ -18,8 +18,7 @@ body {
   font-family: "Noto Sans JP", sans-serif, 游ゴシック体, YuGothic, 游ゴシック,
     "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", メイリオ,
     sans-serif;
-  background-color: var(--mine-shaft);
-  color: var(--white);
+  color: var(--mine-shaft);
 }
 body,
 #wrapper {
