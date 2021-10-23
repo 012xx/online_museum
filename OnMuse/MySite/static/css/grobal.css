@@ -1,3 +1,19 @@
+/* :rootのCSS変数の宣言 */
+:root {
+  --white: #ffffff;
+  --aqua-squeeze: #e9f4f1;
+  --mine-shaft: #2f3130;
+  --observatory: #278c72; 
+  --java: #16afaf;
+  --hoki: #658194;
+  /* style */
+  --main-color: var(--observatory);
+  --sub-color: var(--hoki);
+  --highlight-color: var(--java);
+  --background: var(--aqua-squeeze);
+  --white: var(--white);
+  --black: var(--mine-shaft);
+}
 body {
   font-family: "Noto Sans JP", sans-serif, 游ゴシック体, YuGothic, 游ゴシック,
     "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", メイリオ,
