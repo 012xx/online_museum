@@ -54,7 +54,7 @@
                   <input readonly type="hidden" name="author" value={{ user.username }} >
                   <input readonly type="hidden" name="postid" value={{ id }} >
                   <span class="sub-title">コメントはこちら(100文字以内)</span><br>
-                  <input class="comment-input" type="text"  id="comment" name="comment" size="80" required/>
+                  <textarea class="comment-input" type="text"  id="comment" name="comment" size="80" placeholder="コメントをして応援しよう！" required></textarea>
                   <input class="comment-button" type="submit" id="submit" value=" 送信"/> 
                 </form>
               </td>
@@ -72,7 +72,7 @@
           {% for comment in comments %}
             {% for image in images %}
               {% if image.username == comment.author %}
-                <dl><dt><img src="{{ image.icon.url }}"></dt><dd class="view-comment">{{ comment.comment }}</dd></dl>
+                <dl><dt><img src="{{ image.icon.url }}"></dt><dd class="view-comment">{{ comment.comment | linebreaksbr }}</dd></dl>
               {% endif %}
             {% endfor %}
           {% endfor %}
