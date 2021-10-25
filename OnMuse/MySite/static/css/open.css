@@ -30,7 +30,7 @@
   border-radius: 16px;
 }
 .ef input[type="text"]:focus {
-  border: 3px solid #88bba1;
+  border: 3px solid #278c72;
   outline: none;
 }
 #inputFile {
