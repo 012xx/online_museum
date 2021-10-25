@@ -3,10 +3,12 @@
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link 
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" 
       rel="stylesheet"
@@ -50,7 +52,38 @@
       <input type="text" size="25" placeholder="キーワード検索">
       <input type="submit" value="&#xf002">
     </form>
-   
+     <div class="wrapper">
+      <!-- 個々の作品画像 -->
+      <ul class="slider-wrapper">
+        {% for image in images %}
+        <li>
+          <img src={{ image.image.url }}>
+        </li>
+        {% endfor %}
+        <li>
+          <a href="../last/{{ post.id }}">リストに戻る</a>
+        </li>
+      </ul> 
+      <!-- slider-wrapper -->
+
+      <!-- 画面左右のコントロールパネル -->
+      <div class="slider-prev-next-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+        <label for=slide4></label>
+        <label for=slide5></label>
+      </div><!-- slider-prev-next-control -->
+
+      <!-- 画面下部のコントロールパネル -->
+      <div class="slider-dot-control">
+        <label for=slide1></label>
+        <label for=slide2></label>
+        <label for=slide3></label>
+        <label for=slide4></label>
+        <label for=slide5></label>
+      </div><!-- slider-dot-control -->
+    </div><!-- wrapper -->
     <!-- footer -->
       <footer>
         <ul class="footer-menu">
@@ -58,5 +91,8 @@
         </ul>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
   </body>
 </html>
