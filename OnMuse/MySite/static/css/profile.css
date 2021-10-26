@@ -1,3 +1,18 @@
+:root {
+  --white: #ffffff;
+  --aqua-squeeze: #e9f4f1;
+  --mine-shaft: #2f3130;
+  --observatory: #278c72; 
+  --java: #16afaf;
+  --hoki: #658194;
+  /* style */
+  --main-color: var(--observatory); 
+  --sub-color: var(--hoki);
+  --highlight-color: var(--java);
+  --background: var(--aqua-squeeze);
+  --white: var(--white);
+  --black: var(--mine-shaft);
+}
 .container {
   width: 100%;
   width: 960px;
@@ -23,14 +38,14 @@ p.userid {
   margin: 4px;
   text-align: center;
   font-size: 24px;
-  color: #777777;
+  color: var(--mine-shaft);
 }
 .profile-text{
   padding: 0.5em 1em;
   margin: 2em 0;
   font-weight: bold;
-  color: #f1f1f1;
-  border: solid 3px #7caa92;
+  color: var(--mine-shaft);
+  border: solid 3px #278c72;
   border-radius: 10px;
 }
 p.artworks {

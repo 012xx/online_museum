@@ -57,17 +57,18 @@
       <ul class="slider-wrapper" id="ranking-slider">
         {% for image in images %}
         <li>
-          <img src = "../../medias/testfile/DImJMNXUMAA9vLb.png" >
+          <img src = "../../medias/testfile/2017_babel_b.png">
         </li>
         <li>
-          <img src = "../../medias/testfile/ECy7OMbUEAAdtzC.png">
+          <img src = {{ image.image.url }}>
         </li>
         <li>
-          <img src = "../../medias/testfile/EJyuzsFU4AYXQw7.png">
+          <img src = {{ image.image.url }}>
         </li>
         <li>
-          <img src = "../../medias/testfile/DImJMNXUMAA9vLb.png">
+          <img src = {{ image.image.url }}>
         </li>
+        {% endfor %}
       </ul> 
       <!-- slider-wrapper -->
     </div><!-- wrapper -->
