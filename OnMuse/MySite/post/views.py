@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm,CommentForm
 from account.models import CustomUser
-from .models import Comment, Post,Tag,Image
+from .models import Comment, Post,Tag,Image,Like
 from django.contrib.auth.decorators import login_required
-from django.http.response import HttpResponse
+#from django.http.response import HttpResponse
+from django.http import JsonResponse
 
 @login_required
 def open(request):
@@ -40,12 +41,40 @@ def ranking(request):
 
 @login_required
 def detail(request,id):
+    post = Post.objects.filter(id=str(id)).first
+    liked = Like.objects.filter(author = request.user)
+    like = ""
+    if liked.exists():
+        like = post.id
     context = {
-    'post': Post.objects.filter(id=str(id)).first,
+    'post': post,
     'tags': Tag.objects.filter(id=str(id)),
-    'images':Image.objects.filter(post_id=str(id)),
+    'images': Image.objects.filter(post_id=str(id)),
+    'like' : like,
+
     }
     return render(request, 'post/detail.html', context)
+
+@login_required
+def like(request):
+    if request.method == "POST":
+        post = Post.objects.filter(id = request.POST.get('id'))
+        liked = False
+        like = Like.objects.filter(author = request.user ,postid = post.id)
+        if like.exists():
+            like.delete()
+        else:
+            like.create(author = request.user ,postid = post.id)
+            liked = True
+
+        context = {
+            'id' : post.id,#article_id
+            'liked' : liked,
+            'count': post.like.count(),
+        }
+    
+    if request.is_ajax():
+        return JsonResponse(context)
 
 @login_required
 def last(request,id):

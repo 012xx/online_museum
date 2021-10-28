@@ -18,7 +18,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
     id = models.UUIDField(verbose_name='作品ID',primary_key=True, default=uuid.uuid4, editable=False,null=False)
     #comments = いつか実装
-    #stamp = いつか実装 
+    like = models.IntegerField(default=0) 
 
     '''
     blankは入力フォーム(入力しないと進めない)
@@ -41,3 +41,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Like(models.Model):
+    author = models.CharField(verbose_name='いいねした人',max_length=100,null=False,default="admin")
+    postid = models.UUIDField(verbose_name='作品ID',null=False)
+    created_at = models.DateTimeField(verbose_name='いいねした時間',auto_now_add=True,null=False)
+
+    def __str__(self):
+        return self.postid
