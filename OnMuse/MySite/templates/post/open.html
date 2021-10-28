@@ -54,15 +54,17 @@
     </div>
     <!-- 展示画像をアップロード -->
     <p>展示作品をアップロード</p>
-    <div id="upFileWrap">
-    <div id="inputFile">
+    <div id="upFileWrap"><!-- dragDropArea -->
+    <div id="inputFile"><!-- drag-drop-inside -->
     <!-- ドラッグ&ドロップエリア -->
-      <p id="dropArea">ここにファイルをドロップしてください<br><br>または</p>
-      <br>
-
-    <!-- 通常のinput[type=file] -->
-      <div id="inputFileWrap">
-        <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" multiple="" required>
+      <p id="dropArea">ここにファイルをドロップしてください</p><!-- drag-drop-info -->
+        <p>または</p>
+        <p class="drag-drop-buttons">
+        <div id="inputFileWrap">
+          <!--id fileInput -->
+          <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" onChange="photoPreview(event)" multiple="" required>
+        </p>
+        <div id="previewArea"></div>
         <div id="btnInputFile"><span>ファイルを選択する</span></div>
         <div id="btnChangeFile"><span>ファイルを変更する</span></div>
       </div>
