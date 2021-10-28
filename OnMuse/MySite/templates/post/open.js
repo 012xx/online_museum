@@ -44,8 +44,8 @@ fileInput.addEventListener(
   false
 );
 /*1028*/ 
-var fileArea = document.getElementById('dragDropArea');
-var fileInput = document.getElementById('fileInput');
+var fileArea = document.getElementById('dropArea');
+var fileInput = document.getElementById('uploadFile');
 fileArea.addEventListener('dragover', function(evt){
   evt.preventDefault();
   fileArea.classList.add('dragover');
@@ -54,6 +54,7 @@ fileArea.addEventListener('dragleave', function(evt){
     evt.preventDefault();
     fileArea.classList.remove('dragover');
 });
+/*以下から*/
 fileArea.addEventListener('drop', function(evt){
     evt.preventDefault();
     fileArea.classList.remove('dragenter');
