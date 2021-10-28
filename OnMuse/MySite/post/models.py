@@ -1,6 +1,9 @@
 from django.db import models
 import uuid
 
+def image_directory_path(instance, filename):
+    return 'images/{}.{}'.format(str(uuid.uuid4()), filename.split('.')[-1])
+
 class Tag(models.Model):
     name = models.CharField('タグ', max_length=50)
     id = models.UUIDField(verbose_name='タグID',primary_key=True, default=uuid.uuid4, editable=False)
@@ -27,11 +30,13 @@ class Post(models.Model):
     '''
     
     def __str__(self):
-        return(self.id)
+        return str(self.id)
 
 class Image(models.Model):
-    image = models.ImageField(verbose_name='画像',upload_to='images',blank=False,null=False,default = 'images/icon.png')
+    image = models.ImageField(verbose_name='画像',upload_to=image_directory_path,blank=False,null=False,default = 'images/icon.png')
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.post)
 
 class Comment(models.Model):
     author = models.CharField(verbose_name='作者',max_length=100,null=False,default="admin")
