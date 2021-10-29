@@ -36,7 +36,7 @@ def flyer1(image,title,user):
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin_copy.save(name,quality = 95)#保存先のパス
 
-    return name
+    return name[7:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)

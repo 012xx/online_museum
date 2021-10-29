@@ -55,18 +55,9 @@
     <div class="wrapper">
       <!-- 個々の作品画像 -->
       <ul class="slider-wrapper" id="ranking-slider">
-        {% for image in images %}
+        {% for post in posts %}
         <li>
-          <img src = "../../medias/testfile/2017_babel_b.png">
-        </li>
-        <li>
-          <img src = {{ image.image.url }}>
-        </li>
-        <li>
-          <img src = {{ image.image.url }}>
-        </li>
-        <li>
-          <img src = {{ image.image.url }}>
+          <img src = {{ post.flyer.url }}>
         </li>
         {% endfor %}
       </ul> 

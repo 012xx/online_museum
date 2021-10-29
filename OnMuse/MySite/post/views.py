@@ -19,7 +19,6 @@ def open(request):
                 if first:
                     post = Post.objects.filter(id = str(post_id)).first()
                     name = flyer1(image,post.title,post.author)
-                    print(name)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
                 image_instance = Image(
