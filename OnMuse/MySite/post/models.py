@@ -33,7 +33,7 @@ class Post(models.Model):
         return str(self.id)
 
 class Image(models.Model):
-    image = models.ImageField(verbose_name='画像',upload_to=image_directory_path,blank=False,null=False,default = 'images/icon.png')
+    image = models.ImageField(verbose_name='画像',upload_to=image_directory_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
     def __str__(self):
         return str(self.post)
