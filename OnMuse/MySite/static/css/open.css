@@ -195,3 +195,7 @@ a.btn-submit:hover {
   color: #ffffff;
   background: var(--java);
 }
+p#preview img {
+	width:100px;
+	border:1px solid #cccccc;
+}

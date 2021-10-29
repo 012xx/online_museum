@@ -43,45 +43,15 @@ fileInput.addEventListener(
   },
   false
 );
-/*1028*/ 
-var fileArea = document.getElementById('dropArea');
-var fileInput = document.getElementById('uploadFile');
-fileArea.addEventListener('dragover', function(evt){
-  evt.preventDefault();
-  fileArea.classList.add('dragover');
-});
-fileArea.addEventListener('dragleave', function(evt){
-    evt.preventDefault();
-    fileArea.classList.remove('dragover');
-});
-/*以下から*/
-fileArea.addEventListener('drop', function(evt){
-    evt.preventDefault();
-    fileArea.classList.remove('dragenter');
-    var files = evt.dataTransfer.files;
-    console.log("DRAG & DROP");
-    console.table(files);
-    fileInput.files = files;
-    photoPreview('onChenge',files[0]);
-});
-function photoPreview(event, f = null) {
-  var file = f;
-  if(file === null){
-      file = event.target.files[0];
-  }
-  var reader = new FileReader();
-  var preview = document.getElementById("previewArea");
-  var previewImage = document.getElementById("previewImage");
-
-  if(previewImage != null) {
-    preview.removeChild(previewImage);
-  }
-  reader.onload = function(event) {
-    var img = document.createElement("img");
-    img.setAttribute("src", reader.result);
-    img.setAttribute("id", "previewImage");
-    preview.appendChild(img);
-  };
-
-  reader.readAsDataURL(file);
+/*画像プレビュー*/
+function loadImage(obj)
+{
+	document.getElementById('preview').innerHTML = '<p>プレビュー</p>';
+	for (i = 0; i < obj.files.length; i++) {
+		var fileReader = new FileReader();
+		fileReader.onload = (function (e) {
+			document.getElementById('preview').innerHTML += '<img src="' + e.target.result + '">';
+		});
+		fileReader.readAsDataURL(obj.files[i]);
+	}
 }

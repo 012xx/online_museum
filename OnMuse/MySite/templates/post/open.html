@@ -62,9 +62,9 @@
         <p class="drag-drop-buttons">
         <div id="inputFileWrap">
           <!--id fileInput -->
-          <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" onChange="photoPreview(event)" multiple="" required>
+          <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" multiple="multiple" onchange="loadImage(this);" required>
         </p>
-        <div id="previewArea"></div>
+        <p id="preview"></p>
         <div id="btnInputFile"><span>ファイルを選択する</span></div>
         <div id="btnChangeFile"><span>ファイルを変更する</span></div>
       </div>
