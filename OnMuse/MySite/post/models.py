@@ -1,8 +1,11 @@
 from django.db import models
 import uuid
 
-def image_directory_path(instance, filename):
+def images_path(instance, filename):
     return 'images/{}.{}'.format(str(uuid.uuid4()), filename.split('.')[-1])
+
+def flyers_path(instance, filename):
+    return 'flyers/{}.{}'.format(str(uuid.uuid4()), filename.split('.')[-1])
 
 class Tag(models.Model):
     name = models.CharField('タグ', max_length=50)
@@ -20,6 +23,7 @@ class Post(models.Model):
     #previews = 見られた回数(展示会を個々で見れるようになってから実装)
     created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
     id = models.UUIDField(verbose_name='作品ID',primary_key=True, default=uuid.uuid4, editable=False,null=False)
+    flyer = models.ImageField(verbose_name='フライヤー',upload_to=flyers_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
     #comments = いつか実装
     like = models.IntegerField(default=0) 
 
@@ -33,7 +37,7 @@ class Post(models.Model):
         return str(self.id)
 
 class Image(models.Model):
-    image = models.ImageField(verbose_name='画像',upload_to=image_directory_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
+    image = models.ImageField(verbose_name='画像',upload_to=images_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
     def __str__(self):
         return str(self.post)
