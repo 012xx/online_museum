@@ -5,6 +5,7 @@ from .models import Comment, Post,Tag,Image,Like
 from django.contrib.auth.decorators import login_required
 #from django.http.response import HttpResponse
 from django.http import JsonResponse
+from .flyer_create import flyer1
 
 @login_required
 def open(request):
@@ -13,7 +14,14 @@ def open(request):
         if form.is_valid():
             post_id = form.save()
             portfolio_images = request.FILES.getlist('image', False)
+            first = True
             for image in portfolio_images:
+                if first:
+                    post = Post.objects.filter(id = str(post_id)).first()
+                    name = flyer1(image,post.title,post.author)
+                    print(name)
+                    Post.objects.filter(id = str(post_id)).update(flyer = name)
+                    first = False
                 image_instance = Image(
                     image = image,
                     post = post_id
