@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
+from post.models import Post
+
 
 """ def login(request):
     return render(request,'account/login.html',)
@@ -23,4 +25,12 @@ def signup(request):
 
 @login_required
 def profile(request):
-    return render(request,'account/profile.html',)
+    user = request.user
+    context = {
+        'posts': Post.objects.filter(author = user).order_by('-created_at'),
+    }
+    return render(request,'account/profile.html',context)
+
+@login_required
+def profile_change(request):
+    return render(request,'account/profile_change.html',)

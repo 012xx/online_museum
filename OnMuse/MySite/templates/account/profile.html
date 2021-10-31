@@ -56,12 +56,9 @@
         <input id="trigger1" class="grad-trigger" type="checkbox" />
         <label class="grad-btn" for="trigger1"></label>
         <div class="grad-item">
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
-          <a class="other" href="#"><img class="artworks" src="../../medias/icons/8074e2c65a3ab65d0ce7b482795b7ac0.jpg"/><!-- 取得した他展示  --></a>
+          {% for post in posts %}
+          <a class="other" href="../post/detail/{{ post.id }}"><img class="artworks" src={{ post.flyer.url }}/><!-- 取得した他展示  --></a>
+          {% endfor %}
         </div>
         </div>
       </div>
