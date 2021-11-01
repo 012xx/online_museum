@@ -5,6 +5,7 @@ from .models import Comment, Post,Tag,Image,Like
 from django.contrib.auth.decorators import login_required
 #from django.http.response import HttpResponse
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from .flyer_create import flyer1
 
 @login_required
@@ -48,7 +49,7 @@ def ranking(request):
 
 @login_required
 def detail(request,id):
-    post = Post.objects.filter(id=str(id)).first()
+    post = get_object_or_404(Post,id = str(id))
     liked = Like.objects.filter(author = request.user)
     like = ""
     if liked.exists():
