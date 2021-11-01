@@ -57,7 +57,7 @@
       <ul class="slider-wrapper" id="ranking-slider">
         {% for post in posts %}
         <li>
-          <img src = {{ post.flyer.url }}>
+          <a href="detail/{{ post.id }}"><img src = {{ post.flyer.url }}></a>
         </li>
         {% endfor %}
       </ul> 
