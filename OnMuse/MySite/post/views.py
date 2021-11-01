@@ -28,13 +28,13 @@ def open(request):
                 )
                 image_instance.save()
             return redirect('post:ranking')
-    else:#GETの時
-        context = {
-            'user':request.user,
-            "tags":Tag.objects.all(),
-            "posts":Post.objects.all(),
-            "images":Image.objects.all(),
-        }
+    #GETの時
+    context = {
+        'user':request.user,
+        "tags":Tag.objects.all(),
+        "posts":Post.objects.all(),
+        "images":Image.objects.all(),
+    }
     return render(request, 'post/open.html', context)
 
 @login_required
@@ -90,12 +90,11 @@ def last(request,id):
         if form.is_valid():
             form.save()
             return redirect('post:last',id=id)
-    
     context = {
-    'images':CustomUser.objects.all(),
-    'id': id,
-    'comments':Comment.objects.filter(postid=str(id)).order_by('-created_at'),
-    'user':request.user,
+        'images':CustomUser.objects.all(),
+        'id': id,
+        'comments':Comment.objects.filter(postid=str(id)).order_by('-created_at'),
+        'user':request.user,
     }
     return render(request, 'post/last.html',context)
 

@@ -20,8 +20,7 @@ def signup(request):
             #username = form.cleaned_data.get('username')
             #raw_password = form.cleaned_data.get('password1')
             return redirect('login')
-    else:
-        form = SignUpForm()
+    form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
 
 @login_required
@@ -40,9 +39,8 @@ def profile_change(request):
         if form.is_valid():
             form.save()
             return redirect('account:profile')
-    else:
-        context = {
-            'account':account,
-            'form':ProfileChangeForm()
-        }
+    context = {
+        'account':account,
+        'form':ProfileChangeForm()
+    }
     return render(request,'account/profile_change.html',context)
