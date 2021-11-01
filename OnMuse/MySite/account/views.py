@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-from .forms import SignUpForm
+from .forms import SignUpForm,ProfileChangeForm
+from .models import CustomUser
 from post.models import Post
 
 
@@ -33,4 +34,15 @@ def profile(request):
 
 @login_required
 def profile_change(request):
-    return render(request,'account/profile_change.html',)
+    account = CustomUser.objects.filter(username = request.user).first()
+    if request.method == 'POST':
+        form = ProfileChangeForm(request.POST,request.FILES,instance = account)
+        if form.is_valid():
+            form.save()
+            return redirect('account:profile')
+    else:
+        context = {
+            'account':account,
+            'form':ProfileChangeForm()
+        }
+    return render(request,'account/profile_change.html',context)

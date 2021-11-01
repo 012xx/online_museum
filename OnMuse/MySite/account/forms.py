@@ -6,16 +6,26 @@ from .models import CustomUser
 
 class SignUpForm(UserCreationForm):
     last_name = forms.CharField(
-        max_length=30,
+        max_length=10,
         required=False,
-        help_text='オプション',
+        help_text='必須',
         label='苗字',
     )
-    first_name = forms.CharField(
-        max_length=30,
+    email = forms.EmailField(
+        max_length=254,
+        help_text='必須 有効なメールアドレスを入力してください。',
+        label='Eメールアドレス',
+    )
+    class Meta:
+        model = CustomUser
+        fields = ('last_name','username','email','password1','password2', )
+
+class ProfileChangeForm(forms.ModelForm):
+    last_name = forms.CharField(
+        max_length=10,
         required=False,
-        help_text='オプション',
-        label='名前',
+        help_text='必須',
+        label='苗字',
     )
     email = forms.EmailField(
         max_length=254,
@@ -31,7 +41,7 @@ class SignUpForm(UserCreationForm):
         max_length=200,
         required=False,
         help_text='有効なリンクを入力してください',
-        label='Eメールアドレス',
+        label='リンク',
     )
     icon = forms.ImageField(
         required=False,
@@ -41,7 +51,6 @@ class SignUpForm(UserCreationForm):
         required=False,
         label='生年月日'
     )
-
     class Meta:
         model = CustomUser
-        fields = ('last_name','username','email','password1','password2', )
+        fields = ('last_name','email','introduction','link','icon','birthday')
