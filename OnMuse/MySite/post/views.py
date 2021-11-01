@@ -48,7 +48,7 @@ def ranking(request):
 
 @login_required
 def detail(request,id):
-    post = Post.objects.filter(id=str(id)).first
+    post = Post.objects.filter(id=str(id)).first()
     liked = Like.objects.filter(author = request.user)
     like = ""
     if liked.exists():
@@ -58,7 +58,6 @@ def detail(request,id):
     'tags': Tag.objects.filter(id=str(id)),
     'images': Image.objects.filter(post_id=str(id)),
     'like' : like,
-
     }
     return render(request, 'post/detail.html', context)
 
