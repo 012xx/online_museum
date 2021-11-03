@@ -1,5 +1,5 @@
 from PIL import Image,ImageDraw,ImageFont
-import uuid
+import uuid,unicodedata
 
 def flyer(num,image,title,user):
     if num == 1:
@@ -8,6 +8,22 @@ def flyer(num,image,title,user):
         return flyer2(image,title,user)
     elif num == 3:
         return flyer3(image,title,user)
+
+def len_count(text):
+    count = 0
+    for c in text:
+        if unicodedata.east_asian_width(c) in 'FWA':
+            count += 2
+        else:
+            count += 1
+    return count
+
+def ZEN_count(text):
+    count = 0
+    for c in text:
+        if unicodedata.east_asian_width(c) in 'FWA':
+            count += 1
+    return count
 
 def flyer1(image,title,user):
     #ユーザ名10文字、タイトル10文字
@@ -36,10 +52,15 @@ def flyer1(image,title,user):
     origin_copy.paste(image_copy,(0,0))#貼り付け
 
     draw = ImageDraw.Draw(origin_copy)
+    #もしタイトルが奇数だったら9埋めにしてずらす
+    #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
-    draw.text((0,500),title.center(10,'　'),fill='black',font = font)
+    if len_count(title) % 2 == 0:
+        draw.text((0,500),title.center(20 - ZEN_count(title),' '),fill='black',font = font)
+    else:
+        draw.text((12,500),title.center(19 - ZEN_count(title),' '),fill='black',font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((20,650),user.rjust(16,'　'),fill='black',font = font)
+    draw.text((0,650),user.rjust(32,' '),fill='black',font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin_copy.save(name,quality = 95)#保存先のパス
@@ -79,10 +100,15 @@ def flyer2(image,title,user):
     origin_copy.paste(image_copy,(87,30))#貼り付け
 
     draw = ImageDraw.Draw(origin_copy)
+    #もしタイトルが奇数だったら9埋めにしてずらす
+    #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
-    draw.text((0,500),title.center(10,'　'),fill='black',font = font)
+    if len_count(title) % 2 == 0:
+        draw.text((0,500),title.center(20 - ZEN_count(title),' '),fill='black',font = font)
+    else:
+        draw.text((12,500),title.center(19 - ZEN_count(title),' '),fill='black',font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((20,650),user.rjust(16,'　'),fill='black',font = font)
+    draw.text((0,650),user.rjust(32,' '),fill='black',font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin_copy.save(name,quality = 95)#保存先のパス
@@ -122,10 +148,15 @@ def flyer3(image,title,user):
     origin_copy.paste(image_copy,(0,0))#貼り付け
 
     draw = ImageDraw.Draw(origin_copy)
+    #もしタイトルが奇数だったら9埋めにしてずらす
+    #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
-    draw.text((0,500),title.center(10,'　'),fill='black',font = font)
+    if len_count(title) % 2 == 0:
+        draw.text((0,500),title.center(20 - ZEN_count(title),' '),fill='black',font = font)
+    else:
+        draw.text((12,500),title.center(19 - ZEN_count(title),' '),fill='black',font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((20,650),user.rjust(16,'　'),fill='black',font = font)
+    draw.text((0,650),user.rjust(32,' '),fill='black',font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin_copy.save(name,quality = 95)#保存先のパス
