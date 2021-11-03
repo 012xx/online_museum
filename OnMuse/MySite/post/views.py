@@ -18,8 +18,9 @@ def open(request):
             first = True
             for image in portfolio_images:
                 if first:
+                    choice = request.POST["flyer"]
                     post = Post.objects.filter(id = str(post_id)).first()
-                    name = flyer(3,image,post.title,post.author)
+                    name = flyer(int(choice),image,post.title,post.author)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
                 image_instance = Image(
@@ -32,18 +33,14 @@ def open(request):
     context = {
         'user':request.user,
         "tags":Tag.objects.all(),
-        "posts":Post.objects.all(),
-        "images":Image.objects.all(),
     }
     return render(request, 'post/open.html', context)
 
 @login_required
 def ranking(request):
     context = {
-        'icons':CustomUser.objects.all(),
         'posts': Post.objects.order_by('-created_at'),
-        'tags': Tag.objects.all(),
-        'images':Image.objects.all(),
+        #'tags': Tag.objects.all(),
     }
     return render(request, 'post/ranking.html', context)
 
