@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 #from django.http.response import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from .flyer_create import flyer1
+from .flyer_create import flyer
 
 @login_required
 def open(request):
@@ -19,7 +19,7 @@ def open(request):
             for image in portfolio_images:
                 if first:
                     post = Post.objects.filter(id = str(post_id)).first()
-                    name = flyer1(image,post.title,post.author)
+                    name = flyer(3,image,post.title,post.author)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
                 image_instance = Image(
