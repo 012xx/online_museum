@@ -52,6 +52,15 @@
       <input type="text" size="25" placeholder="キーワード検索">
       <input type="submit" value="&#xf002">
     </form>
+
+    <div class="masonry">
+    {% for post in posts %}
+      <div class="item">
+        <a href="detail/{{ post.id }}"><img src = {{ post.flyer.url }}></a>
+      </div>
+    {% endfor %}
+    </div>
+
     <!-- 内容 -->
     <div class="masonry">
       <div class="item">

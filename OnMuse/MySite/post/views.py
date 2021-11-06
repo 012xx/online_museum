@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 #from django.http.response import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
+from functools import reduce
+from operator import and_
 from .flyer_create import flyer
 
 @login_required
@@ -97,9 +100,24 @@ def last(request,id):
 
 @login_required
 def search(request):
+    post = Post.objects.all()
+    keyword = request.GET.get('keyword')
+    if keyword:
+        exclusion_list = set([' ', '　'])
+        q_list = ''
+
+        for i in keyword:
+            if i in exclusion_list:#空白を無視
+                pass
+            else:
+                q_list += i
+
+        query = reduce(
+                    and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in q_list]
+                )
+        post = post.filter(query)
     context = {
-        'post': Post.objects.all(),
-        'tag': Tag.objects.all(),
+        'posts': post,
     }
     return render(request, 'post/search.html', context)
 
