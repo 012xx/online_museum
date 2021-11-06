@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/like.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/fream.css' %}">
     {% endblock %}
     <title>User Works</title>
@@ -25,12 +26,10 @@
           </div>
         </li>
         {% endfor %}
-        <li>
-          <a href="../last/{{ post.id }}">リストに戻る</a>
-          <!-- {% include 'post/like.html' %} -->
-        </li>
       </ul><!-- slider-wrapper -->
+      <a href="../last/{{ post.id }}">リストに戻る</a>
     </div><!-- wrapper -->
+    {% include 'post/like.html' %}
     
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{% static 'mousewheel/jquery.mousewheel.js' %}"></script>

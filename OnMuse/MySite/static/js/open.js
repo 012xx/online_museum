@@ -43,12 +43,25 @@ fileInput.addEventListener(
   },
   false
 );
+var element=document.getElementById('files');
+            var file_length;
+            $(function(){
+                $('#files').on('change',function(){
+                    file_length+=element.files.length;
+                    console.log(file_length);
+                })
+
+            });
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
 fileInputRef.addEventListener("change", (e) => {
   // 画像の一枚目
-  const file = e.target.files.item(0);
+  // const file = e.target.files.item(0);
 
+  //for文
+  for (let num = 0; num <= 5; num++) {
+  const file = e.target.files.item(num);
+}
   loadImage(
     file, // ロード前の画像を渡す
     (loadedImage) => { // callback ロードが終わった後に実行する関数を渡す
