@@ -196,8 +196,12 @@ a.btn-submit:hover {
   background: var(--java);
 }
 #preview img {
-	width:100px;
-	border:1px solid #cccccc;
+	width:80px;
+  height:80px;
+  object-fit: cover;
+	border:3px solid #278c72;
+  margin: 20px 5px 0 5px;
+  border-radius: 5px;
 }
 
 /*フライヤーのラジオボタン*/
