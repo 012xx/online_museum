@@ -1,17 +1,19 @@
 /*横スクロールのcss*/
+
 .horizontal-scroll {
   display: flex;
   overflow-x: scroll;
   list-style: none;
 }
-.horizontal-scroll li img{
-  display: inline-block;
-  margin: 5px;
-  align-items: center;
-  object-fit: contain;
-}
+
 /* スクロールバーのカスタマイズ */
+
 .horizontal-scroll::-webkit-scrollbar {
-    display:none;
+  display: none;
 }
 
+.heart-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+}

@@ -1,4 +1,4 @@
-{% load static %} 
+{% load static %}
 {% block link %}
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
@@ -6,83 +6,85 @@
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      rel="stylesheet"
-    />
-    <title>OnMuse</title>
-  </head>
-  <body>
-    <!-- header -->
-    <header>
-      <nav class="pc-nav">
-        <ul class="pc-nav-menu">
-          <li class="home"><a href="../../home">HOME</a></li>
-          <li><a href="../../post/open">OPEN</a></li>
-          <li><a href="../ranking">SEARTH</a></li>
-          <li><a href="../../account/profile">PLOFILE</a></li>
-        </ul>
-      </nav>
-      <a href="../../account/signup" class="btn btn-signup">SIGNUP</a>
-      <a href="../../account/login" class="btn btn-login">LOGIN</a>
-    </header>
-    <!-- 内容 -->
-    <div class="container">
-        <p class="good-work">お疲れ様でした</p>
-        <p class="work-comment">この展示に寄せられたコメント</p>
-        <div class="comment-scroll">
-          <!-- コメント投稿部分ST ----->
-          <table border="0" cellspacing="0" cellpadding="1">
-            <tr>
-              <td>
-                <form method="POST"><!-- action="comment.php?rep=1" target="com"(これが括弧内に入るかもしれない) -->
-                  {% csrf_token %}
-                  <input readonly type="hidden" name="author" value={{ user.username }} >
-                  <input readonly type="hidden" name="postid" value={{ id }} >
-                  <span class="sub-title">コメントはこちら(100文字以内)</span><br>
-                  <textarea class="comment-input" type="text"  id="comment" name="comment" size="80" placeholder="コメントをして応援しよう！" required></textarea>
-                  <input class="comment-button" type="submit" id="submit" value=" 送信"/> 
-                </form>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div id="commentv" style="font-size:13px;line-height:15px;color:#666699;width:580px;height:160px;border:1px solid #00ccff;padding:8px;overflow-y:scroll;display:none;"></div>
-                <iframe name="com" src="comment.php" id="com" style="width:301px;height:201px;border:0px;padding:0px;overflow:hidden;display:none;"></iframe>
-              </td>
-            </tr>
-          </table>
-          <br>
-          <!-- コメント投稿部分EN ----->
 
-          {% for comment in comments %}
-            {% for image in images %}
-              {% if image.username == comment.author %}
-                <dl><dt><img src="{{ image.icon.url }}"></dt><dd class="view-comment">{{ comment.comment | linebreaksbr }}</dd></dl>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        </div><!-- class="comment-scroll"-->
-    </div><!-- class="container" -->
-    <!-- footer -->
-      <footer>
-        <ul class="footer-menu">
-          <p class="footer-text">© 2021 こらえる</p>
-        </ul>
-      </footer>
-  </body>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+  <title>OnMuse</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav class="pc-nav">
+      <ul class="pc-nav-menu">
+        <li class="home"><a href="../../home">HOME</a></li>
+        <li><a href="../../post/open">OPEN</a></li>
+        <li><a href="../ranking">SEARTH</a></li>
+        <li><a href="../../account/profile">PLOFILE</a></li>
+      </ul>
+    </nav>
+    <a href="../../account/signup" class="btn btn-signup">SIGNUP</a>
+    <a href="../../account/login" class="btn btn-login">LOGIN</a>
+  </header>
+  <!-- 内容 -->
+  <div class="container">
+    <p class="good-work">お疲れ様でした</p>
+    <p class="work-comment">この展示に寄せられたコメント</p>
+    <div class="comment-scroll">
+      <!-- コメント投稿部分ST ----->
+      <table border="0" cellspacing="0" cellpadding="1">
+        <tr>
+          <td>
+            <form method="POST">
+              <!-- action="comment.php?rep=1" target="com"(これが括弧内に入るかもしれない) -->
+              {% csrf_token %}
+              <input readonly type="hidden" name="author" value={{ user.username }}>
+              <input readonly type="hidden" name="postid" value={{ id }}>
+              <span class="sub-title">コメントはこちら(100文字以内)</span><br>
+              <textarea class="comment-input" type="text" id="comment" name="comment" size="80"
+                placeholder="コメントをして応援しよう！" required></textarea>
+              <input class="comment-button" type="submit" id="submit" value=" 送信" />
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="commentv"
+              style="font-size:13px;line-height:15px;color:#666699;width:580px;height:160px;border:1px solid #00ccff;padding:8px;overflow-y:scroll;display:none;">
+            </div>
+            <iframe name="com" src="comment.php" id="com"
+              style="width:301px;height:201px;border:0px;padding:0px;overflow:hidden;display:none;"></iframe>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <!-- コメント投稿部分EN ----->
+
+      {% for comment in comments %}
+      {% for image in images %}
+      {% if image.username == comment.author %}
+      <dl>
+        <dt><img src="{{ image.icon.url }}"></dt>
+        <dd class="view-comment">{{ comment.comment | linebreaksbr }}</dd>
+      </dl>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div><!-- class="comment-scroll"-->
+  </div><!-- class="container" -->
+  <!-- footer -->
+  <footer>
+    <ul class="footer-menu">
+      <p class="footer-text">© 2021 こらえる</p>
+    </ul>
+  </footer>
+</body>
+
 </html>

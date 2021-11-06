@@ -1,4 +1,4 @@
-{% load static %} 
+{% load static %}
 {% block link %}
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
@@ -7,71 +7,63 @@
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" 
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link 
-      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnMuse</title>
-  </head>
-  <body>
-    <!-- header -->
-    <header>
-      <nav class="pc-nav">
-        <ul class="pc-nav-menu">
-          <li class="home"><a href="../home/choice">HOME</a></li>
-          <li><a href="../post/open">OPEN</a></li>
-          <li><a href="">SEARTH</a></li>
-          <li><a href="../account/profile">PLOFILE</a></li>
-        </ul>
-      </nav>
-      <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
-      <a href="../account/login" class="btn btn-login">LOGIN</a>
-    </header>
-    <!-- 内容 -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <form method="get" action="{% url 'post:search' %}" class="search_container">
-      <input type="text" size="25" name="keyword" placeholder="キーワード検索">
-      <input type="submit" value="&#xf002">
-    </form>
-    <div class="wrapper">
-      <!-- 個々の作品画像 -->
-      <ul class="slider-wrapper" id="ranking-slider">
-        {% for post in posts %}
-        <li>
-          <a href="detail/{{ post.id }}"><img src = {{ post.flyer.url }}></a>
-        </li>
-        {% endfor %}
-      </ul> 
-      <!-- slider-wrapper -->
-    </div><!-- wrapper -->
-    <!-- footer -->
-      <footer>
-        <ul class="footer-menu">
-          <p class="footer-text">© 2021 こらえる</p>
-        </ul>
-      </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/ranking.js' %}"></script>
-  </body>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnMuse</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav class="pc-nav">
+      <ul class="pc-nav-menu">
+        <li class="home"><a href="../home/choice">HOME</a></li>
+        <li><a href="../post/open">OPEN</a></li>
+        <li><a href="">SEARTH</a></li>
+        <li><a href="../account/profile">PLOFILE</a></li>
+      </ul>
+    </nav>
+    <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
+    <a href="../account/login" class="btn btn-login">LOGIN</a>
+  </header>
+  <!-- 内容 -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <form method="get" action="{% url 'post:search' %}" class="search_container">
+    <input type="text" size="25" name="keyword" placeholder="キーワード検索">
+    <input type="submit" value="&#xf002">
+  </form>
+  <div class="wrapper">
+    <!-- 個々の作品画像 -->
+    <ul class="slider-wrapper" id="ranking-slider">
+      {% for post in posts %}
+      <li>
+        <a href="detail/{{ post.id }}"><img src={{ post.flyer.url }}></a>
+      </li>
+      {% endfor %}
+    </ul>
+    <!-- slider-wrapper -->
+  </div><!-- wrapper -->
+  <!-- footer -->
+  <footer>
+    <ul class="footer-menu">
+      <p class="footer-text">© 2021 こらえる</p>
+    </ul>
+  </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/ranking.js' %}"></script>
+</body>
+
 </html>

@@ -43,15 +43,15 @@ fileInput.addEventListener(
   },
   false
 );
-var element=document.getElementById('files');
-            var file_length;
-            $(function(){
-                $('#files').on('change',function(){
-                    file_length+=element.files.length;
-                    console.log(file_length);
-                })
+// var element=document.getElementById('files');
+//             var file_length;
+//             $(function(){
+//                 $('#files').on('change',function(){
+//                     file_length+=element.files.length;
+//                     console.log(file_length);
+//                 })
 
-            });
+//             });
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
 fileInputRef.addEventListener("change", (e) => {
@@ -59,15 +59,15 @@ fileInputRef.addEventListener("change", (e) => {
   // const file = e.target.files.item(0);
 
   //for文
-  for (let num = 0; num <= 5; num++) {
+  for (let num = 0; num < e.target.files.length; num++) {
   const file = e.target.files.item(num);
-}
   loadImage(
     file, // ロード前の画像を渡す
     (loadedImage) => { // callback ロードが終わった後に実行する関数を渡す
       document.getElementById('preview').innerHTML += '<img src="' + loadedImage + '">';
     }
   )
+}
 
 })
 
