@@ -44,14 +44,44 @@ fileInput.addEventListener(
   false
 );
 /*画像プレビュー*/
-function loadImage(obj)
-{
-	document.getElementById('preview').innerHTML = '<p>プレビュー</p>';
-	for (i = 0; i < obj.files.length; i++) {
-		var fileReader = new FileReader();
-		fileReader.onload = (function (e) {
-			document.getElementById('preview').innerHTML += '<img src="' + e.target.result + '">';
-		});
-		fileReader.readAsDataURL(obj.files[i]);
-	}
+const fileInputRef = document.querySelector("#uploadFile");
+fileInputRef.addEventListener("change", (e) => {
+  // 画像の一枚目
+  const file = e.target.files.item(0);
+
+  loadImage(
+    file, // ロード前の画像を渡す
+    (loadedImage) => { // callback ロードが終わった後に実行する関数を渡す
+      document.getElementById('preview').innerHTML += '<img src="' + loadedImage + '">';
+    }
+  )
+
+})
+
+const loadImage = (file, callback) => {
+  const reader = new FileReader();
+
+  //  ロードします。時間かかります。
+  reader.readAsDataURL(file);
+
+  // ロード終わったときに実行される関数
+  reader.onload = () => {
+    // ロードが終わった後の画像
+    const loadedImage = reader.result;
+    callback(loadedImage);
+  }
 }
+
+
+// function loadImage(obj)
+// {
+//   console.log(obj)
+// 	document.getElementById('preview').innerHTML = '<p>プレビュー</p>';
+// 	for (i = 0; i < obj.files.length; i++) {
+// 		var fileReader = new FileReader();
+// 		fileReader.onload = (function (e) {
+// 			document.getElementById('preview').innerHTML += '<img src="' + e.target.result + '">';
+// 		});
+// 		fileReader.readAsDataURL(obj.files[i]);
+// 	}
+// }

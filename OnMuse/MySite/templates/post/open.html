@@ -62,13 +62,14 @@
         <p class="drag-drop-buttons">
         <div id="inputFileWrap">
           <!--id fileInput -->
-          <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" multiple="multiple" onchange="loadImage(this);" required>
+          <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif" multiple="multiple"  required>
+
         </p>
-        <p id="preview"></p>
         <div id="btnInputFile"><span>ファイルを選択する</span></div>
         <div id="btnChangeFile"><span>ファイルを変更する</span></div>
       </div>
   </div>
+  <p id="preview"></p>
 
     <!-- 展示説明を入力 -->
     <div class="explanation">
@@ -102,6 +103,6 @@
         </ul>
       </footer>
     </div>
-    <script type="text/javascript" src="open.js"></script>
+    <script type="text/javascript" src="{% static 'js/open.js' %}"></script>
   </body>
 </html>
