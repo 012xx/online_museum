@@ -210,8 +210,7 @@ label.flyer-number {
   padding: 10px 15px;
   border-radius: 50px;
 }
-label.flyer-number radiobutton:checked {
+.radiobutton:checked + label.flyer-number {
   color: #ffffff;
-  background: var(--observatory);
-  border: 2px solid #ffffff;
+  background: #278c72;
 }
