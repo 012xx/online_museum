@@ -199,3 +199,19 @@ a.btn-submit:hover {
 	width:100px;
 	border:1px solid #cccccc;
 }
+
+/*フライヤーのラジオボタン*/
+.radiobutton {
+  display: none;
+}
+label.flyer-number {
+  margin-right: 5px;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+label.flyer-number radiobutton:checked {
+  color: #ffffff;
+  background: var(--observatory);
+  border: 2px solid #ffffff;
+}
