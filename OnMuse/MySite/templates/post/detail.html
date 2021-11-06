@@ -9,6 +9,7 @@
   {% load static %}
   {% block link %}
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/like.css' %}" />
@@ -33,41 +34,42 @@
       {% include 'post/like.html' %}
     </div>
     <!-- TODO: cssあてる -->
-    <a href="../last/{{ post.id }}">リストに戻る</a>
-  </div>
+    <div class="comment-icon">
+      <a href="../last/{{ post.id }}"><i class="fas fa-comments comment-color"></i></a>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{% static 'mousewheel/jquery.mousewheel.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'mousewheel/jquery.mousewheel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function (event) {
-      $(document).on('click', '#like', function (event) {
-        event.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: "{% url 'post:like' %}",
-          data: {
-            'id': $(this).attr('name'),
-            'csrfmiddlewaretoken': '{{ csrf_token }}'
-          },
-          dataType: 'json',
-          success: function (response) {
-            selector = document.getElementsByName(response.id);
-            if (response.liked) {
-              $(selector).html("<i class='fas fa-lg fa-heart'></i>いいねしてよ");
+    <script type="text/javascript">
+      $(document).ready(function (event) {
+        $(document).on('click', '#like', function (event) {
+          event.preventDefault();
+          $.ajax({
+            type: 'POST',
+            url: "{% url 'post:like' %}",
+            data: {
+              'id': $(this).attr('name'),
+              'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            dataType: 'json',
+            success: function (response) {
+              selector = document.getElementsByName(response.id);
+              if (response.liked) {
+                $(selector).html("<i class='fas fa-lg fa-heart'></i>いいねしてよ");
+              }
+              else {
+                $(selector).html("<i class='far fa-lg fa-heart'></i>いいねしてなよ");
+              }
+              selector2 = document.getElementsByName(response.id + "-count");
+              $(selector2).text(response.count);
             }
-            else {
-              $(selector).html("<i class='far fa-lg fa-heart'></i>いいねしてなよ");
-            }
-            selector2 = document.getElementsByName(response.id + "-count");
-            $(selector2).text(response.count);
-          }
+          });
         });
       });
-    });
-  </script>
+    </script>
 
 </body>
 
