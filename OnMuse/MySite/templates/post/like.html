@@ -1,10 +1,80 @@
-<form action="{% url 'post:like' %}" method="POST">
-    {% csrf_token %}
-    {% if article.id in liked %}
-        <button id="like" name="{{post.id}}"><i class="fas fa-lg fa-heart like-red"></i>いいねしてるよ</button>
-    {% else %}
-        <p>i'm here</p>
-        <button id="like" name="{{post.id}}"><i class="far fa-lg fa-heart"></i>いいねしてない</button>      
-    {% endif %}
-</form>
-<p name="{{article.id}}-count" class="count"> {{ article.like_set.count }} </p>
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/like.css' %}" />
+{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" 
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link 
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnMuse</title>
+  </head>
+<body>
+<input type="checkbox" id="checkbox"/>
+<label for="checkbox">
+  <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+    <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+      <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" />
+      <circle class="circle" cx="29.5" cy="29.5" r="1.5" stroke="#CD85E7" stroke-width="0 "/>
+
+      <g id="grp7" opacity="0" transform="translate(7 6)">
+        <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+        <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+      </g>
+
+      <g id="grp6" opacity="0" transform="translate(0 28)">
+        <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+        <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+      </g>
+
+      <g id="grp3" opacity="0" transform="translate(52 28)">
+        <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+        <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+      </g>
+
+      <g id="grp2" opacity="0" transform="translate(44 6)">
+        <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+        <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+      </g>
+
+      <g id="grp5" opacity="0" transform="translate(14 50)">
+        <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+        <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+      </g>
+
+      <g id="grp4" opacity="0" transform="translate(35 50)">
+        <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+        <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+      </g>
+
+      <g id="grp1" opacity="0" transform="translate(24)">
+        <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+        <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+      </g>
+    </g>
+  </svg>
+  <div class="numbers">
+    <a class="num1">14</a>
+    <a class="num2">15</a>
+  </div>
+</label>
