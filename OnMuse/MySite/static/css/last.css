@@ -1,13 +1,29 @@
+/* :rootのCSS変数の宣言 */
+:root {
+  --white: #ffffff;
+  --aqua-squeeze: #e9f4f1;
+  --mine-shaft: #2f3130;
+  --observatory: #278c72; 
+  --java: #16afaf;
+  --hoki: #658194;
+  /* style */
+  --main-color: var(--observatory); 
+  --sub-color: var(--hoki);
+  --highlight-color: var(--java);
+  --background: var(--aqua-squeeze);
+  --white: var(--white);
+  --black: var(--mine-shaft);
+}
 p.good-work{ /*お疲れ様でした*/
   text-align: center;
-  color: #ffffff;
+  color: var(--mine-shaft);
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 40px;
   margin:48px 0 0 0;/* 上 | 右 | 下 | 左 */
 }
 p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
-  color: #e4e3e3;
+  color: var(--mine-shaft);
   font-family: "Noto Sans JP";
   font-size: 16px;
   margin:40px auto 24px 160px;/* 上 | 右 | 下 | 左 */
@@ -19,7 +35,7 @@ p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
   width: 80%;
   height: 30em;
   overflow: auto;
-  background-color: #686868;
+  background-color: var(--hoki);
   border-radius: 16px;
   align-items: center;
   padding: 1em 3em 1em 3em;/* 上 | 右 | 下 | 左 */
@@ -27,6 +43,7 @@ p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
 dd.view-comment{/*ユーザのコメント*/
   font-size: 24px;
   margin: 0.5em auto 0.5em 1em; /* 上 | 右 | 下 | 左 */
+  color: var(--aqua-squeeze);
 }
 /* span.comment-bg{/*コメントのbox背景
   background-color: #ECECEC;
@@ -66,5 +83,6 @@ img{
   width: 70px;
 }
 span.sub-title{
-  margin:0 0 1em 0;
+  margin-bottom: 1em;
+  color: var(--aqua-squeeze);
 }
