@@ -22,15 +22,16 @@
   display: block;
   padding: 3px 10px;
   border-radius: 20px;
-  height: 48px;
+  height: 40px;
   width: 400px;
   overflow: hidden;
-  margin: 18px auto; /* 上 | 右 | 下 | 左 */
+  margin: 15px auto; /* 上 | 右 | 下 | 左 */
 }
 .search_container input[type="text"] {
   border: none;
-  font-size: 2.4em;
+  font-size: 16px;
   color: #278c72;
+  margin:3px;
 }
 .search_container input[type="text"]:focus {
   outline: 0;
@@ -46,8 +47,16 @@
   width: 2.5em;
   height: 2.5em;
   right: 0;
-  top: -10px;
+  top: -13.5px;
   outline: none;
+}
+.sortbtn{
+  list-style: none;
+  display: flex;
+  justify-content:center;
+}
+li.btn-margin{
+  margin: 0 5px 15px 5px;
 }
 /*新着ボタン*/
 .btn-new,
