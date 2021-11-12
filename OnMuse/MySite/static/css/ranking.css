@@ -49,7 +49,7 @@
   top: -10px;
   outline: none;
 }
-/*並び順のボタン*/
+/*新着ボタン*/
 .btn-new,
 a.btn-new {
   color: #F9F1F5;
@@ -57,13 +57,65 @@ a.btn-new {
   font-size: 16px;
   font-weight: 400;
   width: 160px;
-  border-radius: 10px;
+  border-radius: 7px;
   text-align: center;
+  padding: 0.7rem 1rem;
 }
 .btn-new:hover,
 a.btn-new:hover {
   color: #F9F1F5;
   background: #f36486;
+}
+/*急上昇ボタン*/
+.btn-climb,
+a.btn-climb {
+  color: #E8EFF5;
+  background-color: #7EA9C8;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+.btn-climb:hover,
+a.btn-climb:hover {
+  color: #F9F1F5;
+  background: #7e82c8;
+}
+/*週間いいねボタン*/
+.btn-weeklylikes,
+a.btn-weeklylikes {
+  color: #F9F8F1;
+  background-color: #C8BA7E;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+.btn-weeklylikes:hover,
+a.btn-weeklylikes:hover {
+  color: #F9F1F5;
+  background: #c89c7e;
+}
+/*月間いいねボタン*/
+.btn-monthlylikes,
+a.btn-monthlylikes {
+  color: #F2F9F1;
+  background-color: #7EC89C;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+.btn-monthlylikes:hover,
+a.btn-monthlylikes:hover {
+  color: #F9F1F5;
+  background: #65a07d;
 }
 /*左右の矢印の色を変える*/
 .slick-prev:before,
