@@ -59,10 +59,10 @@ li.btn-margin{
   margin: 0 5px 15px 5px;
 }
 /*新着ボタン*/
-.btn-new,
-a.btn-new {
-  color: #F9F1F5;
-  background-color: #C87EA5;
+.btn-on,
+a.btn-on {
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -70,16 +70,16 @@ a.btn-new {
   text-align: center;
   padding: 0.7rem 1rem;
 }
-.btn-new:hover,
-a.btn-new:hover {
+.btn-on:hover,
+a.btn-on:hover {
   color: #F9F1F5;
-  background: #f36486;
+  background: #0f7b7b;
 }
 /*急上昇ボタン*/
-.btn-climb,
-a.btn-climb {
+.btn-off,
+a.btn-off {
   color: #E8EFF5;
-  background-color: #7EA9C8;
+  background-color: #B8B8B8;
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -87,44 +87,10 @@ a.btn-climb {
   text-align: center;
   padding: 0.7rem 1rem;
 }
-.btn-climb:hover,
-a.btn-climb:hover {
+.btn-off:hover,
+a.btn-off:hover {
   color: #F9F1F5;
-  background: #7e82c8;
-}
-/*週間いいねボタン*/
-.btn-weeklylikes,
-a.btn-weeklylikes {
-  color: #F9F8F1;
-  background-color: #C8BA7E;
-  font-size: 16px;
-  font-weight: 400;
-  width: 160px;
-  border-radius: 7px;
-  text-align: center;
-  padding: 0.7rem 1rem;
-}
-.btn-weeklylikes:hover,
-a.btn-weeklylikes:hover {
-  color: #F9F1F5;
-  background: #c89c7e;
-}
-/*月間いいねボタン*/
-.btn-monthlylikes,
-a.btn-monthlylikes {
-  color: #F2F9F1;
-  background-color: #7EC89C;
-  font-size: 16px;
-  font-weight: 400;
-  width: 160px;
-  border-radius: 7px;
-  text-align: center;
-  padding: 0.7rem 1rem;
-}
-.btn-monthlylikes:hover,
-a.btn-monthlylikes:hover {
-  color: #F9F1F5;
-  background: #65a07d;
+  background: #818181;
 }
 /*左右の矢印の色を変える*/
 .slick-prev:before,
@@ -170,4 +136,5 @@ img {
 .slick-current { /*真ん中*/
   transform: scale(1);
 }
+
 

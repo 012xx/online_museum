@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/ranking.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -45,10 +46,10 @@
   </form>
   <!-- ソートボタン -->
   <ul class="sortbtn">
-    <li class="btn-margin"><a href="#" class="btn btn-new"># 新着</a></li>
-    <li class="btn-margin"><a href="#" class="btn btn-climb"># 急上昇</a></li>
-    <li class="btn-margin"><a href="#" class="btn btn-weeklylikes"># 週間いいね</a></li>
-    <li class="btn-margin"><a href="#" class="btn btn-monthlylikes"># 月間いいね</a></li>
+    <li class="btn-margin"><a href="#" class="btn btn-on"># 新着</a></li>
+    <li class="btn-margin"><a href="#" class="btn btn-off"># 急上昇</a></li>
+    <li class="btn-margin"><a href="#" class="btn btn-off"># 週間いいね</a></li>
+    <li class="btn-margin"><a href="#" class="btn btn-off"># 月間いいね</a></li>
   </ul>
   <div class="wrapper">
     <!-- 個々の作品画像 -->
@@ -62,6 +63,7 @@
     <!-- slider-wrapper -->
   </div><!-- wrapper -->
   <!-- 展示バナー -->
+  <img class="banner" src="../../static/picture/nekoten.png">
   <!-- footer -->
   <footer>
     <ul class="footer-menu">
