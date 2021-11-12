@@ -43,15 +43,7 @@ fileInput.addEventListener(
   },
   false
 );
-// var element=document.getElementById('files');
-//             var file_length;
-//             $(function(){
-//                 $('#files').on('change',function(){
-//                     file_length+=element.files.length;
-//                     console.log(file_length);
-//                 })
 
-//             });
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
 fileInputRef.addEventListener("change", (e) => {
@@ -84,17 +76,3 @@ const loadImage = (file, callback) => {
     callback(loadedImage);
   }
 }
-
-
-// function loadImage(obj)
-// {
-//   console.log(obj)
-// 	document.getElementById('preview').innerHTML = '<p>プレビュー</p>';
-// 	for (i = 0; i < obj.files.length; i++) {
-// 		var fileReader = new FileReader();
-// 		fileReader.onload = (function (e) {
-// 			document.getElementById('preview').innerHTML += '<img src="' + e.target.result + '">';
-// 		});
-// 		fileReader.readAsDataURL(obj.files[i]);
-// 	}
-// }

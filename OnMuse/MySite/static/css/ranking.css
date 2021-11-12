@@ -25,7 +25,7 @@
   height: 48px;
   width: 400px;
   overflow: hidden;
-  margin: 50px auto; /* 上 | 右 | 下 | 左 */
+  margin: 18px auto; /* 上 | 右 | 下 | 左 */
 }
 .search_container input[type="text"] {
   border: none;
@@ -49,6 +49,22 @@
   top: -10px;
   outline: none;
 }
+/*並び順のボタン*/
+.btn-new,
+a.btn-new {
+  color: #F9F1F5;
+  background-color: #C87EA5;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 10px;
+  text-align: center;
+}
+.btn-new:hover,
+a.btn-new:hover {
+  color: #F9F1F5;
+  background: #f36486;
+}
 /*左右の矢印の色を変える*/
 .slick-prev:before,
 .slick-next:before {
@@ -60,7 +76,7 @@
     z-index: 99;
 }
 .slick-prev {
-     left: 15px;
+    left: 15px;
     z-index: 100;
 }
 /*スライド数のドットの色を変える*/

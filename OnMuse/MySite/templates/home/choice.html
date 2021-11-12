@@ -1,61 +1,61 @@
-{% load static %} 
+{% load static %}
 {% block link %}
- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/choice.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnMuse</title>
-  </head>
-  <body>
-    <!-- header -->
-    <header>
-      <nav class="pc-nav">
-        <ul class="pc-nav-menu">
-          <li class="home"><a href="../home">HOME</a></li>
-          <li><a href="../post/open">OPEN</a></li>
-          <li><a href="../post/ranking">SEARTH</a></li>
-          <li><a href="../account/profile">PLOFILE</a></li>
-        </ul>
-      </nav>
-      <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
-      <a href="../account/login" class="btn btn-login">LOGIN</a>
-    </header>
 
-    <!-- 本文 -->
-    <p>{{ user.username }}&ensp;さん&ensp;{{msg}}</p>
-    <div class="container">
-      <div class="box1">
-        <a href="../post/open" class="shadow-box"
-          ><img src="../../static/picture/01.png"
-        /></a>
-        <a class="choice" href="../post/open"><p class="text1">美術館を開く</p></a>
-      </div>
-      <div class="box2">
-        <a href="../post/ranking" class="shadow-box"
-          ><img src="../../static/picture/02.png"
-        /></a>
-        <a class="choice" href="../post/ranking"><p class="text1">美術館を探す</p></a>
-      </div>
-    </div>
-    <!-- footer -->
-    <footer>
-      <ul class="footer-menu">
-        <p class="footer-text">© 2021 こらえる</p>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnMuse</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav class="pc-nav">
+      <ul class="pc-nav-menu">
+        <li class="home"><a href="../home">HOME</a></li>
+        <li><a href="../post/open">OPEN</a></li>
+        <li><a href="../post/ranking">SEARTH</a></li>
+        <li><a href="../account/profile">PLOFILE</a></li>
       </ul>
-    </footer>
-  </body>
+    </nav>
+    <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
+    <a href="../account/login" class="btn btn-login">LOGIN</a>
+  </header>
+
+  <!-- 本文 -->
+  <p>{{ user.username }}&ensp;さん&ensp;{{msg}}</p>
+  <div class="container">
+    <div class="box1">
+      <a href="../post/open" class="shadow-box"><img src="../../static/picture/01.png" /></a>
+      <a class="choice" href="../post/open">
+        <p class="text1">美術館を開く</p>
+      </a>
+    </div>
+    <div class="box2">
+      <a href="../post/ranking" class="shadow-box"><img src="../../static/picture/02.png" /></a>
+      <a class="choice" href="../post/ranking">
+        <p class="text1">美術館を探す</p>
+      </a>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer>
+    <ul class="footer-menu">
+      <p class="footer-text">© 2021 こらえる</p>
+    </ul>
+  </footer>
+</body>
+
 </html>

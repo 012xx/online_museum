@@ -37,11 +37,17 @@
     <a href="../account/login" class="btn btn-login">LOGIN</a>
   </header>
   <!-- 内容 -->
+  <!-- 検索ボックス -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <form method="get" action="{% url 'post:search' %}" class="search_container">
     <input type="text" size="25" name="keyword" placeholder="キーワード検索">
     <input type="submit" value="&#xf002">
   </form>
+  <!-- ソートボタン -->
+  <a href="#" class="btn btn-new"># 新着</a>
+  <a href="#" class="btn btn-climb"># 急上昇</a>
+  <a href="#" class="btn btn-weeklylikes"># 週間いいね</a>
+  <a href="#" class="btn btn-monthlylikes"># 月間いいね</a>
   <div class="wrapper">
     <!-- 個々の作品画像 -->
     <ul class="slider-wrapper" id="ranking-slider">
