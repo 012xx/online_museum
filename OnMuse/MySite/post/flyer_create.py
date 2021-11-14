@@ -237,12 +237,12 @@ def flyer5(image,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     #origin = Image.open('origin.png')#static画像
-    origin = Image.new('RGBA',(500,705),(230,62,57)) #で同じことが可能
+    origin = Image.new('RGBA',(500,718),(45,44,44)) #で同じことが可能
 
     image_copy = image.copy()
 
-    WIDTH = 500
-    HEIGHT = 675
+    WIDTH = 322
+    HEIGHT = 718
 
     width,height = image_copy.size#リサイズ＆切り取り
     if(HEIGHT/height > WIDTH/width):#縦を基準に
@@ -259,15 +259,25 @@ def flyer5(image,title,user):
     origin.paste(image_copy,(0,0))#貼り付け
 
     draw = ImageDraw.Draw(origin)
+    draw = ImageDraw.Draw(origin)
+    draw.line(((322,0),(322,718)),fill=(0,0,255),width=1)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",50)
+    font = ImageFont.truetype("msgothic.ttc",60)
+    
     if len_count(title) % 2 == 0:
-        draw.text((0,300),title.center(20 - ZEN_count(title),' '),fill='black',font = font)
+        title = title.center(10,' ')
+        for i in range(10):
+            print(i,i * 65 + 30,title[i])
+            draw.text((381,i * 65 + 30),title[i],fill=(239,239,239),font = font)
     else:
-        draw.text((12,300),title.center(19 - ZEN_count(title),' '),fill='black',font = font)
+        title = title.center(9,' ')
+        for i in range(9):
+            print(i,i * 65 + 62,title[i])
+            draw.text((381,i * 65 + 62),title[i],fill=(239,239,239),font = font)
+
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((0,400),user.rjust(32,' '),fill='black',font = font)
+    draw.text((336,680),user.center(10,' '),fill=(239,239,239),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
