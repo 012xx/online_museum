@@ -268,12 +268,10 @@ def flyer5(image,title,user):
     if len_count(title) % 2 == 0:
         title = title.center(10,' ')
         for i in range(10):
-            print(i,i * 65 + 30,title[i])
             draw.text((381,i * 65 + 30),title[i],fill=(239,239,239),font = font)
     else:
         title = title.center(9,' ')
         for i in range(9):
-            print(i,i * 65 + 62,title[i])
             draw.text((381,i * 65 + 62),title[i],fill=(239,239,239),font = font)
 
     font = ImageFont.truetype("msgothic.ttc",30)
