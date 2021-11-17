@@ -44,6 +44,23 @@ fileInput.addEventListener(
   false
 );
 
+var _URL = window.URL || window.webkitURL;
+$(`#uploadFile`).change(function (e) {
+  var file, img;
+  if ((file = this.files[0])) {
+      img = new Image();
+      img.onload = function () {
+        if(this.width > 499 && this.height > 499){
+          // ファイルが正常に受け取れた際の処理
+        }else{
+          alert('画像サイズが小さいです');
+        console.log(this.width);
+        }
+        };
+        img.src = _URL.createObjectURL(file);
+        }
+    });
+
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
 fileInputRef.addEventListener("change", (e) => {
