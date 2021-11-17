@@ -50,7 +50,7 @@ $(`#uploadFile`).change(function (e) {
   if ((file = this.files[0])) {
       img = new Image();
       img.onload = function () {
-        if(this.width > 499 && this.height > 499){
+        if(this.width > 600 && this.height > 600){
           // ファイルが正常に受け取れた際の処理
         }else{
           alert('画像サイズが小さいです');
