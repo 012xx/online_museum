@@ -44,7 +44,7 @@ fileInput.addEventListener(
   false
 );
 
-var _URL = window.URL || window.webkitURL;
+/* var _URL = window.URL || window.webkitURL;
 $(`#uploadFile`).change(function (e) {
   var file, img;
   if ((file = this.files[0])) {
@@ -59,7 +59,7 @@ $(`#uploadFile`).change(function (e) {
         };
         img.src = _URL.createObjectURL(file);
         }
-    });
+    }); */
 
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
