@@ -37,6 +37,8 @@ header {
   align-items: center;
   background-color: var(--observatory);
   font-size: 24px;
+  position: fixed;
+  z-index:1000;
 }
 li.home {
   margin-left: 40px;
@@ -86,10 +88,8 @@ footer {
   padding-right: 120px;
   font-size: 16px;
   padding: 30px 0;
-  position: absolute;
   bottom: 0;
   margin-top: auto;
-  position: fixed;
 }
 ul.footer-menu li {
   display: inline;
