@@ -31,8 +31,12 @@
         <li><a href="../account/profile">PLOFILE</a></li>
       </ul>
     </nav>
+    {% if request.user.id != None %}
+    <p>{{request.user}}</p>
+    {% else %}
     <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
     <a href="../account/login" class="btn btn-login">LOGIN</a>
+    {% endif %}
   </header>
   <!-- 内容 -->
   <!--- 以下検索 -->

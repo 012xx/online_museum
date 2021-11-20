@@ -25,7 +25,7 @@
   height: 40px;
   width: 400px;
   overflow: hidden;
-  margin: 15px auto; /* 上 | 右 | 下 | 左 */
+  margin: 59px auto 15px auto; /* 上 | 右 | 下 | 左 */
 }
 .search_container input[type="text"] {
   border: none;
