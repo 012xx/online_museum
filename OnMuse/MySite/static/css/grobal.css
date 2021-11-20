@@ -58,7 +58,7 @@ nav ul li {
 }
 nav ul li a {
   display: block;
-  padding: 10px;
+  padding: 7.5px;
   color: var(--aqua-squeeze);
   text-decoration: none;
   font-weight: 500;
@@ -70,7 +70,7 @@ nav ul li a {
 .pc-nav .pc-nav-menu a::after {
   position: absolute;
   left: 0;
-  bottom: -8px;
+  bottom: 0;
   display: block;
   content: "";
   width: 0%;
