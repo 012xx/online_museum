@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <!-- header -->
+  <!--  header 
   <header>
     <nav class="pc-nav">
       <ul class="pc-nav-menu">
@@ -35,7 +35,7 @@
     <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
     <a href="../account/login" class="btn btn-login">LOGIN</a>
     {% endif %}
-  </header>
+    -->
   <div id="wrapper">
     <main>
       <!-- 内容 -->
@@ -87,7 +87,16 @@
           <p class="home-text2">その絵に書き込んで想いを伝えよう</p>
           <img src="../../static/picture/04.png" class="right" />
         </div>
+        <!-- 以下ここからテキスト -->
       </div>
+      <p class="home-text4">
+        さあ、ここから始めよう<br>
+        {% if request.user.id != None %}
+      <p>{{request.user}}</p>
+      {% else %}
+      <a href="../account/signup" class="btn btn-entrance">SIGNUP</a>
+      {% endif %}
+      </p>
     </main>
     <!-- footer -->
     <footer>

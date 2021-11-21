@@ -140,7 +140,7 @@ img {
 }
 img.right {
   margin-top: 240px;
-  margin-bottom: 200px;
+  margin-bottom: 70px;
 }
 p.home-text1 {
   color: #ffffff;
@@ -166,4 +166,29 @@ p.home-text3 {
   font-family: Regular;
   margin: 2em auto 0.7em;
   margin-top: 200px;
+}
+p.home-text4 {
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-family: Regular;
+  margin-bottom: 50px;
+}
+.btn-entrance,
+a.btn-entrance {
+  color: #fff;
+  background-color: var(--observatory);
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  margin: 30px;
+  font-size: 16px;
+  padding-top: 8px;
+  border: #fff 2px solid;
+}
+.btn-entrance:hover,
+a.btn-entrance:hover {
+  color: #fff;
+  background: var(--java);
 }
