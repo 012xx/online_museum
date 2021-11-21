@@ -2,75 +2,43 @@
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
 {% endblock %}
-  <html>
-    <head>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
-        rel="stylesheet"
-      />
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>SIGN UP</title>
-    </head>
+<html>
 
-    <body>
-      <div class="main" align="center">
-        <p class="su">SIGN UP</p>
-        <form class="form1" align="center" method="POST">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGN UP</title>
+</head>
 
-        <!-- <p>{{ form.errors }}</p> -->
-          <input
-            class="Name"
-            type="text"
-            name="last_name"
-            placeholder="Full Name"
-            required
-            maxlength="10"
-            autofocus
-          />
-          {{ form.last_name.errors }}
-          <input
-            class="ID"
-            type="text" 
-            name="username"
-            placeholder="username" 
-            required 
-            autofocus 
-          />
-          {{ form.username.errors }}
-          <input
-            class="mail"
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-          {{ form.email.errors }}
-          <input
-            class="pass1"
-            type="password"
-            name="password1"
-            placeholder="Choose Password"
-            required
-          />
-          {{ form.password1.errors }}
-          <input
-            class="pass2"
-            type="password"
-            name="password2"
-            placeholder="Retype Password"
-            required
-          />
-          {{ form.password2.errors }}
-          <button type="submit" class="submit" align="center">SIGN UP</button>
-          <!-- <a class="submit"><input type="submit" value="SIGN UP" align="center"/></a> -->
-        </form>
-      </div>
-    </body>
-  </html>
+<body>
+  <div class="main" align="center">
+    <p class="su">SIGN UP</p>
+    <form class="form1" align="center" method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      <!-- <p>{{ form.errors }}</p> -->
+      <input class="Name" type="text" name="last_name" placeholder="Full Name" required maxlength="10" autofocus />
+      {{ form.last_name.errors }}
+      <input class="ID" type="text" name="username" placeholder="username" required autofocus />
+      {{ form.username.errors }}
+      <input class="mail" type="email" name="email" placeholder="Email Address" required />
+      {{ form.email.errors }}
+      <input class="pass1" type="password" name="password1" placeholder="Choose Password" required />
+      {{ form.password1.errors }}
+      <input class="pass2" type="password" name="password2" placeholder="Retype Password" required />
+      {{ form.password2.errors }}
+      <button type="submit" class="submit" align="center">SIGN UP</button><br>
+      <a href="login">アカウントをお持ちの方はこちら</a>
+      <!-- <a class="submit"><input type="submit" value="SIGN UP" align="center"/></a> -->
+    </form>
+  </div>
+</body>
+
+</html>
+
 </html>

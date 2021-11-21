@@ -19,7 +19,7 @@ body {
 
 .su {
   color: #6f9782;
-  margin-bottom: 10%;
+  margin-bottom: 7%;
   font-weight: 600;
   font-size: 25px;
   font-family: "Noto Sans JP", sans-serif;
@@ -165,10 +165,10 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: "Noto Sans JP", sans-serif;
-  margin-top: 4%;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 13px;
 }
 
 .first:focus,
