@@ -13,7 +13,9 @@ def home(request):
 
 @login_required
 def choice(request):
+    dl = datetime.datetime(year=2021, month=12, day=11, hour=13)
     hour = datetime.datetime.now().hour
+    td =  dl - datetime.datetime.now()
     if hour < 6:
         msg = "こんばんは"
     elif hour < 10:
@@ -22,6 +24,10 @@ def choice(request):
         msg = "こんにちは"
     else:
         msg = "こんばんは"
+    
+    msg += "  最終発表まで残り"
+    msg += str(td.days)
+    msg += "日"
     
     context = {
         'user':request.user,
