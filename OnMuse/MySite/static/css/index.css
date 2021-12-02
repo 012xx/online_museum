@@ -175,8 +175,8 @@ p.home-text4 {
   font-family: Regular;
   margin-bottom: 50px;
 }
-.btn-entrance,
-a.btn-entrance {
+.btn-entrance01,
+a.btn-entrance01 {
   color: #fff;
   background-color: var(--observatory);
   width: 120px;
@@ -187,8 +187,26 @@ a.btn-entrance {
   padding-top: 8px;
   border: #fff 2px solid;
 }
-.btn-entrance:hover,
-a.btn-entrance:hover {
+.btn-entrance01:hover,
+a.btn-entrance01:hover {
   color: #fff;
   background: var(--java);
+}
+
+.btn-entrance02,
+a.btn-entrance02 {
+  color: #fff;
+  background-color: var(--java);
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  margin: 30px;
+  font-size: 16px;
+  padding-top: 8px;
+  border: #fff 2px solid;
+}
+.btn-entrance02:hover,
+a.btn-entrance02:hover {
+  color: #fff;
+  background: var(--observatory);
 }
