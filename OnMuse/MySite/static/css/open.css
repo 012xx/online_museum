@@ -188,6 +188,7 @@ a.btn-submit {
   color: #ffffff;
   display:block;  
   margin: 0 auto; 
+  padding: 10px;
   margin-bottom: 72px;
 }
 a.btn-submit:hover {

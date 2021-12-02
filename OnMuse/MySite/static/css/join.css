@@ -1,0 +1,15 @@
+.space{
+  margin: 0 0 40px 0;
+}
+a.btn-submit {
+    width: 153px;
+    height: 48px;
+    border: 2px solid #ffffff;
+    border-radius: 70px;
+    background: var(--observatory);
+    color: #ffffff;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 40px;
+}
