@@ -3,5 +3,7 @@ img.banner{
   width: 728px;
   border: none;
   margin: 10px auto;
-
+}
+a.center{
+  text-align: center;
 }
