@@ -40,6 +40,34 @@ def open(request):
     return render(request, 'post/open.html', context)
 
 @login_required
+def join(request):
+    if request.method == "POST":
+        form = PostCreateForm(request.POST)
+        if form.is_valid():
+            post_id = form.save()
+            portfolio_images = request.FILES.getlist('image', False)
+            first = True
+            for image in portfolio_images:
+                if first:
+                    choice = request.POST["flyer"]
+                    post = Post.objects.filter(id = str(post_id)).first()
+                    name = flyer(int(choice),image,post.title,post.author)
+                    Post.objects.filter(id = str(post_id)).update(flyer = name)
+                    first = False
+                image_instance = Image(
+                    image = image,
+                    post = post_id
+                )
+                image_instance.save()
+            return redirect('post:ranking')
+    #GETの時
+    context = {
+        'user':request.user,
+        "tags":Tag.objects.all(),
+    }
+    return render(request, 'post/join.html', context)
+
+@login_required
 def ranking(request):
     context = {
         'posts': Post.objects.order_by('-created_at'),
