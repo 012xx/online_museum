@@ -172,3 +172,12 @@ a.btn-login:hover {
   border-radius: 10px;
   box-shadow: none;
 }
+img.header-icon {
+  display: block;
+  border: 2.5px solid #ffffff;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 26px 0 0;
+}

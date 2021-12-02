@@ -30,7 +30,7 @@
       </ul>
     </nav>
     {% if request.user.id != None %}
-    <p>{{request.user}}</p>
+    <p><img class="header-icon" src="{{ user.icon.url }}" /></p>
     {% else %}
     <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
     <a href="../account/login" class="btn btn-login">LOGIN</a>
