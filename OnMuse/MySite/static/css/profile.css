@@ -32,13 +32,13 @@ p.username {
   margin: 16px 0 0 0; /* 上 | 右 | 下 | 左 */
   text-align: center;
   font-size: 24px;
-  color: #f1f1f1;
+  color: #278c72;
 }
 p.userid {
   margin: 4px;
   text-align: center;
   font-size: 24px;
-  color: var(--mine-shaft);
+  color: #97a89ea4;
 }
 .profile-text{
   padding: 0.5em 1em;
