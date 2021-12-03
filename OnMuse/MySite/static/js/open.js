@@ -1,7 +1,7 @@
 // ドラッグ&ドロップエリアの取得
 var fileArea = document.getElementById("dropArea");
 // input[type=file]の取得
-var fileInput = document.getElementById("uploadFile");
+// var fileInput = document.getElementById("uploadFile");
 // ドラッグオーバー時の処理
 fileArea.addEventListener("dragover", function (e) {
   e.preventDefault();
@@ -30,52 +30,62 @@ fileArea.addEventListener("drop", function (e) {
 });
 
 // input[type=file]に変更があれば実行
-fileInput.addEventListener(
-  "change",
-  function (e) {
-    var file = e.target.files[0];
+// fileInput.addEventListener(
+//   "change",
+//   function (e) {
+//     var file = e.target.files[0];
+//     console.log('success!')
 
-    if (typeof e.target.files[0] !== "undefined") {
-      // ファイルが正常に受け取れた際の処理
-    } else {
-      // ファイルが受け取れなかった際の処理
-    }
-  },
-  false
-);
+//     if (typeof e.target.files[0] !== "undefined") {
+//       // ファイルが正常に受け取れた際の処理
+//       const imageWidth = e.target.files[0].width
+//       if(imageWidth > 500) {
+//         // 
+//       }
+//     } else {
+//       // ファイルが受け取れなかった際の処理
+//     }
+//   },
+//   false
+// );
+/*画像サイズ判定*/
+// var element = document.getElementById( "#uploadFile" );
 
-/* var _URL = window.URL || window.webkitURL;
-$(`#uploadFile`).change(function (e) {
-  var file, img;
-  if ((file = this.files[0])) {
-      img = new Image();
-      img.onload = function () {
-        if(this.width > 600 && this.height > 600){
-          // ファイルが正常に受け取れた際の処理
-        }else{
-          alert('画像サイズが小さいです');
-        console.log(this.width);
-        }
-        };
-        img.src = _URL.createObjectURL(file);
-        }
-    }); */
+/* var intervalId = setInterval( function () {
+
+	if (element.complete) {
+		var width = element.naturalWidth ;
+		var height = element.naturalHeight ;
+		clearInterval(intervalId) ;
+	}
+}, 500 ) ; */
 
 /*画像プレビュー*/
 const fileInputRef = document.querySelector("#uploadFile");
 fileInputRef.addEventListener("change", (e) => {
+    console.log('success!')
+
   // 画像の一枚目
   // const file = e.target.files.item(0);
 
   //for文
   for (let num = 0; num < e.target.files.length; num++) {
   const file = e.target.files.item(num);
-  loadImage(
-    file, // ロード前の画像を渡す
-    (loadedImage) => { // callback ロードが終わった後に実行する関数を渡す
-      document.getElementById('preview').innerHTML += '<img src="' + loadedImage + '">';
+  const image = new Image();
+  image.src = URL.createObjectURL(file);
+  image.onload = () => {
+    if (image.naturalWidth < 500 && image.naturalHeight < 500) {
+      fileInputRef.value = "";
+      return;
     }
-  )
+    
+    loadImage(
+      file, // ロード前の画像を渡す
+      (loadedImage) => { // callback ロードが終わった後に実行する関数を渡す
+        document.getElementById('preview').innerHTML += '<img src="' + loadedImage + '">';
+      }
+    )
+  }
 }
 
 })

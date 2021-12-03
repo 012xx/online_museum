@@ -54,6 +54,8 @@
             url: "{% url 'post:like' %}",
             data: {
               'id': $(this).attr('name'),
+              userId: "{{ request.user }}",
+              postId: "{{ post.id }}",
               'csrfmiddlewaretoken': '{{ csrf_token }}'
             },
             dataType: 'json',
