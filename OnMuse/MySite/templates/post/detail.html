@@ -19,10 +19,6 @@
 </head>
 
 <body>
-  <p>{{ request.user }}</p>
-  <!--閲覧してるユーザ名-->
-  <p>{{ post.id }}</p>
-  <!--作品ID-->
   <div class="container">
     <ul class="horizontal-scroll">
       {% for image in images %}
@@ -56,7 +52,6 @@
             url: "{% url 'post:like' %}",
             data: {
               'id': $(this).attr('name'),
-              UserId: "{{ request.user }}",
               PostId: "{{ post.id }}",
               'csrfmiddlewaretoken': '{{ csrf_token }}'
             },

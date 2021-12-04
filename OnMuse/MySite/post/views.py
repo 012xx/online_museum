@@ -93,20 +93,23 @@ def detail(request,id):
 @login_required
 def like(request):
     if request.method == "POST":
-        post = Post.objects.filter(id = request.POST.get('id'))
+        post = get_object_or_404(Post,id = request.POST.get('PostId'))
         liked = False
         like = Like.objects.filter(author = request.user ,postid = post.id)
         if like.exists():
             like.delete()
+            post.like -= 1
         else:
             like.create(author = request.user ,postid = post.id)
+            post.like += 1
             liked = True
+        post.save()
 
-        context = {
-            'id' : post.id,#article_id
-            'liked' : liked,
-            'count': post.like.count(),
-        }
+    context = {
+        'id' : post.id,#article_id
+        'liked' : liked,
+        'count': post.like,
+    }
     
     if request.is_ajax():
         return JsonResponse(context)
