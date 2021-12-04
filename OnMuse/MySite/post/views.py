@@ -79,14 +79,17 @@ def ranking(request):
 def detail(request,id):
     post = get_object_or_404(Post,id = str(id))
     liked = Like.objects.filter(author = request.user)
-    like = ""
     if liked.exists():
-        like = post.id
+        liked = False
+    else:
+        liked =True
+    
     context = {
     'post': post,
     'tags': Tag.objects.filter(id=str(id)),
     'images': Image.objects.filter(post_id=str(id)),
-    'like' : like,
+    'like' : post.like,
+    'liked' : liked
     }
     return render(request, 'post/detail.html', context)
 
