@@ -34,7 +34,7 @@
       {% endfor %}
     </ul>
 
-    <div class="heart-icon">
+    <div id="like" class="heart-icon">
       {% include 'post/like.html' %}
     </div>
     <!-- TODO: cssあてる -->
@@ -42,8 +42,7 @@
       <a href="../last/{{ post.id }}"><i class="fas fa-comments comment-color"></i></a>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'mousewheel/jquery.mousewheel.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
 
@@ -51,6 +50,7 @@
       $(document).ready(function (event) {
         $(document).on('click', '#like', function (event) {
           event.preventDefault();
+          console.log("like clicked");
           $.ajax({
             type: 'POST',
             url: "{% url 'post:like' %}",
@@ -72,7 +72,7 @@
               selector2 = document.getElementsByName(response.id + "-count");
               $(selector2).text(response.count);
             }
-          });
+          }).then(res => console.log(res));
         });
       });
     </script>
