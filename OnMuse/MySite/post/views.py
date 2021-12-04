@@ -79,34 +79,40 @@ def ranking(request):
 def detail(request,id):
     post = get_object_or_404(Post,id = str(id))
     liked = Like.objects.filter(author = request.user)
-    like = ""
     if liked.exists():
-        like = post.id
+        liked = False
+    else:
+        liked =True
+    
     context = {
     'post': post,
     'tags': Tag.objects.filter(id=str(id)),
     'images': Image.objects.filter(post_id=str(id)),
-    'like' : like,
+    'like' : post.like,
+    'liked' : liked
     }
     return render(request, 'post/detail.html', context)
 
 @login_required
 def like(request):
     if request.method == "POST":
-        post = Post.objects.filter(id = request.POST.get('id'))
+        post = get_object_or_404(Post,id = request.POST.get('PostId'))
         liked = False
         like = Like.objects.filter(author = request.user ,postid = post.id)
         if like.exists():
             like.delete()
+            post.like -= 1
         else:
             like.create(author = request.user ,postid = post.id)
+            post.like += 1
             liked = True
+        post.save()
 
-        context = {
-            'id' : post.id,#article_id
-            'liked' : liked,
-            'count': post.like.count(),
-        }
+    context = {
+        'id' : post.id,#article_id
+        'liked' : liked,
+        'count': post.like,
+    }
     
     if request.is_ajax():
         return JsonResponse(context)
