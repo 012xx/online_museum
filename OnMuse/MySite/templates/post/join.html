@@ -41,9 +41,10 @@
   <div class="container">
     <h1 class="open-title">ねこ展に参加する</h1>
     <!-- 展示タイトルを入力 -->
-    <form enctype="multipart/form-data" action="{% url 'post:open' %}" method="POST">
+    <form enctype="multipart/form-data" method="POST">
       {% csrf_token %}
       <input readonly type="hidden" name="author" value={{ user.username }}>
+      <input readonly type="hidden" name="post_id" value={{ post_id }}>
       <!-- 展示画像をアップロード -->
       <p>渾身の1枚をアップロード</p>
       <div id="upFileWrap">

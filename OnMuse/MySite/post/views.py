@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import PostCreateForm,CommentForm
+from .forms import PostCreateForm,CommentForm,ExhibitionCreateForm
 from account.models import CustomUser
 from .models import Comment, Post,Tag,Image,Like
 from django.contrib.auth.decorators import login_required
@@ -40,30 +40,20 @@ def open(request):
     return render(request, 'post/open.html', context)
 
 @login_required
-def join(request):
+def join(request,id):
+    print("GET")
     if request.method == "POST":
-        form = PostCreateForm(request.POST)
+        print("Post")
+        form = ExhibitionCreateForm(request.POST)
+        print(form)
+        print(form.is_valid())
         if form.is_valid():
-            post_id = form.save()
-            portfolio_images = request.FILES.getlist('image', False)
-            first = True
-            for image in portfolio_images:
-                if first:
-                    choice = request.POST["flyer"]
-                    post = Post.objects.filter(id = str(post_id)).first()
-                    name = flyer(int(choice),image,post.title,post.author)
-                    Post.objects.filter(id = str(post_id)).update(flyer = name)
-                    first = False
-                image_instance = Image(
-                    image = image,
-                    post = post_id
-                )
-                image_instance.save()
+            form.save()
             return redirect('post:ranking')
     #GETの時
     context = {
         'user':request.user,
-        "tags":Tag.objects.all(),
+        'post_id' : id
     }
     return render(request, 'post/join.html', context)
 

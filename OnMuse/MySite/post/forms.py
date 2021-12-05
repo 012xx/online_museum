@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import fields
-from .models import Comment, Post
+from .models import Comment, Post,Exhibition
 
 class PostCreateForm(forms.ModelForm):
     class Meta:
@@ -19,4 +19,13 @@ class CommentForm(forms.ModelForm):
             'author',
             'comment',
             'postid',
+        )
+
+class ExhibitionCreateForm(forms.ModelForm):
+    class Meta:
+        model = Exhibition
+        fields = (
+            'author',
+            'image',
+            'post_id',
         )
