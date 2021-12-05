@@ -13,5 +13,6 @@ urlpatterns = [
     path('search',views.search,name = 'search'),
     path('draw',views.draw,name = 'draw'),
     path('last/<uuid:id>',views.last,name = 'last'),
-    path('newranking',views.newranking,name ='newranking')
+    path('newranking',views.newranking,name ='newranking'),
+    path('exhibition',views.exhibition,name = 'exhibition'),
 ]

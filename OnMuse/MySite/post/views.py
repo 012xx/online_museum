@@ -146,6 +146,14 @@ def search(request):
     return render(request, 'post/search.html', context)
 
 @login_required
+def exhibition(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/exhibition.html', context)
+
+@login_required
 def draw(request):
     context = {
         'post': Post.objects.all(),
