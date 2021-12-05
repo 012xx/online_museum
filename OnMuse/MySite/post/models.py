@@ -66,4 +66,4 @@ class Like(models.Model):
     created_at = models.DateTimeField(verbose_name='いいねした時間',auto_now_add=True,null=False)
 
     def __str__(self):
-        return self.postid
+        return str(self.postid)

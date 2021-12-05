@@ -68,12 +68,11 @@ def ranking(request):
 @login_required
 def detail(request,id):
     post = get_object_or_404(Post,id = str(id))
-    liked = Like.objects.filter(author = request.user)
-    if liked.exists():
+    liked = Like.objects.filter(author = request.user).first()
+    if liked == None:
         liked = False
     else:
         liked =True
-    
     context = {
     'post': post,
     'tags': Tag.objects.filter(id=str(id)),
