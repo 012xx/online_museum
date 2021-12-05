@@ -67,11 +67,11 @@ def detail(request,id):
         images = Exhibition.objects.filter(post_id = post.id).all()
     else:
         images = Image.objects.filter(post_id=str(id))
-    liked = Like.objects.filter(author = request.user).first()
-    if liked == None:
-        liked = False
+    like = Like.objects.filter(author = request.user, postid = post.id)
+    if like.exists():
+        liked = True
     else:
-        liked =True
+        liked = False
     context = {
     'post': post,
     'tags': Tag.objects.filter(id=str(id)),

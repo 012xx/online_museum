@@ -1,4 +1,4 @@
-<input type="checkbox" id="checkbox" checked />
+<input type="checkbox" id="checkbox" />
 <label for="checkbox">
   <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round"
     stroke-linejoin="round">
@@ -45,9 +45,14 @@
     </g>
   </svg>
   <div class="numbers">
-    <a class="num1">{{like}}</a>
+    <a class="num1" id="num1">{{like}}</a>
     <!--現在のカウント数-->
-    <a class="num2">{{like}}</a>
+    <a class="num2" id="num2">{{like}}</a>
     <!--押したあとのカウント数-->
   </div>
 </label>
+
+<script type="text/javascript">
+  checkBox = document.getElementById("checkbox")
+  checkBox.checked = "{{ liked }}" == "True"
+</script>

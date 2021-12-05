@@ -68,6 +68,12 @@
               }
               selector2 = document.getElementsByName(response.id + "-count");
               $(selector2).text(response.count);
+              button = document.getElementById("checkbox")
+              button.checked = response.liked
+              num1 = document.getElementById("num1")
+              num1.textContent = response.like
+              num2 = document.getElementById("num2")
+              num2.textContent = response.like
             }
           }).then(res => console.log(res));
         });
