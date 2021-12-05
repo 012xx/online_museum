@@ -49,6 +49,7 @@
         $(document).on('click', '#like', function (event) {
           event.preventDefault();
           console.log("like clicked");
+          alert("押したよ!!!");
           $.ajax({
             type: 'POST',
             url: "{% url 'post:like' %}",
@@ -61,10 +62,10 @@
             success: function (response) {
               selector = document.getElementsByName(response.id);
               if (response.liked) {
-                $(selector).html("<i class='fas fa-lg fa-heart'></i>いいねしてよ");
+                $("img").html("<img src='../../static/picture/a.png'>");
               }
               else {
-                $(selector).html("<i class='far fa-lg fa-heart'></i>いいねしてなよ");
+                $("img").html("<img src='../../static/picture/b.png'>");
               }
               selector2 = document.getElementsByName(response.id + "-count");
               $(selector2).text(response.count);
