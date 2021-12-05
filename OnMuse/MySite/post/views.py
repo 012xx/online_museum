@@ -101,7 +101,7 @@ def like(request):
     context = {
         'id' : post.id,#article_id
         'liked' : liked,
-        'count': post.like,
+        'like': post.like,
     }
     
     if request.is_ajax():

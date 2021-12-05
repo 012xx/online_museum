@@ -6,7 +6,7 @@ app_name = 'post'
 
 urlpatterns = [
     path('open',views.open,name = 'open'),
-    path('join/<str:id>',views.join,name = 'join'),
+    path('join/<uuid:id>',views.join,name = 'join'),
     path('ranking',views.ranking,name = 'ranking'),
     path('detail/<uuid:id>',views.detail,name = 'detail'),
     path('like',views.like,name = 'like'),
