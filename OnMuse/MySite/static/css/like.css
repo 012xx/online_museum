@@ -32,7 +32,7 @@ svg .circle {
 }
 
 #checkbox {
-  display: none;
+  display: block;
 }
 
 #checkbox:checked + label svg #heart {

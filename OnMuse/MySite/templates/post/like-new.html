@@ -1,5 +1,10 @@
-{% if liked == True %}
-<button><img src="../../static/picture/a.png"></button>
-{% else %}
-<button><img src="../../static/picture/b.png"></button>
-{% endif %}
+<!-- <div class="toggle">
+  {% if liked == True %}
+  <h3 class="title-on"></h3>
+  <h3 class="title-off"></h3>
+  {% else %}
+  <button><img src="../../static/picture/b.png"></button>
+  {% endif %}
+</div> -->
+
+<img src="../../static/picture/a.png" onclick="this.src='../../static/picture/b.png'">

@@ -31,8 +31,7 @@
     </ul>
 
     <div id="like" class="heart-icon">
-      <!-- {% include 'post/like.html' %} -->
-      {% include 'post/like-new.html' %}
+      {% include 'post/like.html' %}
     </div>
     <!-- TODO: cssあてる -->
     <div class="comment-icon">
@@ -49,7 +48,7 @@
         $(document).on('click', '#like', function (event) {
           event.preventDefault();
           console.log("like clicked");
-          alert("押したよ!!!");
+          // alert("押したよ!!!");
           $.ajax({
             type: 'POST',
             url: "{% url 'post:like' %}",
