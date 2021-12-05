@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import PostCreateForm,CommentForm,ExhibitionCreateForm
 from account.models import CustomUser
-from .models import Comment, Post,Tag,Image,Like
+from .models import Comment, Exhibition, Post,Tag,Image,Like
 from django.contrib.auth.decorators import login_required
 #from django.http.response import HttpResponse
 from django.http import JsonResponse
@@ -41,12 +41,8 @@ def open(request):
 
 @login_required
 def join(request,id):
-    print("GET")
     if request.method == "POST":
-        print("Post")
-        form = ExhibitionCreateForm(request.POST)
-        print(form)
-        print(form.is_valid())
+        form = ExhibitionCreateForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('post:ranking')
@@ -67,6 +63,10 @@ def ranking(request):
 @login_required
 def detail(request,id):
     post = get_object_or_404(Post,id = str(id))
+    if post.is_exhibition == True:
+        images = Exhibition.objects.filter(post_id = post.id).all()
+    else:
+        images = Image.objects.filter(post_id=str(id))
     liked = Like.objects.filter(author = request.user).first()
     if liked == None:
         liked = False
@@ -75,7 +75,7 @@ def detail(request,id):
     context = {
     'post': post,
     'tags': Tag.objects.filter(id=str(id)),
-    'images': Image.objects.filter(post_id=str(id)),
+    'images': images,
     'like' : post.like,
     'liked' : liked
     }

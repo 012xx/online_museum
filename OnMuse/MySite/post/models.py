@@ -41,7 +41,7 @@ class Exhibition(models.Model):
     id = models.UUIDField(verbose_name='作品ID',primary_key=True, default=uuid.uuid4, editable=False,null=False)
     image = models.ImageField(verbose_name='画像',upload_to=images_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
     like = models.IntegerField(default=0)
-    post_id = models.CharField(verbose_name='親ID',max_length=10,null=False,default="admin")
+    post_id = models.CharField(verbose_name='親ID',max_length=100,null=False,default="admin")
     
     def __str__(self):
         return str(self.id)
