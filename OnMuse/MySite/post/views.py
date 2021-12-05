@@ -60,8 +60,7 @@ def join(request,id):
 @login_required
 def ranking(request):
     context = {
-        'posts': Post.objects.order_by('-created_at'),
-        #'tags': Tag.objects.all(),
+        'posts': Post.objects.filter(is_exhibition = False).order_by('-created_at'),
     }
     return render(request, 'post/ranking.html', context)
 
