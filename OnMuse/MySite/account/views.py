@@ -27,7 +27,8 @@ def signup(request):
 def profile(request):
     user = request.user
     context = {
-        'posts': Post.objects.filter(author = user).order_by('-created_at'),
+        'posts': Post.objects.filter(author = user,is_exhibition = False).order_by('-created_at'),
+        'exhibitions': Post.objects.filter(author = user,is_exhibition = True).order_by('-created_at'),
     }
     return render(request,'account/profile.html',context)
 
