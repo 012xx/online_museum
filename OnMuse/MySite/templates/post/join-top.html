@@ -1,0 +1,41 @@
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/join-top.css' %}" />
+{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+  <title>OnMuse</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav class="pc-nav">
+      <ul class="pc-nav-menu">
+        <li class="home"><a href="ranking">SEARTH</a></li>
+        <li><a href="">OPEN</a></li>
+        <li><a href="../account/profile">PLOFILE</a></li>
+      </ul>
+    </nav>
+    {% if request.user.id != None %}
+    <img class="header-icon" src="{{ user.icon.url }}" />
+    {% else %}
+    <a href="../account/signup" class="btn btn-signup">SIGNUP</a>
+    <a href="../account/login" class="btn btn-login">LOGIN</a>
+    {% endif %}
+  </header>
+</body>
+
+</html>
