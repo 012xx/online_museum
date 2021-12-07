@@ -64,6 +64,8 @@ def ranking(request):
 @login_required
 def detail(request,id):
     post = get_object_or_404(Post,id = str(id))
+    post.views += 1
+    post.save()
     if post.is_exhibition == True:
         images = Exhibition.objects.filter(post_id = post.id).all()
     else:
