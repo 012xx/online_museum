@@ -83,6 +83,14 @@ def detail(request,id):
     return render(request, 'post/detail.html', context)
 
 @login_required
+def detail_top(request):
+    context = {
+        'post': Post.objects.all(),
+        'tag': Tag.objects.all(),
+    }
+    return render(request, 'post/detail-top.html', context)
+
+@login_required
 def like(request):
     if request.method == "POST":
         post = get_object_or_404(Post,id = request.POST.get('PostId'))

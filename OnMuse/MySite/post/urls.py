@@ -15,4 +15,5 @@ urlpatterns = [
     path('last/<uuid:id>',views.last,name = 'last'),
     path('newranking',views.newranking,name ='newranking'),
     path('exhibition',views.exhibition,name = 'exhibition'),
+    path('detail-top',views.detail_top,name = 'detail-top'),
 ]
