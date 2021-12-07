@@ -19,7 +19,6 @@ i {
 h2 {
   pointer-events: none;
 }
-
 body {
   background-color: #E6E5E1;
   width: 100vw;
@@ -42,13 +41,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 200px;
 }
 
 .container01 .card {
   position: relative;
-  width: 500px;
-  height: 200px;
-  background-color: #fff;
+  width: 750px;
+  height: 300px;
+  background-color: #16AFAF;
   overflow: hidden;
   margin-bottom: 4px;
 }
@@ -92,7 +92,7 @@ body {
   height: 2px;
   border-radius: 2px;
   margin: 6px 0;
-  background-color: #E6E5E1;
+  background-color: #757575;
 }
 
 .container01 .card h2 {
@@ -103,7 +103,7 @@ body {
   right: 130px;
   font-size: 60px;
   font-weight: 700;
-  color: #fff;
+  color: GREEN;
 }
 
 .container01 .card .fa-arrow-right {
@@ -113,15 +113,16 @@ body {
   bottom: 25px;
   font-size: 40px;
   cursor: pointer;
+  color:#278c72;
 }
 
 .container01 .card p {
   z-index: 99;
   position: absolute;
   top: 20px;
-  right: 70px;
-  color: #333;
-  opacity: 0.7;
+  right: 100px;
+  color: #FFF;
+  opacity: 0.8;
   font-size: 12px;
   letter-spacing: 1px;
   -webkit-writing-mode: vertical-lr;
@@ -133,9 +134,9 @@ body {
 
 .container01 .card .pic {
   z-index: 100;
-  width: 400px;
-  height: 200px;
-  background-image: url("https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80");
+  width: 610px;
+  height: 300px;
+  background-color: #fff;
   background-size: 100% 100%;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
@@ -190,7 +191,7 @@ body {
   bottom: 14px;
   width: 30px;
   height: 30px;
-  background-color: #DA4D1D;
+  background-color: #d0dbdf;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -205,13 +206,10 @@ body {
 }
 
 .container01 .card:hover button {
-  -webkit-transform: scale(16.5);
-          transform: scale(16.5);
+  -webkit-transform: scale(10);
+          transform: scale(10);
 }
 
-.container01 .card:hover p {
-  color: #fff;
-}
 
 .container01 .card:hover .pic {
   -webkit-filter: grayscale(0);
@@ -223,7 +221,7 @@ body {
 }
 
 .container01 .card2 button {
-  background-color: #2b26c3;
+  background-color: #16AFAF;
 }
 
 .dr {
