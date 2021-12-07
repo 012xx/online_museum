@@ -2,7 +2,7 @@
 {% block link %}
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/join-top.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/exhibition.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,7 +25,7 @@
     <nav class="pc-nav">
       <ul class="pc-nav-menu">
         <li class="home"><a href="ranking">SEARTH</a></li>
-        <li><a href="">OPEN</a></li>
+        <li><a href="../post/open">OPEN</a></li>
         <li><a href="../account/profile">PLOFILE</a></li>
       </ul>
     </nav>
@@ -36,11 +36,14 @@
     <a href="../account/login" class="btn btn-login">LOGIN</a>
     {% endif %}
   </header>
+  <p class="ribbon8">ようこそ企画展へ！</p>
 </body>
-<div class="margin"></div>
-<h1>企画展へようこそ！！！</h1>
-<a href="../post/join/3aa62b06-de79-4a49-a955-3f8eb7504839">企画展に参加する</a>
-<a href="../post/detail/3aa62b06-de79-4a49-a955-3f8eb7504839">企画展を閲覧する</a>
-<a href="last/3aa62b06-de79-4a49-a955-3f8eb7504839">コメントはこちら</a>
+<!-- footer -->
+<footer>
+  <ul class="footer-menu">
+    <p class="footer-text">© 2021 こらえる</p>
+  </ul>
+</footer>
+</body>
 
 </html>
