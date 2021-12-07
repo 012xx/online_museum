@@ -113,7 +113,7 @@ body {
   bottom: 25px;
   font-size: 40px;
   cursor: pointer;
-  color:#278c72;
+  color:#16AFAF;
 }
 
 .container01 .card p {
@@ -229,5 +229,29 @@ body {
   bottom: 16px;
   right: 16px;
   width: 100px;
+}
+span.title{
+  color: #757575;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 32px;
+}
+span.overview{
+  color: #757575;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-size: 24px;
+}
+span.tagtop{
+  color: #757575;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  font-size: 16px;
+}
+.white-base{
+  position:relative
 }
 /*# sourceMappingURL=detail-top.css.map */
