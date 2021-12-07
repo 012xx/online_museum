@@ -55,9 +55,16 @@ def join(request,id):
     return render(request, 'post/join.html', context)
 
 @login_required
-def ranking(request):
+def ranking(request,id):
+    if id == "new":
+        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+    elif id == "hot":
+        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+    else:
+        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+    
     context = {
-        'posts': Post.objects.filter(is_exhibition = False).order_by('-created_at'),
+        'posts': posts,
     }
     return render(request, 'post/ranking.html', context)
 
