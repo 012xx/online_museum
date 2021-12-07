@@ -254,4 +254,62 @@ span.tagtop{
 .white-base{
   position:relative
 }
+.sortbtn{
+  list-style: none;
+  justify-content:center;
+  color: #fff;
+}
+li.btn-margin{
+  margin: 100px;
+}
+/*個展タグ*/
+.btn-on01 {
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 190px;
+  left:30px;
+}
+.btn-on02{
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 182.5px;
+  left:195px;
+}
+.btn-on03{
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 217.5px;
+  left:195px;
+}
+.btn-on04{
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 210px;
+  left:30px;
+}
+
 /*# sourceMappingURL=detail-top.css.map */
