@@ -10,6 +10,7 @@ from django.db.models import Q
 from functools import reduce
 from operator import and_
 from .flyer_create import flyer
+import re
 
 @login_required
 def open(request):
@@ -124,20 +125,26 @@ def last(request,id):
 def search(request):
     post = Post.objects.all()
     keyword = request.GET.get('keyword')
+    tag_list = []#list型のタグ
     if keyword:
-        exclusion_list = set([' ', '　'])
-        q_list = ''
-
-        for i in keyword:
-            if i in exclusion_list:#空白を無視
+        keyword.replace("＃","#")
+        keyword = re.split('[ 　]',keyword)
+        for i in range(len(keyword)):
+            if "#" in keyword[i]:
+                tag_list.append(keyword[i][1:])
+        for i in range(len(tag_list)):
+            try:
+                keyword.remove("#" + tag_list[i])
+            except:#存在しないタグが検索された場合pass
                 pass
-            else:
-                q_list += i
-
+        keyword = ''.join(keyword)#連結したキーワード
         query = reduce(
-                    and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in q_list]
+                    and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in keyword]
                 )
         post = post.filter(query)
+        tags = Tag.objects.filter(name__in = tag_list).all()
+        for tag in tags:
+            post = post.filter(tag = tag.id)
     context = {
         'posts': post,
     }
