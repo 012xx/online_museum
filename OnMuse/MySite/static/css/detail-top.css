@@ -264,8 +264,8 @@ li.btn-margin{
 }
 /*個展タグ*/
 .btn-on01 {
-  color: var(--aqua-squeeze);
-  background-color: var(--java);
+  color: #fff;
+  background-color: #bdbdbd;
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -276,8 +276,8 @@ li.btn-margin{
   left:30px;
 }
 .btn-on02{
-  color: var(--aqua-squeeze);
-  background-color: var(--java);
+  color: #fff;
+  background-color: #bdbdbd;
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -288,8 +288,8 @@ li.btn-margin{
   left:195px;
 }
 .btn-on03{
-  color: var(--aqua-squeeze);
-  background-color: var(--java);
+  color: #fff;
+  background-color:#bdbdbd;
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -300,8 +300,8 @@ li.btn-margin{
   left:195px;
 }
 .btn-on04{
-  color: var(--aqua-squeeze);
-  background-color: var(--java);
+  color: #fff;
+  background-color: #bdbdbd;
   font-size: 16px;
   font-weight: 400;
   width: 160px;
@@ -310,6 +310,13 @@ li.btn-margin{
   padding: 0.7rem 1rem;
   top: 210px;
   left:30px;
+}
+span.by{
+  color: #757575;
+  position: absolute;
+  top: 255px;
+  left: 55%;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=detail-top.css.map */
