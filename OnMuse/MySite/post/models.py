@@ -24,6 +24,7 @@ class Post(models.Model):
     id = models.UUIDField(verbose_name='作品ID',primary_key=True, default=uuid.uuid4, editable=False,null=False)
     flyer = models.ImageField(verbose_name='フライヤー',upload_to=flyers_path,blank=False,null=False,default = '../static/picture/8074e2c65a3ab65d0ce7b482795b7ac0.jpg')
     like = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
     is_exhibition = models.BooleanField(default=False,help_text="exhibitionだったらTrue")
 
     '''
