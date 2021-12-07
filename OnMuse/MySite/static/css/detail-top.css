@@ -237,6 +237,20 @@ span.title{
   left: 10%;
   font-size: 32px;
 }
+span.overview{
+  color: #757575;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-size: 24px;
+}
+span.tagtop{
+  color: #757575;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  font-size: 16px;
+}
 .white-base{
   position:relative
 }
