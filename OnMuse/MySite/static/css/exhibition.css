@@ -1,14 +1,15 @@
 /*親要素*/
 .ribbon8 {
+  text-align: center;
   display: inline-block;
+  padding: 10px;
   position: relative;
-  padding: 15px 20px;
   width: 500px;
   top:8%;
-  left:32%;
-  font-size: 18px;/*フォントサイズ*/
+  margin: 0 auto;
+  font-size: 24px;/*フォントサイズ*/
   color: #FFF;/*フォントカラー*/
-  background: #a6d3c8;/*背景色*/
+  background: #16AFAF;/*背景色*/
 }
 /*折り畳み左*/
 .ribbon8:before {
@@ -18,7 +19,7 @@
   left: 0;
   border: none;
   border-bottom: solid 15px transparent;
-  border-right: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+  border-right: solid 40px #0F7777;/*折り返し部分*/
 }
 /*折り畳み右*/
 .ribbon8:after {
@@ -28,5 +29,11 @@
   right: 0;
   border: none;
   border-bottom: solid 15px transparent;
-  border-left: solid 20px rgb(149, 158, 155);/*折り返し部分*/
+  border-left: solid 40px #0F7777;/*折り返し部分*/
+}
+img.main-png{
+  margin: 90px auto 0 auto;
+  border: solid 4px #0F7777;
+  width: 52%;
+  height: 52%;
 }
