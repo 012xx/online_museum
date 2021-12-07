@@ -47,16 +47,18 @@
       <div class="white-base">
         <div class="pic">
         </div>
-        <span class="title">##ここに展示タイトル</span>
-        <span class="overview">##ここに展示概要</span>
+        <span class="title">##ここに展示タイトル</span><!-- 題名 -->
+        <span class="overview">##ここに展示概要</span><!-- 説明 -->
         <span class="tagtop">個展タグ</span>
         <ul class="sortbtn">
-          <li class="btn-margin"><span class="btn btn-on01"># かわいい</span></li>
-          <li class="btn-margin"><span class="btn btn-on02"># かっこいい</span></li>
-          <li class="btn-margin"><span class="btn btn-on03"># ねむい</span></li>
-          <li class="btn-margin"><span class="btn btn-on04"># 気合入れろ</span></li>
+          <!-- それぞれ配置位置に職人調整掛けてるからifとか使って上手いこと表示させてくれ、ゴリ押しでもいいです -->
+          <li class="btn-margin"><span class="btn btn-on01"># かわいい</span></li><!-- 1つのときはこれだけ -->
+          <li class="btn-margin"><span class="btn btn-on02"># かっこいい</span></li><!-- 2つのときはここまで -->
+          <li class="btn-margin"><span class="btn btn-on03"># ねむい</span></li><!-- 3つのときはここまで -->
+          <li class="btn-margin"><span class="btn btn-on04"># 気合入れろ</span></li><!-- 4つのときはここまで -->
         </ul>
         <span class="by">Presented by<img class="tickrt-icon" src="{{ user.icon.url }}" /></span>
+        <!-- ユーザーではなく投稿者のアイコン -->
       </div>
       <ul>
         <li></li>
