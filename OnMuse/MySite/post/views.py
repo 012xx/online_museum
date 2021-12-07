@@ -149,7 +149,7 @@ def search(request):
         query = reduce(
                     and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in keyword]
                 )
-        post = post.filter(query)
+        post = post.filter(query,is_exhibition = 0)
         tags = Tag.objects.filter(name__in = tag_list).all()
         for tag in tags:
             post = post.filter(tag = tag.id)
