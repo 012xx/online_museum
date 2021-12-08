@@ -59,13 +59,14 @@
         {% endfor %}
       </div>
     </div>
-    <p class="artworks">この作者の参加した展覧会</p>
+    <p class="artworks">この作者の参加した企画展</p>
     <div class="grad-wrap">
       <input id="trigger1" class="grad-trigger" type="checkbox" />
       <label class="grad-btn" for="trigger1"></label>
       <div class="grad-item">
         {% for exhibition in exhibitions %}
-        <a class="other" href="../post/detail/{{ exhibition.id }}"><img class="artworks" src={{ exhibition.flyer.url }} />
+        <a class="other" href="../post/detail/{{ exhibition.id }}">
+          <img class="artworks" src={{ exhibition.flyer.url }} />
           <!-- 取得した他展示  --></a>
         {% endfor %}
       </div>
