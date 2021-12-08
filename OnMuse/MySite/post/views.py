@@ -92,9 +92,12 @@ def detail(request,id):
     return render(request, 'post/detail.html', context)
 
 @login_required
-def detail_top(request):
+def detail_top(request,id):
+    post = get_object_or_404(Post,id = str(id))
+    views = str(post.views).zfill(6)
     context = {
-        'post': Post.objects.all(),
+        'post': post,
+        'views': views,
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/detail-top.html', context)

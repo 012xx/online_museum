@@ -28,7 +28,7 @@
   <header>
     <nav class="pc-nav">
       <ul class="pc-nav-menu">
-        <li class="home"><a href="../../post/search/hot">SEARTH</a></li>
+        <li class="home"><a href="../../../post/ranking/hot">SEARTH</a></li>
         <li><a href="../../post/open">OPEN</a></li>
         <li><a href="../../account/profile">PLOFILE</a></li>
       </ul>
@@ -59,7 +59,7 @@
     <ul class="slider-wrapper" id="ranking-slider">
       {% for post in posts %}
       <li>
-        <a href="detail/{{ post.id }}"><img src={{ post.flyer.url }}></a>
+        <a href="../detail-top/{{ post.id }}"><img src={{ post.flyer.url }}></a>
       </li>
       {% endfor %}
     </ul>
