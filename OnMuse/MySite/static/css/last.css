@@ -20,22 +20,17 @@ p.good-work{ /*お疲れ様でした*/
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 40px;
-  margin:48px 0 0 0;/* 上 | 右 | 下 | 左 */
-}
-p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
-  color: var(--mine-shaft);
-  font-family: "Noto Sans JP";
-  font-size: 16px;
-  margin:40px auto 24px 160px;/* 上 | 右 | 下 | 左 */
+  margin:70px 0 30px 0;/* 上 | 右 | 下 | 左 */
 }
 .comment-scroll{
   margin:0 auto 8px auto;/* 上 | 右 | 下 | 左 */
   padding: 0 1.5em;
   font-size: 1em;
   width: 80%;
-  height: 30em;
+  height: 45em;
   overflow: auto;
-  background-color: var(--hoki);
+  background-color: #ffffff;
+  border: 3px solid #707070;
   border-radius: 16px;
   align-items: center;
   padding: 1em 3em 1em 3em;/* 上 | 右 | 下 | 左 */
@@ -43,7 +38,7 @@ p.work-comment{/*サブ補足：この展示に寄せられたコメント*/
 dd.view-comment{/*ユーザのコメント*/
   font-size: 24px;
   margin: 0.5em auto 0.5em 1em; /* 上 | 右 | 下 | 左 */
-  color: var(--aqua-squeeze);
+  color: #9BAEB0;
 }
 /* span.comment-bg{/*コメントのbox背景
   background-color: #ECECEC;
@@ -54,7 +49,7 @@ img{
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: #ffffff solid 3px;
+  border: #9BAEB0 solid 3px;
   float: left;
 }
 .comment-scroll dl {
@@ -84,5 +79,5 @@ img{
 }
 span.sub-title{
   margin-bottom: 1em;
-  color: var(--aqua-squeeze);
+  color: #707070;
 }

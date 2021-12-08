@@ -41,7 +41,6 @@
     <p class="good-work">Prise for {{
       <!-- 投稿者ID -->}}
     </p>
-    <p class="work-comment">この展示に寄せられたコメント</p>
     <div class="comment-scroll">
       <!-- コメント投稿部分ST ----->
       <table border="0" cellspacing="0" cellpadding="1">
@@ -52,10 +51,6 @@
               {% csrf_token %}
               <input readonly type="hidden" name="author" value={{ user.username }}>
               <input readonly type="hidden" name="postid" value={{ id }}>
-              <span class="sub-title">コメントはこちら(100文字以内)</span><br>
-              <textarea class="comment-input" type="text" id="comment" name="comment" size="80"
-                placeholder="コメントをして応援しよう！" required></textarea>
-              <input class="comment-button" type="submit" id="submit" value=" 送信" />
             </form>
           </td>
         </tr>
