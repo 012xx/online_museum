@@ -26,7 +26,7 @@ p.good-work{ /*お疲れ様でした*/
   margin:0 auto 8px auto;/* 上 | 右 | 下 | 左 */
   padding: 0 1.5em;
   font-size: 1em;
-  width: 80%;
+  width: 65%;
   height: 45em;
   overflow: auto;
   background-color: #ffffff;
@@ -64,23 +64,6 @@ img{
 .comment-scroll dt {clear: left;float: left;}
 .comment-scroll dd {margin-left: 0.5em;}
 }
-.comment-input {
-  border: 2px solid #7caa92;
-  background: #ffffff;
-  border-radius: 15px;
-  width: 650px;
-  height: 45px;
-  position: fixed;
-  top: 525px;
-  left: 260px;
-}
-.comment-button {
-  border: 2px solid #ffffff;
-  border-radius: 70px;
-  background: #7caa92;
-  color: #ffffff;
-  width: 70px;
-}
 span.sub-title{
   margin-bottom: 1em;
   color: #707070;
@@ -90,4 +73,26 @@ span.sub-title{
   margin: 1em 25px 0 auto;
   position :fixed;
   top: 505px;
+}
+.comment-input {
+  border: 2px solid #7caa92;
+  background: #ffffff;
+  border-radius: 15px;
+  width: 650px;
+  height: 45px;
+  position: fixed;
+  top: 525px;
+  margin: 0 80px 0;
+}
+.comment-button {
+  border: 2px solid #ffffff;
+  border-radius: 70px;
+  background: #7caa92;
+  color: #ffffff;
+  height: 40px;
+  width: 80px;
+  position: fixed;
+  top: 527px;
+  margin: 0 0 0 750px;
+  font-size: 16px;
 }
