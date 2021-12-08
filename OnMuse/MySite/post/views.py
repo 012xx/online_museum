@@ -134,6 +134,7 @@ def last(request,id):
         'images':CustomUser.objects.all(),
         'id': id,
         'comments':Comment.objects.filter(postid=str(id)).order_by('-created_at'),
+        'post': Post.objects.filter(id = id).first(),
         'user':request.user,
     }
     return render(request, 'post/last.html',context)
