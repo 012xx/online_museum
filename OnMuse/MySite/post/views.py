@@ -32,7 +32,7 @@ def open(request):
                     post = post_id
                 )
                 image_instance.save()
-            return redirect('post:ranking')
+            return redirect('ranking/new')
     #GETの時
     context = {
         'user':request.user,
@@ -46,7 +46,7 @@ def join(request,id):
         form = ExhibitionCreateForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('post:ranking')
+            return redirect('post:ranking/new')
     #GETの時
     context = {
         'user':request.user,
