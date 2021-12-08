@@ -254,4 +254,81 @@ span.tagtop{
 .white-base{
   position:relative
 }
+.sortbtn{
+  list-style: none;
+  justify-content:center;
+  color: #fff;
+}
+li.btn-margin{
+  margin: 100px;
+}
+/*個展タグ*/
+.btn-on01 {
+  color: #fff;
+  background-color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 190px;
+  left:30px;
+}
+.btn-on02{
+  color: #fff;
+  background-color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 182px;
+  left:195px;
+}
+.btn-on03{
+  color: #fff;
+  background-color:#bdbdbd;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 215.8px;
+  left:30px;
+}
+.btn-on04{
+  color: #fff;
+  background-color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  top: 208.5px;
+  left: 195px;
+}
+span.by{
+  color: #757575;
+  position: absolute;
+  top: 255px;
+  left: 55%;
+  font-size: 16px;
+}
+img.tickrt-icon{
+  display: block;
+  border: 2.5px solid #ffffff;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: 105px;
+  z-index: 100;
+}
+
 /*# sourceMappingURL=detail-top.css.map */

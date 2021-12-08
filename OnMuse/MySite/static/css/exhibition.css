@@ -1,0 +1,85 @@
+/*親要素*/
+.ribbon8 {
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  width: 500px;
+  top:8%;
+  margin: 0 auto;
+  font-size: 24px;/*フォントサイズ*/
+  color: #FFF;/*フォントカラー*/
+  background: #16AFAF;/*背景色*/
+  margin-top: 15px;
+}
+/*折り畳み左*/
+.ribbon8:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 40px #0F7777;/*折り返し部分*/
+}
+/*折り畳み右*/
+.ribbon8:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  right: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-left: solid 40px #0F7777;/*折り返し部分*/
+}
+img.main-png{
+  margin: 90px auto 0 auto;
+  border: solid 4px #0F7777;
+  width: 52%;
+  height: 52%;
+}
+.sortbtn{
+  list-style: none;
+  display: flex;
+  justify-content:center;
+  margin-top: 30px;
+}
+li.btn-margin{
+  margin: 0 5px 15px 5px;
+}
+/*新着ボタン*/
+.btn-on,
+a.btn-on {
+  color: var(--aqua-squeeze);
+  background-color: var(--java);
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  margin-right: 10px;
+}
+.btn-on:hover,
+a.btn-on:hover {
+  color: #F9F1F5;
+  background: #0f7b7b;
+}
+/*急上昇ボタン*/
+.btn-off,
+a.btn-off {
+  color: #E8EFF5;
+  background-color: #658194;
+  font-size: 16px;
+  font-weight: 400;
+  width: 160px;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  margin-left: 10px;
+}
+.btn-off:hover,
+a.btn-off:hover {
+  color: #F9F1F5;
+  background: #475a68;
+}
