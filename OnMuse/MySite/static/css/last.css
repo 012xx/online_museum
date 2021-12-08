@@ -67,8 +67,12 @@ img{
 .comment-input {
   border: 2px solid #7caa92;
   background: #ffffff;
-  border-radius: 10px;
-  width: 300px;
+  border-radius: 15px;
+  width: 650px;
+  height: 45px;
+  position: fixed;
+  top: 525px;
+  left: 260px;
 }
 .comment-button {
   border: 2px solid #ffffff;
@@ -80,4 +84,10 @@ img{
 span.sub-title{
   margin-bottom: 1em;
   color: #707070;
+}
+.comment-icon{
+  padding-bottom: 0;
+  margin: 1em 25px 0 auto;
+  position :fixed;
+  top: 505px;
 }

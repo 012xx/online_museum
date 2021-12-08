@@ -51,6 +51,11 @@
               {% csrf_token %}
               <input readonly type="hidden" name="author" value={{ user.username }}>
               <input readonly type="hidden" name="postid" value={{ id }}>
+              <div class="comment-post">
+                <img src="{{ user.icon.url }}" class="comment-icon"><textarea class="comment-input" type="text"
+                  id="comment" name="comment" size="80" placeholder="コメントをして応援しよう！" required></textarea><input
+                  class="comment-button" type="submit" id="submit" value=" 送信" /></p>
+              </div>
             </form>
           </td>
         </tr>
