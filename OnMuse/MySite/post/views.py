@@ -56,14 +56,27 @@ def join(request,id):
 
 @login_required
 def ranking(request,id):
+    new = "btn btn-off"
+    hot = "btn btn-off"
+    week = "btn btn-off"
+    month = "btn btn-off"
     if id == "new":
         posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        new = "btn btn-on"
     elif id == "hot":
         posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        hot = "btn btn-on"
+    elif id == "week":
+        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        week = "btn btn-on"
     else:
         posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
-    
+        month = "btn btn-on"
     context = {
+        'new':new,
+        'hot':hot,
+        'week':week,
+        'month':month,
         'posts': posts,
     }
     return render(request, 'post/ranking.html', context)
@@ -159,10 +172,12 @@ def search(request):
             except:#存在しないタグが検索された場合pass
                 pass
         keyword = ''.join(keyword)#連結したキーワード
-        query = reduce(
-                    and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in keyword]
-                )
-        post = post.filter(query,is_exhibition = 0)
+        if keyword:
+            query = reduce(
+                        and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in keyword]
+                    )
+            post = post.filter(query)
+        post = post.filter(is_exhibition = 0)
         tags = Tag.objects.filter(name__in = tag_list).all()
         for tag in tags:
             post = post.filter(tag = tag.id)
