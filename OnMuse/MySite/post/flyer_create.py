@@ -1,17 +1,17 @@
 from PIL import Image,ImageDraw,ImageFont,ImageFilter
 import uuid,unicodedata,datetime
 
-def flyer(num,image,title,user):
+def flyer(num,back_color,character_color,image,title,user):
     if num == 1:
-        return flyer1(image,title,user)
+        return flyer1(image,back_color,character_color,title,user)
     elif num == 2:
-        return flyer2(image,title,user)
+        return flyer2(image,back_color,character_color,title,user)
     elif num == 3:
-        return flyer3(image,title,user)
+        return flyer3(image,back_color,character_color,title,user)
     elif num == 4:
-        return flyer4(image,title,user)
+        return flyer4(image,back_color,character_color,title,user)
     elif num == 5:
-        return flyer5(image,title,user)
+        return flyer5(image,back_color,character_color,title,user)
 
 def len_count(text):
     count = 0
@@ -29,13 +29,19 @@ def ZEN_count(text):
             count += 1
     return count
 
-def flyer1(image,title,user):
+def RGB(color):
+    R = int(color[1:3],16)
+    G = int(color[3:5],16)
+    B = int(color[5:7],16)
+    return R, G, B
+
+def flyer1(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
     #origin = Image.open('origin.png')#static画像
-    origin = Image.new('RGBA',(500,718),(225,225,225))
-    new = Image.new('RGBA',(500,718),(225,225,225))
+    origin = Image.new('RGBA',(500,718),RGB(back_color))
+    new = Image.new('RGBA',(500,718),RGB(back_color))
     new.paste(logo,(350,610))
     origin = Image.alpha_composite(origin,new)
 
@@ -67,13 +73,13 @@ def flyer1(image,title,user):
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
-    draw.text((50,520),title[:5],fill='black',font = font)
+    draw.text((50,520),title[:5],fill=RGB(character_color),font = font)
     if len(title) > 5:
-        draw.text((50,570),title[5:10],fill='black',font = font)
+        draw.text((50,570),title[5:10],fill=RGB(character_color),font = font)
     font = ImageFont.truetype("msgothic.ttc",24)
     time = datetime.datetime.now()
     draw.text((0,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
-    draw.text((0,560),user.rjust(40,' '),fill='black',font = font)
+    draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
@@ -86,13 +92,13 @@ def flyer1(image,title,user):
     #static画像に張り付け
     #タイトル、ユーザーを描写
 
-def flyer2(image,title,user):
+def flyer2(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     #origin = Image.open('origin.png')#static画像
     logo = Image.open('static/picture/logo.png')
-    origin = Image.new('RGBA',(500,718),(38,38,38))
-    new = Image.new('RGBA',(500,718),(38,38,38))
+    origin = Image.new('RGBA',(500,718),RGB(back_color))
+    new = Image.new('RGBA',(500,718),RGB(back_color))
     new.paste(logo,(350,610))
     origin = Image.alpha_composite(origin,new)
     image_copy = image.copy()
@@ -122,13 +128,13 @@ def flyer2(image,title,user):
     font = ImageFont.truetype("msgothic.ttc",50)
     #draw.text((100,615),user.center(20,' '),fill=(255,255,255),font = font)
     if len_count(title) % 2 == 0:
-        draw.text((0,60),title.center(20 - ZEN_count(title),' '),fill=(255,255,255),font = font)
+        draw.text((0,60),title.center(20 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     else:
-        draw.text((12,60),title.center(19 - ZEN_count(title),' '),fill=(255,255,255),font = font)
+        draw.text((12,60),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
     time = datetime.datetime.now()
-    draw.text((20,600),str(time)[:10] + "～" ,fill='white',font = font)
-    draw.text((20,640),user.ljust(20,' '),fill='white',font = font)
+    draw.text((20,600),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
+    draw.text((20,640),user.ljust(20,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
@@ -141,12 +147,12 @@ def flyer2(image,title,user):
     #static画像に張り付け
     #タイトル、ユーザーを描写
 
-def flyer3(image,title,user):
+def flyer3(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
-    origin = Image.new('RGBA',(500,718),(202,235,224))
-    circle = Image.new('RGBA',(500,718),(202,235,224))
+    origin = Image.new('RGBA',(500,718),RGB(back_color))
+    circle = Image.new('RGBA',(500,718),RGB(back_color))
     circle.paste(logo,(350,610))
     draw = ImageDraw.Draw(circle)
     draw.ellipse((30,86,30+440,86+440),fill = 255)
@@ -177,13 +183,13 @@ def flyer3(image,title,user):
     #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
     if len_count(title) % 2 == 0:
-        draw.text((0,540),title.center(20 - ZEN_count(title),' '),fill=(38,38,38),font = font)
+        draw.text((0,540),title.center(20 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     else:
-        draw.text((12,540),title.center(19 - ZEN_count(title),' '),fill=(38,38,38),font = font)
+        draw.text((12,540),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
     time = datetime.datetime.now()
-    draw.text((10,620),str(time)[:10] + "～" ,fill=(38,38,38),font = font)
-    draw.text((10,660),user.ljust(10,' '),fill=(38,38,38),font = font)
+    draw.text((10,620),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
+    draw.text((10,660),user.ljust(10,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
@@ -196,7 +202,7 @@ def flyer3(image,title,user):
     #static画像に張り付け
     #タイトル、ユーザーを描写
 
-def flyer4(image,title,user):
+def flyer4(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
@@ -252,13 +258,13 @@ def flyer4(image,title,user):
     #static画像に張り付け
     #タイトル、ユーザーを描写
 
-def flyer5(image,title,user):
+def flyer5(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
-    #origin = Image.open('origin.png')#static画像
-    origin = Image.new('RGBA',(500,718),(45,44,44)) #で同じことが可能
     logo = Image.open('static/picture/logo.png')
-    new = Image.new('RGBA',(500,718),(45,44,44))
+    #origin = Image.open('origin.png')#static画像
+    origin = Image.new('RGBA',(500,718),RGB(back_color))
+    new = Image.new('RGBA',(500,718),RGB(back_color))
     new.paste(logo,(350,610))
     origin = Image.alpha_composite(origin,new)
 
@@ -291,14 +297,14 @@ def flyer5(image,title,user):
     if len_count(title) % 2 == 0:
         title = title.center(10,' ')
         for i in range(10):
-            draw.text((381,i * 50 + 30),title[i],fill=(239,239,239),font = font)
+            draw.text((381,i * 50 + 30),title[i],fill=RGB(character_color),font = font)
     else:
         title = title.center(9,' ')
         for i in range(9):
-            draw.text((381,i * 50 + 30),title[i],fill=(239,239,239),font = font)
+            draw.text((381,i * 50 + 30),title[i],fill=RGB(character_color),font = font)
 
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((336,560),user.center(10,' '),fill=(239,239,239),font = font)
+    draw.text((336,560),user.center(10,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス

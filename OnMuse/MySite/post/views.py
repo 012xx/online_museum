@@ -23,8 +23,10 @@ def open(request):
             for image in portfolio_images:
                 if first:
                     choice = request.POST["flyer"]
+                    back_color = request.POST["back_color"]
+                    character_color = request.POST["character_color"]
                     post = Post.objects.filter(id = str(post_id)).first()
-                    name = flyer(int(choice),image,post.title,post.author)
+                    name = flyer(int(choice),back_color,character_color,image,post.title,post.author)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
                 image_instance = Image(
