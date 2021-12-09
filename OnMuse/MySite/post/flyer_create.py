@@ -206,12 +206,13 @@ def flyer4(image,back_color,character_color,title,user):
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
-    origin = Image.new('RGBA',(500,705),'black') #で同じことが可能
-    circle = Image.new('L',(480,480),0)
+    origin = Image.new('RGBA',(500,705),RGB(back_color)) #で同じことが可能
+    circle = Image.new('L',(500,705),0)
+    base = Image.new('L',(500,705),0)
     new = Image.new("RGBA",(500,705),0)
     new.paste(logo,(350,610))
     draw = ImageDraw.Draw(circle)
-    draw.ellipse((90,60,500-110,560-200),fill = 255)
+    draw.ellipse((90+10,60+20+10,500-110-10,560-200+20-10),fill = 255)
     circle = circle.filter(ImageFilter.GaussianBlur(50))
 
     image = image.convert("L")
@@ -232,7 +233,8 @@ def flyer4(image,back_color,character_color,title,user):
         dif = int((mag * height - HEIGHT) / 2)#はみ出し測定
         image_copy = image_copy.crop((0,dif,WIDTH,HEIGHT + dif))
 
-    origin.paste(image_copy,(10,72),circle)
+    base.paste(image_copy,(0,0))
+    origin.paste(base,(0,0),circle)
     new.paste(logo,(350,610))#貼り付け
     origin = Image.alpha_composite(origin,new)
 
@@ -241,11 +243,11 @@ def flyer4(image,back_color,character_color,title,user):
     #偶数の場合今まで通り10埋め
     font = ImageFont.truetype("msgothic.ttc",50)
     if len_count(title) % 2 == 0:
-        draw.text((0,545),title.center(20 - ZEN_count(title),' '),fill='white',font = font)
+        draw.text((0,545),title.center(20 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     else:
-        draw.text((12,545),title.center(19 - ZEN_count(title),' '),fill='white',font = font)
+        draw.text((12,545),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     font = ImageFont.truetype("msgothic.ttc",30)
-    draw.text((15,650),user.ljust(32,' '),fill='white',font = font)
+    draw.text((15,650),user.ljust(32,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
