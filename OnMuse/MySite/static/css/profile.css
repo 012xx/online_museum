@@ -54,45 +54,13 @@ p.artworks {
   margin: 56px 0 16px 0; /* 上 | 右 | 下 | 左 */
 }
 img.artworks {
-  margin: 32px; /* 上 | 右 | 下 | 左 */
-  width: 250px;
-  height: 300px;
+  margin: 10px; /* 上 | 右 | 下 | 左 */
+  width: 200px;
   object-fit: cover;
   border: 3px solid #f1f1f1;
 }
 img.artworks:hover {
   border: 3px double #f1f1f1;
-}
-.grad-btn::before {
-  content: "続きを読む";
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 48px;
-}
-.grad-item {
-  position: relative;
-  overflow: hidden;
-  height: 400px; /*隠した状態の高さ*/
-}
-.grad-item::before {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  content: "";
-}
-.grad-trigger {
-  display: none; /*チェックボックスは常に非表示*/
-}
-.grad-trigger:checked ~ .grad-btn::before {
-  content: "閉じる"; /*チェックされていたら、文言を変更する*/
-}
-.grad-trigger:checked ~ .grad-item {
-  height: auto; /*チェックされていたら、高さを戻す*/
-}
-.grad-trigger:checked ~ .grad-item::before {
-  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
 }
 
 /*タブここから*/
@@ -102,6 +70,7 @@ img.artworks:hover {
 	flex-wrap: wrap;
 	overflow: hidden;
 	padding: 0 0 20px;
+  margin: 0 auto 15px auto;
 }
 
 .tab-label {
@@ -187,4 +156,59 @@ img.artworks:hover {
 .tab-switch {
 	display: none;
 }
-
+.cp_box *, .cp_box *:before, .cp_box *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.cp_box {
+	position: relative;
+}
+.cp_box label {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	width: 100%;
+	height: 200px; /* グラデーションの高さ */
+	cursor: pointer;
+	text-align: center;
+	/* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+	 background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, #E9F4F1 75%); 
+}
+.cp_box input:checked + label {
+	background: inherit; /* 開いた時にグラデーションを消す */
+}
+.cp_box label:after {
+	line-height: 2.5rem;
+	position: absolute;
+	z-index: 2;
+	bottom: 20px;
+	left: 50%;
+	width: 16rem;
+	font-family: FontAwesome;
+	content: ' 続きをよむ';
+	transform: translate(-50%, 0);
+	letter-spacing: 0.05em;
+	color: #ffffff;
+	border-radius: 20px;
+	background-color: rgba(27, 37, 56, 1);
+}
+.cp_box input {
+	display: none;
+}
+.cp_box .cp_container {
+	overflow: hidden;
+	height: 450px; /* 開く前に見えている部分の高さ */
+	transition: all 0.5s;
+}
+.cp_box input:checked + label {
+	/* display: none ; 閉じるボタンを消す場合解放 */
+}
+.cp_box input:checked + label:after {
+	font-family: FontAwesome;
+	content: ' 閉じる';
+}
+.cp_box input:checked ~ .cp_container {
+	height: auto;
+	padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+	transition: all 0.5s;
+}

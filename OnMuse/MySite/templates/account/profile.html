@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
   <title>OnMuse</title>
 </head>
 
@@ -51,7 +52,21 @@
       <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label"
         for="TAB-01">個展</label>
       <div class="tab-content">
-        <!--個展内容-->
+        <div class="cp_box">
+          <input id="cp01" type="checkbox">
+          <div class="cp_container">
+            <label for="cp01"></label>
+            <div class="grad-item">
+              {% for post in posts %}
+              <a class="other" href="../../post/detail-top/{{ post.id }}">
+                <img class="artworks" src={{ post.flyer.url}} /></a>
+              {% empty %}
+              <a>まだ投稿していません</a>
+              <!-- 取得した他展示  --></a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </div>
       <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">企画展</label>
       <div class="tab-content">
