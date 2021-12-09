@@ -26,7 +26,7 @@
       <ul class="pc-nav-menu">
         <li class="home"><a href="ranking/hot">SEARTH</a></li>
         <li><a href="../post/open">OPEN</a></li>
-        <li><a href="../account/profile">PLOFILE</a></li>
+        <li><a href="../account/profile/{{ request.user }}">PLOFILE</a></li>
       </ul>
     </nav>
     {% if request.user.id != None %}
