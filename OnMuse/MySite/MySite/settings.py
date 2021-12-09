@@ -136,5 +136,5 @@ AUTH_USER_MODEL = 'account.CustomUser'
 ACCOUNT_FORMS   = { "signup":"account.forms.SignupForm"}
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = '../../home/choice'
+LOGIN_REDIRECT_URL = '../../choice'
 LOGOUT_REDIRECT_URL = '../../home'
