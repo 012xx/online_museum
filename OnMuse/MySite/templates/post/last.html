@@ -75,7 +75,7 @@
       {% for image in images %}
       {% if image.username == comment.author %}
       <dl>
-        <dt><img src="{{ image.icon.url }}"></dt>
+        <a href="../../account/profile/{{ image.username }}"><dt><img src="{{ image.icon.url }}"></dt></a>
         <dd class="view-comment">{{ comment.comment | linebreaksbr }}</dd>
       </dl>
       {% endif %}
