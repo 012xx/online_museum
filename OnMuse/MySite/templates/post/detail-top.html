@@ -25,9 +25,9 @@
   <header>
     <nav class="pc-nav">
       <ul class="pc-nav-menu">
-        <li class="home"><a href="ranking/hot">SEARTH</a></li>
-        <li><a href="../post/open">OPEN</a></li>
-        <li><a href="../account/profile">PLOFILE</a></li>
+        <li class="home"><a href="../ranking/hot">SEARTH</a></li>
+        <li><a href="../../post/open">OPEN</a></li>
+        <li><a href="../../account/profile">PLOFILE</a></li>
       </ul>
     </nav>
     {% if request.user.id != None %}
@@ -60,7 +60,7 @@
           {% endfor %}
           <!-- それぞれ配置位置に職人調整掛けてるからifとか使って上手いこと表示させてくれ、ゴリ押しでもいいです -->
         </ul>
-        <span class="by">Presented by<img class="tickrt-icon" src="{{ user.icon.url }}" /></span>
+        <span class="by">Presented by<img class="tickrt-icon" src="{{ account.icon.url }}" /></span>
         <!-- ユーザーではなく投稿者のアイコン -->
       </div>
       <ul>

@@ -111,6 +111,7 @@ def detail_top(request,id):
     post = get_object_or_404(Post,id = str(id))
     views = str(post.views).zfill(6)
     context = {
+        'account' : CustomUser.objects.filter(username = post.author).first(),
         'post': post,
         'views': views,
         'tag': Tag.objects.all(),
