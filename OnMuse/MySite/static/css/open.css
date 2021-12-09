@@ -239,6 +239,7 @@ input[type=radio][value="3"]+label:before{
 }
 input[type=radio][value="4"]+label:before{
   background-image: url(../picture/fly04.png);
+  border: 1px solid #707070;
   margin: 15px;
 }
 input[type=radio][value="5"]+label:before{
