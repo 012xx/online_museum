@@ -57,10 +57,18 @@ img.artworks {
   margin: 10px; /* 上 | 右 | 下 | 左 */
   width: 200px;
   object-fit: cover;
-  border: 3px solid #f1f1f1;
+  border: 3px solid #278c72;
 }
 img.artworks:hover {
-  border: 3px double #f1f1f1;
+  border: 2px double #278c72;
+}
+img.artworks2 {
+  margin: 10px; /* 上 | 右 | 下 | 左 */
+  width: 184px;
+	height: 184px;
+  object-fit: cover;
+  border: 3px solid #278c72;
+	border-radius: 8px;
 }
 
 /*タブここから*/
