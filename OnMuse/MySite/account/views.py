@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from .forms import SignUpForm,ProfileChangeForm
 from .models import CustomUser
 from post.models import Post
+from django.shortcuts import get_object_or_404
 
 
 """ def login(request):
@@ -25,9 +26,10 @@ def signup(request):
     return render(request, 'account/signup.html', {'form': form})
 
 @login_required
-def profile(request):
-    user = request.user
+def profile(request,id):
+    user = get_object_or_404(CustomUser,username = id)
     context = {
+        'user':user,
         'posts': Post.objects.filter(author = user,is_exhibition = False).order_by('-created_at'),
         'exhibitions': Post.objects.filter(author = user,is_exhibition = True).order_by('-created_at'),
     }
