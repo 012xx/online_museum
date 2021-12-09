@@ -253,25 +253,15 @@ input[type=radio]:checked+label::before{
 input[type=radio]{
   display: none;
 } 
-.square {
-	width: 245px;
-	height: 50px;
-	background: #0091EA;
-  margin: 10px auto 20px auto;
-  border: #278c72 solid 3px;
+#outer{
+margin-top:20px;
+padding:10px;
+width:245px;
+background:#278c72;
+color:#ffffff;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+margin: 30px auto;
+border: 3px solid#707070;
 }
-.sample{
-  position:relative
-}
-p.sample-text  {
-  position: absolute;
-  color: white;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
-  font-size: 24px;
-  }
