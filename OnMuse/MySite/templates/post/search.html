@@ -41,15 +41,15 @@
   <div class="container">
     <!--- 以下検索 -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <form method="get" action="#" class="search_container">
-      <input type="text" size="25" placeholder="キーワード検索">
+    <form method="get" action="{% url 'post:search' %}" class="search_container">
+      <input type="text" size="25" name="keyword" placeholder="キーワード検索">
       <input type="submit" value="&#xf002">
     </form>
 
     <div class="masonry">
       {% for post in posts %}
       <div class="item">
-        <a href="detail/{{ post.id }}"><img src={{ post.flyer.url }}></a>
+        <a href="detail-top/{{ post.id }}"><img src={{ post.flyer.url }}></a>
       </div>
       {% endfor %}
     </div>

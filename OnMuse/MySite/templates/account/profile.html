@@ -54,7 +54,7 @@
       <label class="grad-btn" for="trigger1"></label>
       <div class="grad-item">
         {% for post in posts %}
-        <a class="other" href="../post/detail/{{ post.id }}"><img class="artworks" src={{ post.flyer.url }} />
+        <a class="other" href="../post/detail-top/{{ post.id }}"><img class="artworks" src={{ post.flyer.url }} />
           <!-- 取得した他展示  --></a>
         {% endfor %}
       </div>
@@ -65,7 +65,7 @@
       <label class="grad-btn" for="trigger1"></label>
       <div class="grad-item">
         {% for exhibition in exhibitions %}
-        <a class="other" href="../post/detail/{{ exhibition.id }}">
+        <a class="other" href="../post/detail-top/{{ exhibition.id }}">
           <img class="artworks" src={{ exhibition.flyer.url }} />
           <!-- 取得した他展示  --></a>
         {% endfor %}

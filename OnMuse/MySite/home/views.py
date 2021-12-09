@@ -3,8 +3,6 @@ from django.contrib.auth.decorators import login_required
 import datetime
 
 def home(request):
-    print(request.user.id)
-    print(type(request.user))
     user = str(request.user)
     if user != "AnonymousUser":
         return redirect('../account/logout')
