@@ -51,13 +51,15 @@
         <span class="overview">{{ post.content }}</span><!-- 説明 -->
         <span class="tagtop">個展タグ</span>
         <ul class="sortbtn">
-        {% for tag in post.tag.all|slice:"0:5" %}<!--4番目まで表示-->
-          <li class="btn-margin"><span class="btn btn-on0{{ forloop.counter }}">{{ tag.name }}</span></li><!-- 1つのときはこれだけ -->
-        {% empty %}
+          {% for tag in post.tag.all|slice:"0:4" %}
+          <!--4番目まで表示-->
+          <li class="btn-margin"><span class="btn btn-on0{{ forloop.counter }}">{{ tag.name }}</span></li>
+          <!-- 1つのときはこれだけ -->
+          {% empty %}
           <a>タグ付いてないよ</a>
-        {% endfor %}
+          {% endfor %}
           <!-- それぞれ配置位置に職人調整掛けてるからifとか使って上手いこと表示させてくれ、ゴリ押しでもいいです -->
-          </ul>
+        </ul>
         <span class="by">Presented by<img class="tickrt-icon" src="{{ user.icon.url }}" /></span>
         <!-- ユーザーではなく投稿者のアイコン -->
       </div>
@@ -101,8 +103,7 @@
         <li></li>
       </ul>
       <div class="title">{{ post.title }}</div>
-      <button>
-        <a href="detail/{{ post.id }}"></a>
+      <button onclick="location.href='../detail/{{ post.id }}'">
       </button>
     </div>
     <!-- footer -->
