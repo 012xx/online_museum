@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=1.11.3'></script>
   <title>OnMuse</title>
 </head>
 
@@ -78,16 +79,18 @@
           </label>
         </div>
 
-        <p class="workstag">作品タグ</p>
+        <p class="workstag">作品タグ（4つまで表示されます）</p>
         <div class="tag-space">
           {% for tag in tags %}
-          <label class="tag"><input type="checkbox" value={{tag.id}} name="tag"><span>{{ tag.name }}</span></label>
+          <label class="tag"><input type="checkbox" value={{tag.id}} name="tag" onclick="click_cb();">
+            <span>{{tag.name}}</span>
+          </label>
           {% endfor %}
         </div>
         <p>フライヤー選択</p>
         <div class="tag-space">
           <input id="radio1" class="radiobutton" type="radio" name="flyer" value="1" checked="checked"><label
-            for="radio1" class="flyer-number">1</label>
+            for=" radio1" class="flyer-number">1</label>
           <input id="radio2" class="radiobutton" type="radio" name="flyer" value="2"><label for="radio2"
             class="flyer-number">2</label>
           <input id="radio3" class="radiobutton" type="radio" name="flyer" value="3"><label for="radio3"
