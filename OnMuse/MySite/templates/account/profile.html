@@ -47,31 +47,19 @@
     <div class="profile-text">
       {{ user.introduction | linebreaksbr }}
     </div>
-    <!-- 展示作品 -->
-    <p class="artworks">この作者の個展</p>
-    <div class="grad-wrap">
-      <input id="trigger1" class="grad-trigger" type="checkbox" />
-      <label class="grad-btn" for="trigger1"></label>
-      <div class="grad-item">
-        {% for post in posts %}
-          <a class="other" href="../../post/detail-top/{{ post.id }}"><img class="artworks" src={{ post.flyer.url }} />
-        {% empty %}
-          <a>まだ投稿していません</a>
-          <!-- 取得した他展示  --></a>
-        {% endfor %}
+    <div class="tab-wrap">
+      <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label"
+        for="TAB-01">個展</label>
+      <div class="tab-content">
+        <!--個展内容-->
       </div>
-    </div>
-    <p class="artworks">この作者の参加した企画展</p>
-    <div class="grad-wrap">
-      <input id="trigger1" class="grad-trigger" type="checkbox" />
-      <label class="grad-btn" for="trigger1"></label>
-      <div class="grad-item">
-        {% for exhibition in exhibitions %}
-          <a class="other" href="../../post/detail-top/{{ exhibition.id }}"><img class="artworks" src={{ exhibition.flyer.url }} />
-        {% empty %}
-          <a>まだ投稿していません</a>
-          <!-- 取得した他展示  -->
-        {% endfor %}
+      <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">企画展</label>
+      <div class="tab-content">
+        <!--企画展-->
+      </div>
+      <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">いいね</label>
+      <div class="tab-content">
+        <!--いいね欄内容-->
       </div>
     </div>
   </div>
