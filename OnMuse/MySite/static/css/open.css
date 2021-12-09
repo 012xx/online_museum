@@ -218,3 +218,24 @@ label.flyer-number {
   color: #ffffff;
   background: #278c72;
 }
+input[type=radio]+label:before{
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  width: 140px;
+  height: 140px;
+}
+input[type=radio][value="small"]+label:before{
+  background-image: url(./img/small.png);
+}
+input[type=radio][value="medium"]+label:before{
+  background-image: url(./img/medium.png);
+}
+input[type=radio][value="large"]+label:before{
+  background-image: url(./img/large.png);
+}
+input[type=radio][value="small"]+label:before{
+  background-image: url(./img/small.png);
+}
+input[type=radio][value="medium"]+label:before{
+  background-image: url(./img/medium.png);
