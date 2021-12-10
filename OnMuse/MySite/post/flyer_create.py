@@ -91,7 +91,7 @@ def flyer1(image,back_color,character_color,title,user):
     origin.save(name,quality = 95)#保存先のパス
     print("保存成功")
 
-    return name[6:]
+    return name[28:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)
