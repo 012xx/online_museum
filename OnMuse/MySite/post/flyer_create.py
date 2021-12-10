@@ -78,8 +78,8 @@ def flyer1(image,back_color,character_color,title,user):
         draw.text((50,570),title[5:10],fill=RGB(character_color),font = font)
     font = ImageFont.truetype("NotoSansCJK-Bold.ttc",24)
     time = datetime.datetime.now()
-    draw.text((32,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
-    draw.text((20,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
+    draw.text((32*5,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
+    draw.text((200,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
     name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
