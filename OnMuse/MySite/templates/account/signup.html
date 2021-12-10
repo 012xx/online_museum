@@ -23,15 +23,15 @@
 
       <!-- <p>{{ form.errors }}</p> -->
       <input class="Name" type="text" name="last_name" placeholder="Full Name" required maxlength="10" autofocus />
-      {{ form.last_name.errors }}
+      <p>{{ form.last_name.errors.0 }}</p>
       <input class="ID" type="text" name="username" placeholder="username" required autofocus />
-      {{ form.username.errors }}
+      <p>{{ form.username.errors.0 }}</p>
       <input class="mail" type="email" name="email" placeholder="Email Address" required />
-      {{ form.email.errors }}
+      <p>{{ form.email.errors.0 }}</p>
       <input class="pass1" type="password" name="password1" placeholder="Choose Password" required />
-      {{ form.password1.errors }}
+      <p>{{ form.password1.errors.0 }}</p>
       <input class="pass2" type="password" name="password2" placeholder="Retype Password" required />
-      {{ form.password2.errors }}
+      <p>{{ form.password2.errors.0 }}</p>
       <button type="submit" class="submit" align="center">SIGN UP</button><br>
       <a href="login">アカウントをお持ちの方はこちら</a>
       <!-- <a class="submit"><input type="submit" value="SIGN UP" align="center"/></a> -->

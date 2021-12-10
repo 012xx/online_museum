@@ -22,7 +22,8 @@ def signup(request):
             #username = form.cleaned_data.get('username')
             #raw_password = form.cleaned_data.get('password1')
             return redirect('login')
-    form = SignUpForm()
+    else:
+        form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
 
 @login_required
