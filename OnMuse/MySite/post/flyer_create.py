@@ -78,8 +78,8 @@ def flyer1(image,back_color,character_color,title,user):
         draw.text((50,570),title[5:10],fill=RGB(character_color),font = font)
     font = ImageFont.truetype("NotoSansCJK-Bold.ttc",24)
     time = datetime.datetime.now()
-    draw.text((0,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
-    draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
+    draw.text((32,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
+    draw.text((20,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
     name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
@@ -188,8 +188,8 @@ def flyer3(image,back_color,character_color,title,user):
         draw.text((12,540),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     time = datetime.datetime.now()
-    draw.text((190,620),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
-    draw.text((0,660),user.ljust(32,' '),fill=RGB(character_color),font = font)
+    draw.text((10,620),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
+    draw.text((10,660),user.ljust(10,' '),fill=RGB(character_color),font = font)
 
     name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス

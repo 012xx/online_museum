@@ -80,7 +80,7 @@
                 <img class="artworks2" src={{ exhibition.flyer.url }} />
               </a>
               {% empty %}
-              <a>まだ投稿していません</a>
+              <a>まだ投稿をしていません</a>
               <!-- 取得した他展示  --></a>
               {% endfor %}
             </div>
@@ -91,10 +91,10 @@
       <div class="tab-content">
         {% for like in likes %}
               <a class="other" href="../../post/detail-top/{{ like.id }}">
-                <img class="artworks2" src={{ like.flyer.url }} />
+                <img class="artworks" src={{ like.flyer.url }} />
               </a>
               {% empty %}
-              <a>まだいいねしていません</a>
+              <a>まだいいねをしていません</a>
               <!-- 取得した他展示  --></a>
               {% endfor %}
         <!--いいね欄内容-->
