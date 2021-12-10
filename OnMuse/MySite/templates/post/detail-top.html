@@ -48,7 +48,7 @@
         <div class="pic">
         </div>
         <span class="title">{{ post.title }}</span><!-- 題名 -->
-        <span class="overview">{{ content1 }}<p>{{ content2 }}</p></span><!-- 説明 -->
+        <span class="overview">{{ content1 }}<div class="overview2">{{ content2 }}</div></span><!-- 説明 -->
         <span class="tagtop">個展タグ</span>
         <ul class="sortbtn">
           {% for tag in post.tag.all|slice:"0:4" %}
@@ -60,7 +60,8 @@
           {% endfor %}
           <!-- それぞれ配置位置に職人調整掛けてるからifとか使って上手いこと表示させてくれ、ゴリ押しでもいいです -->
         </ul>
-        <a  href="../../account/profile/{{ account.username }}"><span class="by" >Presented by<img class="tickrt-icon" src="{{ account.icon.url }}"/></span></a>
+        <a href="../../account/profile/{{ account.username }}"><span class="by">Presented by<img class="tickrt-icon"
+              src="{{ account.icon.url }}" /></span></a>
         <!-- ユーザーではなく投稿者のアイコン -->
       </div>
       <ul>
