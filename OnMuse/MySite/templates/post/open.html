@@ -46,7 +46,7 @@
       <input readonly type="hidden" name="author" value={{ user.username }}>
       <div class="title">
         <label class="ef">
-          <input type="text" name="title" placeholder="展示タイトル" required>
+          <input type="text" name="title" placeholder="展示タイトル(最大10文字)" required>
         </label>
       </div>
       <!-- 展示画像をアップロード -->
@@ -74,7 +74,7 @@
         <!-- 展示説明を入力 -->
         <div class="explanation">
           <label class="el">
-            <textarea name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示の説明を入力してください"
+            <textarea name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示説明を入力(最大44文字)"
               required></textarea>
           </label>
         </div>
