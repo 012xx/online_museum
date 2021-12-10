@@ -86,9 +86,10 @@ def flyer1(image,back_color,character_color,title,user):
 
     name = "media/flyers/{}.png".format(str(uuid.uuid4()))
     print("今から保存")
+    print(name)
+    print(name[6:])
     origin.save(name,quality = 95)#保存先のパス
     print("保存成功")
-    print(name[6:])
 
     return name[6:]
 
