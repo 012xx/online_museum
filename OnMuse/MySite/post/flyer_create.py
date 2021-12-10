@@ -84,7 +84,7 @@ def flyer1(image,back_color,character_color,title,user):
     draw.text((0,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
     draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
-    name = "media/flyers/{}.png".format(str(uuid.uuid4()))
+    name = "media\flyers\{}.png".format(str(uuid.uuid4()))
     print("今から保存")
     print(name)
     print(name[6:])
