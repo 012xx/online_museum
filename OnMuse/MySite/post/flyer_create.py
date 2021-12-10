@@ -75,11 +75,11 @@ def flyer1(image,back_color,character_color,title,user):
     draw.line(((145,0),(500-2,0),(500-2,480)),fill=(0,0,255),width=1)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",50)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",50)
     draw.text((50,520),title[:5],fill=RGB(character_color),font = font)
     if len(title) > 5:
         draw.text((50,570),title[5:10],fill=RGB(character_color),font = font)
-    font = ImageFont.truetype("msgothic.ttc",24)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",24)
     time = datetime.datetime.now()
     draw.text((0,510),(str(time)[:10] + "～" ).rjust(39,' '),fill='black',font = font)
     draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
@@ -131,13 +131,13 @@ def flyer2(image,back_color,character_color,title,user):
     draw.line(((22-3,161-3),(477,161-3),(477,566+1)),fill=(255,255,255),width=3)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",50)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",50)
     #draw.text((100,615),user.center(20,' '),fill=(255,255,255),font = font)
     if len_count(title) % 2 == 0:
         draw.text((0,60),title.center(20 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     else:
         draw.text((12,60),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
-    font = ImageFont.truetype("msgothic.ttc",30)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     time = datetime.datetime.now()
     draw.text((20,600),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
     draw.text((20,640),user.ljust(20,' '),fill=RGB(character_color),font = font)
@@ -187,12 +187,12 @@ def flyer3(image,back_color,character_color,title,user):
     draw = ImageDraw.Draw(origin)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",50)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",50)
     if len_count(title) % 2 == 0:
         draw.text((0,540),title.center(20 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
     else:
         draw.text((12,540),title.center(19 - ZEN_count(title),' '),fill=RGB(character_color),font = font)
-    font = ImageFont.truetype("msgothic.ttc",30)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     time = datetime.datetime.now()
     draw.text((10,620),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
     draw.text((10,660),user.ljust(10,' '),fill=RGB(character_color),font = font)
@@ -245,12 +245,12 @@ def flyer4(image,back_color,character_color,title,user):
     draw = ImageDraw.Draw(origin)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",50)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",50)
     if len_count(title) % 2 == 0:
         draw.text((0,545),title.center(20 - ZEN_count(title),' '),fill='white',font = font)
     else:
         draw.text((12,545),title.center(19 - ZEN_count(title),' '),fill='white',font = font)
-    font = ImageFont.truetype("msgothic.ttc",30)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     draw.text((15,650),user.ljust(32,' '),fill='white',font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
@@ -298,7 +298,7 @@ def flyer5(image,back_color,character_color,title,user):
     draw.line(((322,0),(322,718)),fill=(0,0,255),width=1)
     #もしタイトルが奇数だったら9埋めにしてずらす
     #偶数の場合今まで通り10埋め
-    font = ImageFont.truetype("msgothic.ttc",45)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",45)
     
     if len_count(title) % 2 == 0:
         title = title.center(10,' ')
@@ -309,7 +309,7 @@ def flyer5(image,back_color,character_color,title,user):
         for i in range(9):
             draw.text((381,i * 50 + 30),title[i],fill=RGB(character_color),font = font)
 
-    font = ImageFont.truetype("msgothic.ttc",30)
+    font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     draw.text((336,560),user.center(10,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
