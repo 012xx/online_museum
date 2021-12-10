@@ -114,10 +114,14 @@ def detail(request,id):
 @login_required
 def detail_top(request,id):
     post = get_object_or_404(Post,id = str(id))
+    content1 = post.content[:22]
+    content2 = post.content[22:]
     views = str(post.views).zfill(6)
     context = {
         'account' : CustomUser.objects.filter(username = post.author).first(),
         'post': post,
+        'content1':content1,
+        'content2':content2,
         'views': views,
         'tag': Tag.objects.all(),
     }

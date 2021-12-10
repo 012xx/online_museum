@@ -48,7 +48,7 @@
         <div class="pic">
         </div>
         <span class="title">{{ post.title }}</span><!-- 題名 -->
-        <span class="overview">{{ post.content }}</span><!-- 説明 -->
+        <span class="overview">{{ content1 }}<p>{{ content2 }}</p></span><!-- 説明 -->
         <span class="tagtop">個展タグ</span>
         <ul class="sortbtn">
           {% for tag in post.tag.all|slice:"0:4" %}
