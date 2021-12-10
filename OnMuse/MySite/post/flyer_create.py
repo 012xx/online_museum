@@ -3,6 +3,7 @@ import uuid,unicodedata,datetime
 
 def flyer(num,back_color,character_color,image,title,user):
     if num == 1:
+        print("フライヤー1だよ")
         return flyer1(image,back_color,character_color,title,user)
     elif num == 2:
         return flyer2(image,back_color,character_color,title,user)
@@ -36,9 +37,11 @@ def RGB(color):
     return R, G, B
 
 def flyer1(image,back_color,character_color,title,user):
+    print("open前")
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
+    print("openしたよ")
     #origin = Image.open('origin.png')#static画像
     origin = Image.new('RGBA',(500,718),RGB(back_color))
     new = Image.new('RGBA',(500,718),RGB(back_color))
@@ -82,7 +85,10 @@ def flyer1(image,back_color,character_color,title,user):
     draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
     name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
+    print("今から保存")
     origin.save(name,quality = 95)#保存先のパス
+    print("保存成功")
+    print(name[7:])
 
     return name[7:]
 

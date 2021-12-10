@@ -16,8 +16,6 @@ import re
 def open(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
-        print(form)
-        print(form.is_valid())
         if form.is_valid():
             post_id = form.save()
             portfolio_images = request.FILES.getlist('image', False)
@@ -28,6 +26,7 @@ def open(request):
                     back_color = request.POST["back_color"]
                     character_color = request.POST["character_color"]
                     post = Post.objects.filter(id = str(post_id)).first()
+                    print(post)
                     name = flyer(int(choice),back_color,character_color,image,post.title,post.author)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
@@ -53,7 +52,7 @@ def join(request,id):
         form = ExhibitionCreateForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('post:ranking/new')
+            return redirect('post:detail',id = id)
     #GETの時
     context = {
         'user':request.user,
