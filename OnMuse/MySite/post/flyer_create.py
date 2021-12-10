@@ -1,5 +1,6 @@
 from PIL import Image,ImageDraw,ImageFont,ImageFilter
 import uuid,unicodedata,datetime
+import  os
 
 def flyer(num,back_color,character_color,image,title,user):
     if num == 1:
@@ -88,7 +89,11 @@ def flyer1(image,back_color,character_color,title,user):
     print("今から保存")
     print(name)
     print(name[6:])
-    origin.save(name[6:],quality = 95)#保存先のパス
+    print(os.getcwd())
+    try:
+        origin.save(name[6:],quality = 95)#保存先のパス
+    except Exception as e:
+        print(str(type(e)),str(e.args),str(e.message),str(e))
     print("保存成功")
 
     return name[6:]
