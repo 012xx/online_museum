@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm,ProfileChangeForm
 from .models import CustomUser
-from post.models import Post
+from post.models import Post,Like
 from django.shortcuts import get_object_or_404
 
 
@@ -19,9 +19,11 @@ def signup(request):
         print(form)
         if form.is_valid():
             form.save()
-            #username = form.cleaned_data.get('username')
-            #raw_password = form.cleaned_data.get('password1')
-            return redirect('login')
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username = username,password = raw_password)
+            login(request,user)
+            return redirect('../post/ranking/new')
     else:
         form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
@@ -29,8 +31,18 @@ def signup(request):
 @login_required
 def profile(request,id):
     user = get_object_or_404(CustomUser,username = id)
+    likes = Like.objects.filter(author = id).order_by('created_at')#likes.postidでpostが分かる
+    #likes = list(likes.values())
+    print(type(likes))
+    like_list = []
+    for like in likes:
+        like_list.append(like.postid)
+    print(like_list)
+    likes = Post.objects.filter(id__in = like_list)
+    print(likes)
     context = {
         'user':user,
+        'likes':likes,
         'posts': Post.objects.filter(author = user,is_exhibition = False).order_by('-created_at'),
         'exhibitions': Post.objects.filter(author = user,is_exhibition = True).order_by('-created_at'),
     }

@@ -71,13 +71,13 @@ def ranking(request,id):
         posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
         new = "btn btn-on"
     elif id == "hot":
-        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        posts = Post.objects.filter(is_exhibition = False).order_by('-like')
         hot = "btn btn-on"
     elif id == "week":
-        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        posts = Post.objects.filter(is_exhibition = False).order_by('-like')
         week = "btn btn-on"
     else:
-        posts = Post.objects.filter(is_exhibition = False).order_by('-created_at')
+        posts = Post.objects.filter(is_exhibition = False).order_by('-like')
         month = "btn btn-on"
     context = {
         'new':new,
