@@ -3,7 +3,6 @@ import uuid,unicodedata,datetime
 
 def flyer(num,back_color,character_color,image,title,user):
     if num == 1:
-        print("フライヤー1だよ")
         return flyer1(image,back_color,character_color,title,user)
     elif num == 2:
         return flyer2(image,back_color,character_color,title,user)
@@ -37,11 +36,9 @@ def RGB(color):
     return R, G, B
 
 def flyer1(image,back_color,character_color,title,user):
-    print("open前")
     #ユーザ名10文字、タイトル10文字
     image = Image.open(image)#ユーザの画像
     logo = Image.open('static/picture/logo.png')
-    print("openしたよ")
     #origin = Image.open('origin.png')#static画像
     origin = Image.new('RGBA',(500,718),RGB(back_color))
     new = Image.new('RGBA',(500,718),RGB(back_color))
@@ -85,11 +82,7 @@ def flyer1(image,back_color,character_color,title,user):
     draw.text((0,560),user.rjust(40,' '),fill=RGB(character_color),font = font)
 
     name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
-    print("今から保存")
-    print(name)
-    print(name[28:])
     origin.save(name,quality = 95)#保存先のパス
-    print("保存成功")
 
     return name[28:]
 
@@ -143,10 +136,10 @@ def flyer2(image,back_color,character_color,title,user):
     draw.text((20,600),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
     draw.text((20,640),user.ljust(20,' '),fill=RGB(character_color),font = font)
 
-    name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
+    name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
 
-    return name[7:]
+    return name[28:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)
@@ -198,10 +191,10 @@ def flyer3(image,back_color,character_color,title,user):
     draw.text((10,620),str(time)[:10] + "～" ,fill=RGB(character_color),font = font)
     draw.text((10,660),user.ljust(10,' '),fill=RGB(character_color),font = font)
 
-    name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
+    name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
 
-    return name[7:]
+    return name[28:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)
@@ -254,10 +247,10 @@ def flyer4(image,back_color,character_color,title,user):
     font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     draw.text((15,650),user.ljust(32,' '),fill='white',font = font)
 
-    name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
+    name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
 
-    return name[7:]
+    return name[28:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)
@@ -313,10 +306,10 @@ def flyer5(image,back_color,character_color,title,user):
     font = ImageFont.truetype("NotoSansCJK-Bold.ttc",30)
     draw.text((336,560),user.center(10,' '),fill=RGB(character_color),font = font)
 
-    name = "medias/flyers/{}.png".format(str(uuid.uuid4()))
+    name = "/usr/share/nginx/html/media/flyers/{}.png".format(str(uuid.uuid4()))
     origin.save(name,quality = 95)#保存先のパス
 
-    return name[7:]
+    return name[28:]
 
     #staticから705 * 500の画像を複製
     #開いた画像の短辺を基準にリサイズ(おそらくはみ出す)
