@@ -16,6 +16,8 @@ import re
 def open(request):
     if request.method == "POST":
         form = PostCreateForm(request.POST)
+        print(form)
+        print(form.is_valid())
         if form.is_valid():
             post_id = form.save()
             portfolio_images = request.FILES.getlist('image', False)
@@ -36,7 +38,10 @@ def open(request):
                 image_instance.save()
             return redirect('ranking/new')
     #GETの時
+    else:
+        form = PostCreateForm()
     context = {
+        'form':form,
         'user':request.user,
         "tags":Tag.objects.all(),
     }

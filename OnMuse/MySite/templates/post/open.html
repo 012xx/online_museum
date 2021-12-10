@@ -47,6 +47,9 @@
       <div class="title">
         <label class="ef">
           <input type="text" name="title" placeholder="展示タイトル(最大10文字)" required>
+          {% if form.errors.title %}
+            {{ form.errors.title.0 }}
+          {% endif %}
         </label>
       </div>
       <!-- 展示画像をアップロード -->
@@ -63,6 +66,9 @@
             <!--id fileInput -->
             <input type="file" name="image" id="uploadFile" accept="image/png,image/jpeg,image/jpg,image/gif"
               multiple="multiple" required>
+              {% if form.errors.image %}
+                {{ form.errors.image.0 }}
+              {% endif %}
 
             </p>
             <div id="btnInputFile"><span>ファイルを選択する</span></div>
@@ -74,8 +80,10 @@
         <!-- 展示説明を入力 -->
         <div class="explanation">
           <label class="el">
-            <textarea name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示説明を入力(最大44文字)"
-              required></textarea>
+            <textarea name="content" rows="2" cols="10" wrap="hard" maxlength="200" placeholder="簡単に展示の説明を入力してください(最大44文字)"></textarea>
+              {% if form.errors.content %}
+                {{ form.errors.content.0 }}
+              {% endif %}
           </label>
         </div>
 
@@ -89,7 +97,7 @@
         </div>
         <p>フライヤー選択（青の部分に画像が入ります）</p>
         <div class="tag-space">
-          <input id="radio1" class="radiobutton" type="radio" name="flyer" value="1"><label for="radio1"
+          <input id="radio1" class="radiobutton" type="radio" name="flyer" value="1" checked="checked"><label for="radio1"
             class="flyer-number"></label>
           <input id="radio2" class="radiobutton" type="radio" name="flyer" value="2"><label for="radio2"
             class="flyer-number"></label>

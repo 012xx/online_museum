@@ -16,8 +16,8 @@ class Tag(models.Model):
 
 class Post(models.Model):
     author = models.CharField(verbose_name='作者',max_length=100,null=False,default="admin")
-    title = models.CharField(verbose_name='タイトル',max_length=20,blank=False,null=False)
-    content = models.TextField(verbose_name='本文',max_length=140,blank=False,null=False)
+    title = models.CharField(verbose_name='タイトル',max_length=10,blank=False,null=False)
+    content = models.CharField(verbose_name='本文',max_length=44,blank=False,null=False)
     tag = models.ManyToManyField(Tag, verbose_name='タグ',blank=True)#Tagモデルと紐づけ
     relation = models.ManyToManyField('self', verbose_name='関連', blank=True)#Postモデルと紐づけ
     created_at = models.DateTimeField(verbose_name='投稿時間',auto_now_add=True,null=False)
