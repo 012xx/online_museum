@@ -88,7 +88,7 @@ def flyer1(image,back_color,character_color,title,user):
     print("今から保存")
     print(name)
     print(name[6:])
-    origin.save(name,quality = 95)#保存先のパス
+    origin.save(name[6:],quality = 95)#保存先のパス
     print("保存成功")
 
     return name[6:]
