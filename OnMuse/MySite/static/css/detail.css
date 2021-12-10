@@ -15,14 +15,14 @@
 .heart-icon {
   position: fixed;
   bottom: 10px;
-  right: 30px;
+  right: 80px;
 }
 
 .comment-icon{
   font-size: 3.1em;
   position: fixed;
   bottom: 5px;
-  right: 100px;
+  right: 150px;
   margin: 10px;
 }
 .comment-color{
@@ -30,4 +30,21 @@
 }
 .fa-comments:hover{
  color:#e0245e;
+}
+.exit-icon{
+  font-size: 3.2em;
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+}
+.exit-icon{
+  color: #5f7083;
+}
+.fa-door-open:before {
+    content: "\f52b";
+    color: #5f7083;
+}
+
+.fa-door-open:hover{
+  color:#e0245e;
 }

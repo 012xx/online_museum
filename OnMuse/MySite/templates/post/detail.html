@@ -26,17 +26,16 @@
         <div class="frame">
           <img src={{ image.image.url }}>
         </div>
-        <div class="frame">
-          <a href="../post/ranking/hot"><img src="../../static/picture/exit-icon-4621.png"></a>
-        </div>
-      </li>
-      {% endfor %}
+        {% endfor %}
     </ul>
 
+    <div class="exit-icon">
+      <a href="../post/ranking"><i class="fas fa-door-open"></i></a>
+      <!-- ここにランキングリンク繋いで、、、 -->
+    </div>
     <div id="like" class="heart-icon">
       {% include 'post/like.html' %}
     </div>
-    <!-- TODO: cssあてる -->
     <div class="comment-icon">
       <a href="../last/{{ post.id }}"><i class="fas fa-comments comment-color"></i></a>
     </div>
