@@ -18,6 +18,7 @@ from django.urls import path,include
 from django.views.generic import base
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +26,9 @@ urlpatterns = [
     path('', include('home.urls')),
     path('account/', include('account.urls')),
     path('account/', include('django.contrib.auth.urls')),
+    path('accounts/password_reset_form/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html', from_email='www.onmuse.ml@gmail.com'), name='password_reset'),
+    path('accounts/password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_mail_done.html'), name='password_reset_done'),
+    path('accounts/password_reset///', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirmations.html'), name='password_reset_confirm'),
+    path('accounts/password_reset_finish/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_finish.html'), name='password_reset_complete'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

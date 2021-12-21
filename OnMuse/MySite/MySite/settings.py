@@ -6,7 +6,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from password import *
 from pathlib import Path
 import os
 
@@ -138,3 +138,10 @@ ACCOUNT_FORMS   = { "signup":"account.forms.SignupForm"}
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '../../choice'
 LOGOUT_REDIRECT_URL = '../../home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = MAIL
+EMAIL_HOST_PASSWORD = PASSWORD
+EMAIL_USE_TLS = True

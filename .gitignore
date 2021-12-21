@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 #OnMuse/MySite/db.sqlite3/
 #OnMuse/MySite/medias/
-
+password.py
 # C extensions
 *.so
 
