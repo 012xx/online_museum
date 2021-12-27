@@ -168,3 +168,33 @@ p.userunlock{
   left: 400;
   border-radius: 5px;
 }
+.btn--save,
+a.btn--save{
+  color: #658194;
+  background-color:#fff;
+  border: 2px solid #fff;
+  margin: 5px;
+  justify-content: center;
+  margin: 10px 105px;
+  width: 90px;
+  position: absolute;
+  top:160;
+  left: 520;
+}
+.btn--save:hover,
+a.btn--save:hover {
+  color: #fff;
+  background: #16afaf;
+  width: 90px;
+}
+footer {
+  width: 100%;
+  height: 88px;
+  background-color: var(--observatory);
+  color: var(--aqua-squeeze);
+  padding-right: 120px;
+  font-size: 16px;
+  padding: 30px 0;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+}
