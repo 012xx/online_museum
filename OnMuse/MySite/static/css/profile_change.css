@@ -6,6 +6,7 @@
  background-color: #278c72;
  border-radius: 25px;
  margin: 4vw 70vw 4vw 3.6vw;
+ height: 550px;
 }
 img.icon{
   height: 180px;
@@ -24,12 +25,13 @@ p.username{
 a.btn--pro,
 .btn--art,
 a.btn--art{
-  color: #fff;
-  background-color:#658194;
+  color: #658194;
+  background-color:#fff;
   border: 2px solid #fff;
   margin: 5px;
-  align-items: center;
-  font-weight: 500;
+  width: 188px;
+  justify-content: center;
+  margin: 10px 105px;
 }
 .btn--pro:hover,
 a.btn--pro:hover 
