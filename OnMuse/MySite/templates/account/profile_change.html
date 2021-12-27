@@ -2,6 +2,7 @@
 {% block link %}
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile_change.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -36,7 +37,14 @@
         {% endif %}
     </header>
     <div class="container">
-
+        <div class="side">
+            <p class="username">{{ user.username }}</p>
+            <img class="icon" src="{{ user.icon.url }}" />
+            <a href="#" class="btn btn--pro btn--radius">プロフィールを編集する</a>
+            <br>
+            <a href="#" class="btn btn--art btn--radius">展示会を見る</a>
+        </div>
+        <div class="item"></div>
     </div>
     <!-- footer -->
     <footer>
