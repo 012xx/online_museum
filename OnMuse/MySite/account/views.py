@@ -5,6 +5,7 @@ from .forms import SignUpForm,ProfileChangeForm
 from .models import CustomUser
 from post.models import Post,Like
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 
 
 """ def login(request):
@@ -23,6 +24,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username = username,password = raw_password)
             login(request,user)
+            messages.add_message(request, messages.SUCCESS, "アカウント作成完了")
             return redirect('../post/ranking/new')
     else:
         form = SignUpForm()
@@ -55,6 +57,7 @@ def profile_change(request):
         form = ProfileChangeForm(request.POST,request.FILES,instance = account)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "変更完了")
             return redirect('account:profile')
     context = {
         'account':account,

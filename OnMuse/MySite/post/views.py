@@ -11,6 +11,7 @@ from functools import reduce
 from operator import and_
 from .flyer_create import flyer
 import re
+from django.contrib import messages
 
 @login_required
 def open(request):
@@ -35,6 +36,7 @@ def open(request):
                     post = post_id
                 )
                 image_instance.save()
+            messages.add_message(request, messages.SUCCESS, "投稿完了")
             return redirect('ranking/new')
     #GETの時
     else:
@@ -52,6 +54,7 @@ def join(request,id):
         form = ExhibitionCreateForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "投稿完了")
             return redirect('post:detail',id = id)
     #GETの時
     context = {
