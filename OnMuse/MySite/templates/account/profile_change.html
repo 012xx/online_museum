@@ -47,17 +47,25 @@
         <div class="main">
             <p class="icon">アイコン画像</p>
             <img src="{{ account.icon.url }}" class="change-icon">
+            <a href="#" class="btn btn--sansyo btn--radius">参照</a>
             <p class="userid">ユーザID</p>
+            <div class="useruntext">
+                <p class="userunlock">{{ user.username }}</p>
+            </div>
             <p class="username02">ユーザ名</p>
+            <div class="usernametext"></div>
             <p class="mail">メールアドレス</p>
+            <div class="usermailtext"></div>
+            <p class="bio">自己紹介</p>
+            <div class="userbiotext"></div>
         </div>
     </div>
     <!-- footer -->
-    <!-- <footer>
+    <footer>
         <ul class="footer-menu">
             <p class="footer-text">© 2021 こらえる</p>
         </ul>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

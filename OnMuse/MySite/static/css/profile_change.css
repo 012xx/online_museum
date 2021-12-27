@@ -60,31 +60,39 @@ p.icon{
   font-weight: 500;
   position: absolute;
   top:60;
-  left: 120px;
+  left: 170px;
 }
 p.userid{
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   position: absolute;
-  top:60;
-  left: 120px;
+  top:235;
+  left: 170px;
 }
 p.username02{
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   position: absolute;
-  top:60;
-  left: 120px;
+  top:290;
+  left: 170px;
 }
 p.mail{
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   position: absolute;
-  top:60;
-  left: 120px;
+  top:345;
+  left: 170px;
+}
+p.bio{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  top:400;
+  left: 170px;
 }
 img.change-icon{
   color: #fff;
@@ -93,6 +101,70 @@ img.change-icon{
   left: 120px;
   border-radius: 50%;
   border: 3.5px solid #fff;
-  height: 160px;
-  width: 160px;
+  height: 140px;
+  width: 140px;
+  position: absolute;
+  top:60;
+  left: 480px;
+}
+.btn--sansyo,
+a.btn--sansyo{
+  color: #658194;
+  background-color:#fff;
+  border: 2px solid #fff;
+  margin: 5px;
+  justify-content: center;
+  margin: 10px 105px;
+  width: 90px;
+  position: absolute;
+  top:160;
+  left: 520;
+}
+.btn--sansyo:hover,
+a.btn--sansyo:hover {
+  color: #fff;
+  background: #16afaf;
+  width: 90px;
+}
+.useruntext{
+  background-color: #fff;
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top:235;
+  left: 400;
+  border-radius: 5px;
+}
+p.userunlock{
+  color: #658194;
+  text-align: center;
+  font-size: 18px;
+  font-family: 500;
+}
+.usernametext{
+  background-color: #fff;
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top:290;
+  left: 400;
+  border-radius: 5px;
+}
+.usermailtext{
+  background-color: #fff;
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top:345;
+  left: 400;
+  border-radius: 5px;
+}
+.userbiotext{
+  background-color: #fff;
+  width: 350px;
+  height: 60px;
+  position: absolute;
+  top:400;
+  left: 400;
+  border-radius: 5px;
 }
