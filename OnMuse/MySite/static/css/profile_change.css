@@ -176,16 +176,16 @@ a.btn--save{
   margin: 5px;
   justify-content: center;
   margin: 10px 105px;
-  width: 90px;
+  width: 120px;
   position: absolute;
-  top:160;
+  top:475;
   left: 520;
 }
 .btn--save:hover,
 a.btn--save:hover {
   color: #fff;
   background: #16afaf;
-  width: 90px;
+  width: 120px;
 }
 footer {
   width: 100%;
