@@ -2,6 +2,7 @@
 {% block link %}
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/grobal.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile_change.css' %}" />
 {% endblock %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -36,36 +37,27 @@
         {% endif %}
     </header>
     <div class="container">
-        <form method="post" enctype="multipart/form-data">
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <p class="user-name">{{account.username}}</p>
-                <br>現在の名前</br>
-                <input type="text" name="last_name" value={{account.last_name}}>
-                <br>現在のメールアドレス</br>
-                <input type="email" name="email" value={{account.email}}>
-                <br>現在の自己紹介</br>
-                <textarea type="text" name="introduction">{{account.introduction}}</textarea>
-                <br>現在のリンク</br>
-                <input type="url" name="link" value={{account.link}}>
-                <br>現在のアイコン</br>
-                <img src="{{ account.icon.url }}" style="width:600px;height:auto">
-                <br>
-                <input type="file" name="icon" accept="image/png,image/jpeg,image/jpg,image/gif">
-                <br>現在の誕生日
-                <br>{{account.birthday}}</br>
-                <input type="date" name="birthday">
-                <input type="reset" value="リセットする">
-                <button type="submit">ユーザー登録</button>
-            </form>
-        </form>
+        <div class="side">
+            <p class="username">{{ user.username }}</p>
+            <img class="icon" src="{{ user.icon.url }}" />
+            <a href="#" class="btn btn--pro btn--radius">プロフィールを編集する</a>
+            <br>
+            <a href="#" class="btn btn--art btn--radius">展示会を見る</a>
+        </div>
+        <div class="main">
+            <p class="icon">アイコン画像</p>
+            <img src="{{ account.icon.url }}" class="change-icon">
+            <p class="userid">ユーザID</p>
+            <p class="username02">ユーザ名</p>
+            <p class="mail">メールアドレス</p>
+        </div>
     </div>
     <!-- footer -->
-    <footer>
+    <!-- <footer>
         <ul class="footer-menu">
             <p class="footer-text">© 2021 こらえる</p>
         </ul>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
