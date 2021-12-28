@@ -172,7 +172,6 @@ footer {
   position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
 }
-
 .profilebutton a {
   display: flex;
   justify-content: space-between;
@@ -215,4 +214,3 @@ footer {
   text-decoration: none;
   background-color: #bbbbbb;
 }
-
