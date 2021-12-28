@@ -5,9 +5,26 @@
 .side{
  background-color: #278c72;
  border-radius: 25px;
- margin: 5.5vw 70vw 2vw 3.6vw;
+ margin: 0 70vw 2vw 3.6vw;
  height: 540px;
  float: left;
+}
+.btn, a.btn, button.btn{
+  color: #658194;
+  background-color:#fff;
+  border: 2px solid #fff;
+  margin: 5px;
+  justify-content: center;
+  margin: 10px 105px;
+  width: 120px;
+  position: absolute;
+  top:475;
+  left: 520;
+}
+.btn:hover, a.btn:hover, button.btn:hover {
+  color: #fff;
+  background: #16afaf;
+  width: 120px;
 }
 img.icon{
   height: 160px;
@@ -23,26 +40,6 @@ p.username{
   text-align: center;
   padding: 10px 0 5px 0;
 }
-.btn--pro,
-a.btn--pro,
-.btn--art,
-a.btn--art{
-  color: #658194;
-  background-color:#fff;
-  border: 2px solid #fff;
-  margin: 5px;
-  width: 188px;
-  justify-content: center;
-  margin: 10px 105px;
-}
-.btn--pro:hover,
-a.btn--pro:hover 
-.btn--art:hover,
-a.btn--art:hover {
-  color: #fff;
-  background: #16afaf;
-}
-
 a.btn--radius {
    border-radius: 100vh;
 }
@@ -107,24 +104,11 @@ img.change-icon{
   top:60;
   left: 480px;
 }
-.btn--sansyo,
-a.btn--sansyo{
-  color: #658194;
-  background-color:#fff;
-  border: 2px solid #fff;
-  margin: 5px;
-  justify-content: center;
-  margin: 10px 105px;
-  width: 90px;
+.icon-button{
   position: absolute;
-  top:160;
-  left: 520;
-}
-.btn--sansyo:hover,
-a.btn--sansyo:hover {
-  color: #fff;
-  background: #16afaf;
-  width: 90px;
+  top:180;
+  left: 650;
+  font-family: "Noto Sans JP";
 }
 .useruntext{
   background-color: #fff;
@@ -149,6 +133,9 @@ p.userunlock{
   top:290;
   left: 400;
   border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: #658194;
 }
 .usermailtext{
   background-color: #fff;
@@ -158,6 +145,9 @@ p.userunlock{
   top:345;
   left: 400;
   border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: #658194;
 }
 .userbiotext{
   background-color: #fff;
@@ -167,25 +157,9 @@ p.userunlock{
   top:400;
   left: 400;
   border-radius: 5px;
-}
-.btn--save,
-a.btn--save{
   color: #658194;
-  background-color:#fff;
-  border: 2px solid #fff;
-  margin: 5px;
-  justify-content: center;
-  margin: 10px 105px;
-  width: 120px;
-  position: absolute;
-  top:475;
-  left: 520;
-}
-.btn--save:hover,
-a.btn--save:hover {
-  color: #fff;
-  background: #16afaf;
-  width: 120px;
+  font-size: 12px;
+  font-weight: 500;
 }
 footer {
   width: 100%;
@@ -198,3 +172,47 @@ footer {
   position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
 }
+
+.profilebutton a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 32px;
+  width: 188px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #cccccc;
+  border-radius: 50vh;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #fff;
+}
+
+.profilebutton a:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+.artshow a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 53px;
+  width: 188px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #cccccc;
+  border-radius: 50vh;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #fff;
+}
+
+.artshow a:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+

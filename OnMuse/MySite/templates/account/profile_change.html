@@ -36,31 +36,43 @@
         <a href="../account/login" class="btn btn-login">LOGIN</a>
         {% endif %}
     </header>
-    <div class="container">
-        <div class="side">
-            <p class="username">{{ user.username }}</p>
-            <img class="icon" src="{{ user.icon.url }}" />
-            <a href="#" class="btn btn--pro btn--radius">プロフィールを編集する</a>
-            <br>
-            <a href="#" class="btn btn--art btn--radius">展示会を見る</a>
-        </div>
-        <div class="main">
-            <p class="icon">アイコン画像</p>
-            <img src="{{ account.icon.url }}" class="change-icon">
-            <a href="#" class="btn btn--sansyo btn--radius">参照</a>
-            <p class="userid">ユーザID</p>
-            <div class="useruntext">
-                <p class="userunlock">{{ user.username }}</p>
+    <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container">
+                <div class="side">
+                    <p class="username">{{ user.username }}</p>
+                    <img class="icon" src="{{ user.icon.url }}" />
+                    <!-- プロフィールに戻る -->
+                    <div class="profilebutton">
+                        <a href="../account/profile">プロフィールに戻る</a>
+                    </div>
+                    <!-- 展示会を見る -->
+                    <br>
+                    <div class="artshow">
+                        <a href=#>展示会を見る</a>
+                    </div>
+                </div>
+                <div class="main">
+                    <p class="icon">アイコン画像</p>
+                    <img src="{{ account.icon.url }}" class="change-icon">
+                    <input type="file" name="icon" accept="image/png,image/jpeg,image/jpg,image/gif"
+                        class="icon-button">
+                    <p class="userid">ユーザID</p>
+                    <div class="useruntext">
+                        <p class="userunlock">{{ user.username }}</p>
+                    </div>
+                    <p class="username02">ユーザ名</p>
+                    <input type="text" name="last_name" class="usernametext" value="{{ user.last_name }}">
+                    <p class="mail">メールアドレス</p>
+                    <input type="email" name="email" class="usermailtext" value={{account.email}}>
+                    <p class="bio">自己紹介</p>
+                    <textarea type="text" name="introduction" class="userbiotext">{{account.introduction}}</textarea>
+                    <button type="submit" class="btn btn--save btn--radius">変更を保存</button>
+                </div>
             </div>
-            <p class="username02">ユーザ名</p>
-            <div class="usernametext"></div>
-            <p class="mail">メールアドレス</p>
-            <div class="usermailtext"></div>
-            <p class="bio">自己紹介</p>
-            <div class="userbiotext"></div>
-            <a href="#" class="btn btn--save btn--radius">変更を保存</a>
-        </div>
-    </div>
+        </form>
+    </form>
     <!-- footer -->
     <footer>
         <ul class="footer-menu">
