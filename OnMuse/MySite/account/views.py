@@ -34,14 +34,10 @@ def signup(request):
 def profile(request,id):
     user = get_object_or_404(CustomUser,username = id)
     likes = Like.objects.filter(author = id).order_by('created_at')#likes.postidでpostが分かる
-    #likes = list(likes.values())
-    print(type(likes))
     like_list = []
     for like in likes:
         like_list.append(like.postid)
-    print(like_list)
     likes = Post.objects.filter(id__in = like_list)
-    print(likes)
     context = {
         'user':user,
         'likes':likes,
