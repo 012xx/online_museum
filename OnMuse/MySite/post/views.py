@@ -27,7 +27,6 @@ def open(request):
                     back_color = request.POST["back_color"]
                     character_color = request.POST["character_color"]
                     post = Post.objects.filter(id = str(post_id)).first()
-                    print(post)
                     name = flyer(int(choice),back_color,character_color,image,post.title,post.author)
                     Post.objects.filter(id = str(post_id)).update(flyer = name)
                     first = False
@@ -207,19 +206,3 @@ def exhibition(request):
         'tag': Tag.objects.all(),
     }
     return render(request, 'post/exhibition.html', context)
-
-@login_required
-def draw(request):
-    context = {
-        'post': Post.objects.all(),
-        'tag': Tag.objects.all(),
-    }
-    return render(request, 'post/draw.html', context)
-
-@login_required
-def newranking(request):
-    context = {
-        'post': Post.objects.all(),
-        'tag': Tag.objects.all(),
-    }
-    return render(request, 'post/new-ranking.html', context)
