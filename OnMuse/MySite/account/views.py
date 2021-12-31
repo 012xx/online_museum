@@ -58,7 +58,7 @@ def profile_change(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, "変更完了")
-            return redirect('account:profile')
+            return redirect('account:profile',id = request.user)
     context = {
         'account':account,
         'form':ProfileChangeForm()
