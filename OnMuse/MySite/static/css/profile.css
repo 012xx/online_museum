@@ -220,3 +220,29 @@ img.artworks2 {
 	padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
 	transition: all 0.5s;
 }
+a.btn-submit {
+	width: 153px;
+	height: 48px;
+	position: relative;
+	left: 450px;
+	border: 2px solid #ffffff;
+	border-radius: 70px;
+	background: var(--observatory);
+	color: #ffffff;
+	display:block;  
+	margin: 0 auto; 
+	padding: 10px;
+	margin-bottom: 72px;
+  }
+  a.btn-submit:hover {
+	color: #ffffff;
+	background: var(--java);
+  }
+  #preview img {
+	width:80px;
+  height:80px;
+  object-fit: cover;
+	border:3px solid #278c72;
+  margin: 20px 5px 0 5px;
+  border-radius: 5px;
+}
