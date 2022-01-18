@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pw69x+rco#)k=euang6duicz_cpw&b)pa-8utuejoa&eb4hscr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['59.106.218.64','localhost','127.0.0.1','www.onmuse.ml']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -128,7 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/usr/share/nginx/html/static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -138,15 +137,15 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT = '/usr/share/nginx/html/media'
-MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.joinpath('medias')
+MEDIA_URL = '/medias/'
 
 AUTH_USER_MODEL = 'account.CustomUser'
 ACCOUNT_FORMS   = { "signup":"account.forms.SignupForm"}
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '../../choice'
-LOGOUT_REDIRECT_URL = '../../'
+LOGOUT_REDIRECT_URL = '../../home'
 
 PASSWORD,MAIL = get_password()
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
